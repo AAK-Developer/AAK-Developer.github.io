@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad — AAK MotorLog</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    line-height: 1.6;
+    color: #1a1a2e;
+    background: #ffffff;
+  }
+  h1 { font-size: 28px; margin-bottom: 4px; }
+  h2 { font-size: 20px; margin-top: 40px; border-bottom: 1px solid #eee; padding-bottom: 6px; }
+  h3 { font-size: 16px; margin-top: 24px; }
+  p, li { font-size: 15px; }
+  ul { padding-left: 22px; }
+  a { color: #FF6B35; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 1px; font-size: 12px; color: #888; }
+  .meta { color: #555; font-size: 14px; margin: 2px 0; }
+  .end { text-align: center; color: #999; margin-top: 60px; font-size: 13px; }
+  em { color: #555; }
+</style>
+</head>
+<body>
+
+<p class="eyebrow">Política de Privacidad</p>
+<h1>AAK MotorLog</h1>
+<p class="meta">Última actualización: 12 de julio de 2026</p>
+<p class="meta">Desarrollador: Enrique Morón Campos</p>
+<p class="meta">Correo de contacto: <a href="mailto:henryinfomaps@gmail.com">henryinfomaps@gmail.com</a></p>
+<p class="meta">País: España</p>
+
+<h2>1. Introducción</h2>
+<p>Enrique Morón Campos (en adelante, «el Desarrollador») desarrolla y distribuye la aplicación AAK MotorLog (en adelante, «la Aplicación»). Esta Política de Privacidad explica qué datos trata la Aplicación, con qué finalidad, con quién se comparten y qué derechos tienes sobre ellos.</p>
+<p>El Desarrollador actúa como responsable del tratamiento respecto de los datos descritos en esta política.</p>
+
+<h2>2. Información que trata la Aplicación</h2>
+
+<h3>2.1 Información de registro (solo si inicias sesión con Apple ID)</h3>
+<p>Cuando inicias sesión usando «Sign in with Apple», la Aplicación recibe:</p>
+<ul>
+  <li>Un identificador único asignado por Apple (no es tu email ni tu contraseña).</li>
+  <li>Tu nombre y tu dirección de correo electrónico, <strong>solo si eliges compartirlos</strong> durante el inicio de sesión. Apple te permite ocultarlos o usar una dirección de reenvío privada.</li>
+</ul>
+<p>Apple gestiona tu autenticación y tu contraseña. El Desarrollador no almacena ni tiene acceso a la contraseña de tu Apple ID.</p>
+<p>Estos datos se guardan <strong>en tu propio dispositivo</strong>. Iniciar sesión es opcional: puedes usar la Aplicación como invitado, con la limitación de que tus datos no se sincronizarán en iCloud ni podrás contratar un plan de pago.</p>
+
+<h3>2.2 Datos de tus vehículos y su mantenimiento</h3>
+<p>La Aplicación trata la información que tú introduces voluntariamente:</p>
+<ul>
+  <li><strong>Datos del vehículo:</strong> marca, modelo, año, matrícula, color, tipo de combustible, kilometraje y fotografía.</li>
+  <li><strong>Historial de mantenimiento:</strong> fecha, coste, taller, kilómetros, notas y, opcionalmente, fotografías (por ejemplo, de la factura).</li>
+  <li><strong>ITV:</strong> fecha, resultado, estación, coste, kilómetros y, opcionalmente, fotografía.</li>
+  <li><strong>Seguro:</strong> compañía, número de póliza, tipo, fechas, prima, franquicia y, opcionalmente, fotografía.</li>
+  <li><strong>Repostajes:</strong> fecha, litros, precio por litro, coste total, kilómetros, estación de servicio y, opcionalmente, fotografía.</li>
+</ul>
+<p>Estos datos se almacenan en tu dispositivo y, si inicias sesión y activas la copia en iCloud, se sincronizan con <strong>tu base de datos privada de iCloud (CloudKit)</strong>, asociada a tu Apple ID. Este historial no se almacena en servidores propios del Desarrollador, que no accede ordinariamente a ese contenido ni lo utiliza para finalidades distintas de las funciones que tú solicitas desde la Aplicación.</p>
+
+<h3>2.3 Tu perfil y los perfiles de familia (solo en tu dispositivo)</h3>
+<p>La Aplicación te permite crear tu propio perfil y perfiles de miembros de tu familia (nombre, correo electrónico y, opcionalmente, una fotografía) para asignarles vehículos.</p>
+<p><strong>Estos perfiles se guardan exclusivamente en el almacenamiento local de tu dispositivo.</strong> No se sincronizan con iCloud, no se envían a ningún servidor, y no se incluyen cuando compartes un vehículo con otra persona (ver sección 2.6).</p>
+<p>Si introduces datos de otras personas:</p>
+<ul>
+  <li>Eres tú quien decide qué información aportar sobre ellas. Eres responsable de disponer de una base legítima para introducirla y de informarles cuando resulte necesario.</li>
+  <li>El Desarrollador no recibe, no contacta con esas personas y no utiliza sus datos para ninguna finalidad.</li>
+</ul>
+<p>De forma similar, las fotografías de facturas que guardes pueden contener datos de terceros (por ejemplo, el nombre o los datos fiscales de un taller). Se tratan únicamente como parte del contenido de la imagen que tú decides guardar.</p>
+
+<h3>2.4 Escaneo de facturas con inteligencia artificial</h3>
+<p>La Aplicación ofrece una función <strong>opcional</strong> para analizar la fotografía de una factura y extraer automáticamente sus datos (taller, importe, fecha, kilómetros, categoría). Cuando la utilizas:</p>
+<ul>
+  <li>La fotografía se envía cifrada (HTTPS) a un servidor intermediario utilizado por el Desarrollador, alojado en <strong>Cloudflare Workers</strong>.</li>
+  <li>Junto a la imagen se envían dos identificadores técnicos: el identificador aleatorio de tu instalación y el identificador interno del vehículo. Sirven exclusivamente para comprobar el límite de escaneos de tu plan (ver sección 2.5).</li>
+  <li>El servidor reenvía <strong>únicamente la imagen</strong> a la API de <strong>Anthropic</strong> (modelo Claude), que la analiza y devuelve los datos extraídos.</li>
+  <li>El servidor del Desarrollador no conserva copia de la fotografía una vez devuelta la respuesta: actúa solo como paso intermedio.</li>
+  <li>Anthropic puede conservar temporalmente la imagen y la respuesta conforme a su política de retención estándar (hasta 30 días desde su recepción, salvo excepciones legales o de prevención de usos indebidos). Ver sección 6.3.</li>
+</ul>
+<p>Esta función es independiente de que decidas <em>guardar</em> esa misma fotografía en el registro de mantenimiento: si la guardas, se almacena como cualquier otro dato de tu vehículo (sección 2.2).</p>
+
+<h3>2.5 Control de uso del escaneo con IA</h3>
+<p>Para aplicar los límites de escaneo de cada plan y evitar un uso indebido del servicio, el servidor utilizado por el Desarrollador (Cloudflare Workers KV) almacena, de forma separada del contenido de tus facturas:</p>
+<ul>
+  <li>Un <strong>identificador aleatorio</strong> generado por la Aplicación para tu instalación. No es tu Apple ID, ni tu nombre, ni tu email, ni un identificador del hardware, ni el identificador de proveedor de Apple (<em>identifierForVendor</em>).</li>
+  <li>El <strong>identificador interno del vehículo</strong> al que corresponde el escaneo y el número de escaneos realizados sobre él. Este identificador es también un valor aleatorio generado por la Aplicación: no se construye a partir de la matrícula, el número de bastidor, la marca, el modelo ni ningún otro dato del vehículo o de su propietario.</li>
+  <li>El plan de suscripción activo asociado a esa instalación y su fecha de caducidad.</li>
+  <li>Si inicias sesión con Apple ID, un <strong>testigo de actualización (<em>refresh token</em>) emitido por Apple</strong>. Se almacena cifrado y tiene una única finalidad: permitir que, al eliminar tu cuenta, el Desarrollador pueda solicitar a Apple la revocación de la autorización concedida a la Aplicación (ver sección 2.14). No da acceso a tu Apple ID, ni a tu correo, ni a ningún otro servicio de Apple, y se elimina al eliminar la cuenta.</li>
+</ul>
+<p>Estos registros son pseudónimos, no contienen el contenido de tus facturas ni datos identificativos directos, y caducan automáticamente (ver sección 9).</p>
+
+<h3>2.6 Compartir vehículos con otras personas</h3>
+<p>La Aplicación te permite compartir un vehículo concreto con otra persona para que ambos podáis consultarlo y, opcionalmente, editarlo. Si usas esta función:</p>
+<ul>
+  <li>Se utiliza la función nativa de compartición de Apple (<strong>CloudKit Sharing / CKShare</strong>), mediante un enlace que tú generas y envías por el medio que elijas.</li>
+  <li>Tú decides quién recibe el enlace y qué permiso concedes (solo consulta, o consulta y edición).</li>
+  <li>La persona invitada accede a través de tu iCloud mediante el mecanismo de Apple. <strong>No recibe una copia independiente de los datos.</strong></li>
+  <li>Se comparte el vehículo y sus registros asociados (mantenimiento, ITV, seguro, combustible). <strong>No se comparten tus otros vehículos, ni tu perfil, ni los perfiles de familia</strong>, que residen únicamente en tu dispositivo.</li>
+  <li>Puedes dejar de compartir en cualquier momento desde la Aplicación; al hacerlo, esa persona pierde el acceso.</li>
+</ul>
+
+<h3>2.7 Exportación de tu historial</h3>
+<p>La Aplicación te permite generar un documento PDF con el historial de uno o varios vehículos y compartirlo mediante las opciones nativas de iOS. El documento <strong>se genera íntegramente en tu dispositivo</strong>. Una vez lo compartes, su difusión queda bajo tu control y responsabilidad; el Desarrollador no interviene ni recibe copia.</p>
+
+<h3>2.8 Compras y suscripciones</h3>
+<p>Los planes de suscripción opcionales (Motor y Premium) se gestionan íntegramente por Apple mediante <strong>StoreKit</strong>. El Desarrollador no recibe ni almacena datos de tu tarjeta de pago; Apple gestiona el cobro conforme a su propia política de privacidad. El Desarrollador únicamente conoce qué plan está activo en tu instalación, para aplicar los límites correspondientes (ver sección 2.5).</p>
+
+<h3>2.9 Notificaciones</h3>
+<p>La Aplicación puede recordarte los vencimientos de ITV, seguro y mantenimiento.</p>
+<ul>
+  <li>Estas notificaciones son <strong>locales</strong>: las genera y programa iOS en tu propio dispositivo, a partir de los datos que tú has introducido. No pasan por ningún servidor y el Desarrollador no envía notificaciones comerciales ni promocionales.</li>
+  <li>Para que la sincronización con iCloud funcione, la Aplicación se registra en el servicio de notificaciones de Apple (APNs). Esto permite <strong>únicamente</strong> que Apple avise al dispositivo de que hay cambios pendientes en <em>tu</em> iCloud privado. Son avisos silenciosos, sin contenido, gestionados por Apple; el Desarrollador no dispone de un servidor de envío de notificaciones ni almacena el identificador de dispositivo (token) correspondiente.</li>
+</ul>
+
+<h3>2.10 Acceso a tus fotografías</h3>
+<p>Cuando adjuntas una fotografía a un vehículo, a un registro o a un perfil, la Aplicación utiliza el <strong>selector de fotos nativo de iOS</strong>, que se ejecuta fuera de la Aplicación: iOS te muestra tu galería y la Aplicación recibe únicamente la imagen concreta que tú seleccionas.</p>
+<p>Por este motivo, la Aplicación <strong>no solicita acceso a tu biblioteca de fotos</strong> y no puede ver, examinar ni acceder a ninguna otra fotografía de tu dispositivo. La Aplicación <strong>tampoco utiliza la cámara</strong>: las imágenes se seleccionan, no se capturan desde la Aplicación.</p>
+
+<h3>2.11 Permisos del dispositivo</h3>
+<p>La Aplicación solicita un único permiso al usuario:</p>
+<ul>
+  <li><strong>Notificaciones:</strong> para avisarte de los vencimientos que tú mismo registras. Es opcional y puede modificarse en cualquier momento desde los Ajustes de iOS.</li>
+</ul>
+<p>No se solicita acceso a cámara, micrófono, contactos, biblioteca de fotos ni ubicación, porque la Aplicación no utiliza ninguna de esas funciones.</p>
+
+<h3>2.12 Qué NO trata la Aplicación</h3>
+<ul>
+  <li>Contactos.</li>
+  <li>Mensajes.</li>
+  <li>Historial de navegación.</li>
+  <li>Datos de ubicación.</li>
+  <li>Datos de tu tarjeta de pago (los gestiona Apple directamente).</li>
+  <li>Datos médicos.</li>
+  <li>Información publicitaria o identificadores de seguimiento publicitario.</li>
+  <li>Analítica de comportamiento. La Aplicación no integra ningún servicio de analítica ni de seguimiento. El servidor conserva únicamente los contadores técnicos necesarios para aplicar los límites de escaneo (sección 2.5), que no describen tu comportamiento de uso.</li>
+</ul>
+
+<h3>2.13 Cookies</h3>
+<p>La Aplicación no utiliza cookies.</p>
+
+<h3>2.14 Eliminación de tu cuenta</h3>
+<p>Puedes eliminar tu cuenta en cualquier momento desde la propia Aplicación, en <em>Perfil → Cuenta → Eliminar cuenta</em>. La eliminación es permanente e irreversible, y borra:</p>
+<ul>
+  <li>Todos tus vehículos y su historial (mantenimiento, ITV, seguro, combustible) guardados en este dispositivo.</li>
+  <li>Todas las fotografías y facturas asociadas.</li>
+  <li>Tu perfil y los perfiles de familia.</li>
+  <li>La copia de seguridad sincronizada en tu iCloud privado.</li>
+  <li>Los datos técnicos asociados a tu instalación en el servidor: el identificador aleatorio de instalación, el plan y los contadores de escaneo descritos en la sección 2.5.</li>
+  <li>Tu sesión iniciada con Apple ID y las credenciales guardadas en el dispositivo.</li>
+  <li>La autorización de «Iniciar sesión con Apple» concedida a la Aplicación: el Desarrollador solicita a Apple su revocación mediante la API oficial de Sign in with Apple.</li>
+</ul>
+<p>Antes de confirmar, la Aplicación te ofrece exportar tu historial en PDF, y te pide escribir una palabra de confirmación para evitar borrados accidentales.</p>
+<p>Dos aclaraciones importantes:</p>
+<ul>
+  <li><strong>Eliminar la cuenta no cancela tu suscripción.</strong> Las suscripciones las gestiona Apple: para cancelarla debes hacerlo desde los Ajustes de iOS → tu nombre → Suscripciones.</li>
+  <li><strong>Vehículos compartidos:</strong> al eliminar los datos de tu iCloud se destruyen también las comparticiones activas, por lo que las personas a las que hubieras invitado pierden el acceso automáticamente. No necesitas dejar de compartir manualmente antes de eliminar tu cuenta.</li>
+  <li><strong>Sign in with Apple:</strong> la Aplicación cierra tu sesión, elimina las credenciales almacenadas en el dispositivo y solicita a Apple la revocación de la autorización asociada, mediante la API oficial de Sign in with Apple. La Aplicación dejará de aparecer en <em>Ajustes de iOS → tu nombre → Inicio de sesión y seguridad → Iniciar sesión con Apple</em>. Eliminar tu cuenta en la Aplicación no afecta a tu Apple ID ni a ningún otro servicio o aplicación vinculados a él.</li>
+</ul>
+<p>Si algún paso del borrado no se completa (por ejemplo, por falta de conexión), la Aplicación te lo indica de forma explícita al finalizar, señalando qué no pudo eliminarse, incluido el resultado de la revocación de Sign in with Apple. Los datos de tu dispositivo se eliminan en todo caso, ya que es la acción que has solicitado de forma expresa. Si la copia de iCloud no pudo borrarse, puedes eliminarla más tarde desde los Ajustes de iCloud de tu dispositivo. Si la revocación de la autorización de Apple no pudo completarse, puedes retirarla tú mismo desde <em>Ajustes de iOS → tu nombre → Inicio de sesión y seguridad → Iniciar sesión con Apple</em>. Los contadores técnicos del servidor son pseudónimos y caducan automáticamente, según lo indicado en la sección 9.</p>
+
+<h2>3. Finalidades del tratamiento</h2>
+<ul>
+  <li><strong>Prestar el servicio:</strong> gestión de vehículos, mantenimiento, ITV, seguro y combustible.</li>
+  <li><strong>Escaneo con IA:</strong> extraer los datos de una factura que tú seleccionas, para rellenar el formulario por ti.</li>
+  <li><strong>Sincronización en iCloud:</strong> si has iniciado sesión y activado la copia.</li>
+  <li><strong>Compartir vehículos:</strong> dar acceso a otra persona a un vehículo concreto, si tú lo decides.</li>
+  <li><strong>Notificaciones:</strong> avisarte de vencimientos calculados a partir de tus propios datos.</li>
+  <li><strong>Gestionar tu plan:</strong> aplicar los límites de escaneo y de vehículos correspondientes a tu suscripción.</li>
+  <li><strong>Atención al usuario:</strong> responder a tus preguntas o solicitudes.</li>
+</ul>
+<p>El Desarrollador no utiliza tus datos para publicidad, elaboración de perfiles ni decisiones automatizadas con efectos jurídicos sobre ti.</p>
+
+<h2>4. Base jurídica del tratamiento</h2>
+<ul>
+  <li><strong>Ejecución de un contrato (art. 6.1.b RGPD):</strong> prestación de las funciones que tú solicitas — crear y gestionar tu cuenta con Sign in with Apple, registrar y consultar tus vehículos, sincronizarlos en iCloud, compartir un vehículo, realizar un escaneo cuando lo pides, y gestionar tu suscripción y sus límites de uso, incluidos los contadores técnicos necesarios para aplicarlos.</li>
+  <li><strong>Consentimiento (art. 6.1.a RGPD):</strong> para el envío de notificaciones, y para cualquier otra función opcional en la que el consentimiento sea la base aplicable. Puedes retirarlo en cualquier momento, sin que ello afecte a la licitud del tratamiento previo.</li>
+  <li><strong>Interés legítimo (art. 6.1.f RGPD):</strong> prevención de abusos y usos fraudulentos del servicio de escaneo.</li>
+  <li><strong>Cumplimiento de obligaciones legales (art. 6.1.c RGPD),</strong> cuando resulte aplicable.</li>
+</ul>
+<p>Retirar el consentimiento a una función concreta se hace desactivándola (por ejemplo, desactivando las notificaciones en los Ajustes de iOS) o comunicándolo al Desarrollador cuando proceda. <em>Cerrar sesión no equivale, por sí solo, a retirar todos los consentimientos ni a borrar tus datos:</em> consulta las secciones 8 y 9.</p>
+
+<h2>5. Transferencias internacionales de datos</h2>
+<p>Determinados proveedores que hacen posible la Aplicación pueden tratar datos, o permitir el acceso a ellos, desde fuera del Espacio Económico Europeo, principalmente desde Estados Unidos:</p>
+<ul>
+  <li><strong>Apple</strong> — autenticación, iCloud/CloudKit, notificaciones y StoreKit.</li>
+  <li><strong>Cloudflare</strong> — servidor intermediario del escaneo y almacenamiento de los contadores técnicos.</li>
+  <li><strong>Anthropic</strong> — análisis de la imagen de la factura.</li>
+</ul>
+<p>Estas transferencias se amparan en los mecanismos previstos por el RGPD, tales como las Cláusulas Contractuales Tipo aprobadas por la Comisión Europea u otros mecanismos equivalentes adoptados por dichos proveedores. Puedes consultar los detalles en sus respectivas políticas de privacidad y acuerdos de tratamiento de datos.</p>
+
+<h2>6. Almacenamiento y seguridad</h2>
+
+<h3>6.1 Almacenamiento local</h3>
+<ul>
+  <li>Tus vehículos, su historial, tu perfil y los perfiles de familia se guardan en el almacenamiento privado de la Aplicación en tu dispositivo.</li>
+  <li>Están protegidos por el cifrado nativo de iOS y por las medidas de seguridad y desbloqueo que tú tengas configuradas en tu dispositivo (código, Face ID o Touch ID).</li>
+</ul>
+
+<h3>6.2 Sincronización en iCloud</h3>
+<ul>
+  <li>Si inicias sesión y activas la copia, tus vehículos y su historial se sincronizan con <strong>tu base de datos privada</strong> de iCloud (CloudKit).</li>
+  <li>Si compartes un vehículo, ese vehículo y sus registros pasan a estar accesibles también a través de la base de datos compartida de CloudKit, únicamente para las personas a las que hayas invitado.</li>
+  <li>El tratamiento y el nivel de cifrado dependen de los servicios y la configuración de iCloud del usuario (por ejemplo, la Protección Avanzada de Datos, si la activas).</li>
+  <li>Más información en la <a href="https://www.apple.com/es/legal/privacy/" target="_blank" rel="noopener">política de privacidad de Apple</a>.</li>
+</ul>
+
+<h3>6.3 Escaneo de facturas con IA</h3>
+<ul>
+  <li>La fotografía viaja cifrada (HTTPS) desde tu dispositivo hasta el servidor utilizado por el Desarrollador, y desde este hasta Anthropic.</li>
+  <li>Ese servidor no guarda un historial de las imágenes procesadas: su función es reenviar la petición y devolverte el resultado.</li>
+  <li>Anthropic puede conservar temporalmente las entradas y salidas de su API conforme a sus condiciones aplicables. Según su política estándar, se eliminan de sus sistemas en un plazo de hasta 30 días desde su recepción, salvo excepciones (por ejemplo, obligaciones legales o prevención de usos indebidos). Consulta la <a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data" target="_blank" rel="noopener">política de retención de datos de Anthropic</a>.</li>
+  <li>La clave de acceso a la API de Anthropic reside exclusivamente en el servidor y nunca se incluye en la Aplicación.</li>
+</ul>
+
+<h3>6.4 Medidas de seguridad</h3>
+<ul>
+  <li>El historial de tus vehículos no se almacena en servidores del Desarrollador: reside en tu dispositivo y, si activas la copia, en tu iCloud privado. El Desarrollador no lo consulta ni lo utiliza para finalidades distintas de las funciones que tú solicitas.</li>
+  <li>El Desarrollador no vende, alquila ni cede tus datos con fines comerciales.</li>
+  <li>Apple proporciona la infraestructura de autenticación, sincronización y pagos, y aplica sus propias medidas de seguridad.</li>
+  <li><strong>Cloudflare</strong> y <strong>Anthropic</strong> prestan los servicios tecnológicos necesarios para la función de escaneo y la aplicación de los límites de uso, conforme a sus términos comerciales y a sus acuerdos de tratamiento de datos aplicables (<a href="https://www.cloudflare.com/cloudflare-customer-dpa/" target="_blank" rel="noopener">Cloudflare DPA</a> · <a href="https://www.anthropic.com/legal/commercial-terms" target="_blank" rel="noopener">Anthropic — términos comerciales</a>). Tratan los datos únicamente para prestar esa función y siguiendo las instrucciones del Desarrollador.</li>
+</ul>
+
+<h2>7. Comunicación de datos a terceros</h2>
+<p>El Desarrollador no comparte tu información personal con terceros, salvo en los siguientes casos:</p>
+<ul>
+  <li><strong>Apple:</strong> autenticación (Sign in with Apple), sincronización y compartición (iCloud/CloudKit), notificaciones (APNs) y gestión de suscripciones (StoreKit).</li>
+  <li><strong>Cloudflare:</strong> la fotografía de la factura en el momento del escaneo, y los datos técnicos pseudónimos descritos en la sección 2.5 (identificador aleatorio de instalación, identificador interno del vehículo, contador de escaneos, plan, fecha de caducidad y, si inicias sesión con Apple ID, el testigo de actualización emitido por Apple).</li>
+  <li><strong>Anthropic:</strong> únicamente la fotografía de la factura, en el momento en que tú decides usar el escaneo con IA, para devolver los datos extraídos. Anthropic no recibe los identificadores de la sección 2.5.</li>
+  <li><strong>Otras personas,</strong> si tú decides compartir un vehículo: acceden solo al vehículo y al historial que tú eliges compartir, nunca al resto de tus vehículos ni a tus perfiles.</li>
+  <li><strong>Autoridades competentes,</strong> cuando exista una obligación legal de facilitar información.</li>
+</ul>
+<p>El Desarrollador no vende ni alquila datos personales a terceros.</p>
+
+<h2>8. Tus derechos (RGPD)</h2>
+<p>Si resides en la Unión Europea, tienes derecho a:</p>
+<ul>
+  <li><strong>Acceso:</strong> conocer qué datos se tratan sobre ti. La práctica totalidad de tus datos son visibles y consultables en la propia Aplicación en todo momento.</li>
+  <li><strong>Rectificación:</strong> corregir información inexacta, editable directamente desde la Aplicación.</li>
+  <li><strong>Supresión:</strong> puedes <strong>eliminar tu cuenta y todos tus datos directamente desde la Aplicación</strong>, en <em>Perfil → Cuenta → Eliminar cuenta</em> (ver sección 2.14). Este proceso borra los datos locales, la copia de iCloud y los datos técnicos asociados a tu instalación en el servidor, sin necesidad de solicitarlo por escrito. También puedes borrar vehículos y registros de forma individual, o eliminar únicamente la copia de iCloud desde <em>Perfil → Copia de seguridad</em>.</li>
+  <li><strong>Limitación</strong> del tratamiento y <strong>oposición</strong> al mismo.</li>
+  <li><strong>Portabilidad:</strong> puedes solicitar al Desarrollador la entrega de los datos que trata sobre ti en un formato estructurado, de uso común y lectura mecánica, cuando resulte aplicable. Adicionalmente, la Aplicación te permite exportar el historial de tus vehículos en formato PDF, pensado para consulta y compartición.</li>
+  <li><strong>Retirada del consentimiento</strong> en cualquier momento, sin que ello afecte a la licitud del tratamiento previo (ver sección 4).</li>
+</ul>
+<p>Para ejercer estos derechos, escribe a <a href="mailto:henryinfomaps@gmail.com">henryinfomaps@gmail.com</a>. El Desarrollador responderá en un plazo máximo de un mes.</p>
+<p>Si consideras que tus derechos no han sido correctamente atendidos, puedes presentar una reclamación ante la <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos (AEPD)</a>.</p>
+
+<h2>9. Conservación de datos</h2>
+<ul>
+  <li><strong>Datos locales:</strong> permanecen en tu dispositivo hasta que los borres desde la Aplicación, elimines tu cuenta (sección 2.14) o desinstales la Aplicación.</li>
+  <li><strong>Datos en iCloud:</strong> permanecen en tu iCloud privado hasta que los elimines. <strong>Desinstalar la Aplicación no borra automáticamente los datos ya sincronizados en iCloud.</strong> Para eliminarlos, usa <em>Perfil → Cuenta → Eliminar cuenta</em> (que los borra junto con el resto), o bien «Borrar la copia de iCloud» en <em>Perfil → Copia de seguridad</em> antes de desinstalar. También puedes gestionar el almacenamiento desde los Ajustes de iCloud de tu dispositivo.</li>
+  <li><strong>Vehículos compartidos:</strong> si dejas de compartir un vehículo, la otra persona pierde el acceso de inmediato. Los datos siguen residiendo en tu iCloud.</li>
+  <li><strong>Contadores de uso del escaneo</strong> (sección 2.5): se eliminan al eliminar tu cuenta. En cualquier otro caso, se conservan únicamente mientras son necesarios para aplicar el límite correspondiente: tienen configurada una caducidad automática en el propio sistema de almacenamiento, con un plazo máximo de 400 días, transcurrido el cual se eliminan sin intervención del Desarrollador. La información del plan activo deja de ser aplicable al vencer la suscripción.</li>
+  <li><strong>Fotografías enviadas al escaneo:</strong> no se conservan en el servidor del Desarrollador. En los sistemas de Anthropic se eliminan conforme a lo indicado en la sección 6.3.</li>
+</ul>
+
+<h2>10. Menores de edad</h2>
+<p>La Aplicación no está diseñada para menores de 14 años, edad mínima establecida en España para prestar consentimiento válido en el tratamiento de datos personales. El Desarrollador no recaba información de menores deliberadamente. Si tiene conocimiento de que un menor de esa edad ha proporcionado información sin el consentimiento de sus progenitores o tutores, la eliminará.</p>
+
+<h2>11. Cambios en esta política</h2>
+<p>El Desarrollador se reserva el derecho de actualizar esta Política de Privacidad. Las actualizaciones entrarán en vigor cuando se publiquen. Si los cambios son sustanciales, se informará por un medio adecuado dentro de la Aplicación. Se recomienda revisar esta página periódicamente.</p>
+
+<h2>12. Legislación aplicable</h2>
+<p>Esta Política de Privacidad se rige por la legislación española y por el Reglamento General de Protección de Datos (RGPD) de la Unión Europea.</p>
+
+<h2>13. Contacto</h2>
+<p class="meta">Desarrollador: Enrique Morón Campos</p>
+<p class="meta">Email: <a href="mailto:henryinfomaps@gmail.com">henryinfomaps@gmail.com</a></p>
+<p class="meta">País: España</p>
+
+<p class="end">Fin de la Política de Privacidad</p>
+
+</body>
+</html>
