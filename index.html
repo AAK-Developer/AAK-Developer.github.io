@@ -152,9 +152,18 @@
     color: var(--shell);
     background: var(--deep);
     flex-shrink: 0;
+    overflow: hidden;
   }
-  .app-icon.tc { background: var(--clay); }
-  .app-icon.radio { background: var(--jade); }
+
+  /* Iconos reales de las apps.
+     object-fit: cover recorta si la imagen no fuese cuadrada,
+     y el border-radius del contenedor la redondea. */
+  .app-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
   .app-info h3 {
     margin: 0;
@@ -310,12 +319,12 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Aplicaciones</h2>
-      <span>02 en marcha</span>
+      <span>03 en marcha</span>
     </div>
 
     <div class="app-grid">
       <a class="app-card" href="/twoclicks/privacy.html">
-        <div class="app-icon tc">TC</div>
+        <div class="app-icon"><img src="/twoclicks.png" alt="TwoClicks"></div>
         <div class="app-info">
           <h3>TwoClicks</h3>
           <p>Recordatorios multimedia con foto, vídeo, voz y ubicación.</p>
@@ -324,7 +333,7 @@
       </a>
 
       <a class="app-card" href="/aakradio/privacy.html">
-        <div class="app-icon radio">AR</div>
+        <div class="app-icon"><img src="/aakradio.png" alt="AAK Radio"></div>
         <div class="app-info">
           <h3>AAK Radio</h3>
           <p>Emisoras de radio de todo el mundo, en directo.</p>
@@ -332,13 +341,13 @@
         <span class="app-status live">Verificando en App Store</span>
       </a>
 
-      <a class="app-card placeholder" href="#">
-        <div class="app-icon">·</div>
+      <a class="app-card" href="/aakmotorlog/privacy.html">
+        <div class="app-icon"><img src="/motorlog.png" alt="AAK MotorLog"></div>
         <div class="app-info">
-          <h3>Próxima app</h3>
-          <p>Aún sin anunciar.</p>
+          <h3>AAK MotorLog</h3>
+          <p>Todos los vehículos de tu familia, mantenidos y documentados.</p>
         </div>
-        <span class="app-status soon">Próximamente</span>
+        <span class="app-status live">Verificando en App Store</span>
       </a>
 
       <a class="app-card placeholder" href="#">
