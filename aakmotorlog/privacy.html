@@ -30,7 +30,7 @@
 
 <p class="eyebrow">Política de Privacidad</p>
 <h1>AAK MotorLog</h1>
-<p class="meta">Última actualización: 12 de julio de 2026</p>
+<p class="meta">Última actualización: 13 de julio de 2026</p>
 <p class="meta">Desarrollador: Enrique Morón Campos</p>
 <p class="meta">Correo de contacto: <a href="mailto:henryinfomaps@gmail.com">henryinfomaps@gmail.com</a></p>
 <p class="meta">País: España</p>
@@ -75,7 +75,7 @@
 <p>La Aplicación ofrece una función <strong>opcional</strong> para analizar la fotografía de una factura y extraer automáticamente sus datos (taller, importe, fecha, kilómetros, categoría). Cuando la utilizas:</p>
 <ul>
   <li>La fotografía se envía cifrada (HTTPS) a un servidor intermediario utilizado por el Desarrollador, alojado en <strong>Cloudflare Workers</strong>.</li>
-  <li>Junto a la imagen se envían dos identificadores técnicos: el identificador aleatorio de tu instalación y el identificador interno del vehículo. Sirven exclusivamente para comprobar el límite de escaneos de tu plan (ver sección 2.5).</li>
+  <li>Junto a la imagen se envía el <strong>identificador aleatorio de tu instalación</strong>, que sirve exclusivamente para comprobar el límite de escaneos de tu plan (ver sección 2.5).</li>
   <li>El servidor reenvía <strong>únicamente la imagen</strong> a la API de <strong>Anthropic</strong> (modelo Claude), que la analiza y devuelve los datos extraídos.</li>
   <li>El servidor del Desarrollador no conserva copia de la fotografía una vez devuelta la respuesta: actúa solo como paso intermedio.</li>
   <li>Anthropic puede conservar temporalmente la imagen y la respuesta conforme a su política de retención estándar (hasta 30 días desde su recepción, salvo excepciones legales o de prevención de usos indebidos). Ver sección 6.3.</li>
@@ -86,9 +86,10 @@
 <p>Para aplicar los límites de escaneo de cada plan y evitar un uso indebido del servicio, el servidor utilizado por el Desarrollador (Cloudflare Workers KV) almacena, de forma separada del contenido de tus facturas:</p>
 <ul>
   <li>Un <strong>identificador aleatorio</strong> generado por la Aplicación para tu instalación. No es tu Apple ID, ni tu nombre, ni tu email, ni un identificador del hardware, ni el identificador de proveedor de Apple (<em>identifierForVendor</em>).</li>
-  <li>El <strong>identificador interno del vehículo</strong> al que corresponde el escaneo y el número de escaneos realizados sobre él. Este identificador es también un valor aleatorio generado por la Aplicación: no se construye a partir de la matrícula, el número de bastidor, la marca, el modelo ni ningún otro dato del vehículo o de su propietario.</li>
+  <li>El <strong>número de escaneos realizados desde tu instalación</strong>. El contador está asociado únicamente al identificador aleatorio de instalación descrito arriba, no a ningún vehículo ni a ningún dato tuyo.</li>
   <li>El plan de suscripción activo asociado a esa instalación y su fecha de caducidad.</li>
-  <li>Si inicias sesión con Apple ID, un <strong>testigo de actualización (<em>refresh token</em>) emitido por Apple</strong>. Se almacena cifrado y tiene una única finalidad: permitir que, al eliminar tu cuenta, el Desarrollador pueda solicitar a Apple la revocación de la autorización concedida a la Aplicación (ver sección 2.14). No da acceso a tu Apple ID, ni a tu correo, ni a ningún otro servicio de Apple, y se elimina al eliminar la cuenta.</li>
+  <li>Si te suscribes a un plan de pago, un <strong>identificador técnico pseudónimo de cuenta</strong> (<em>appAccountToken</em>), utilizado para asociar una compra con el usuario autenticado. Es un código derivado de forma irreversible de tu identificador de Apple, que no permite recuperarlo. Se comunica a Apple en el momento de la compra y al servidor del Desarrollador al activar el plan, con una única finalidad: comprobar que la suscripción pertenece realmente a tu cuenta y evitar que el comprobante de compra de otra persona pueda reutilizarse. No se emplea para publicidad ni para seguimiento, y se elimina al eliminar la cuenta.</li>
+  <li>Si inicias sesión con Apple ID, un <strong>testigo de actualización (<em>refresh token</em>) emitido por Apple</strong>. Se almacena en la infraestructura de Cloudflare, protegida por las medidas de seguridad y el cifrado en reposo que dicho proveedor aplica, y tiene una única finalidad: permitir que, al eliminar tu cuenta, el Desarrollador pueda solicitar a Apple la revocación de la autorización concedida a la Aplicación (ver sección 2.14). No da acceso a tu Apple ID, ni a tu correo, ni a ningún otro servicio de Apple, y se elimina al eliminar la cuenta.</li>
 </ul>
 <p>Estos registros son pseudónimos, no contienen el contenido de tus facturas ni datos identificativos directos, y caducan automáticamente (ver sección 9).</p>
 
@@ -106,7 +107,7 @@
 <p>La Aplicación te permite generar un documento PDF con el historial de uno o varios vehículos y compartirlo mediante las opciones nativas de iOS. El documento <strong>se genera íntegramente en tu dispositivo</strong>. Una vez lo compartes, su difusión queda bajo tu control y responsabilidad; el Desarrollador no interviene ni recibe copia.</p>
 
 <h3>2.8 Compras y suscripciones</h3>
-<p>Los planes de suscripción opcionales (Motor y Premium) se gestionan íntegramente por Apple mediante <strong>StoreKit</strong>. El Desarrollador no recibe ni almacena datos de tu tarjeta de pago; Apple gestiona el cobro conforme a su propia política de privacidad. El Desarrollador únicamente conoce qué plan está activo en tu instalación, para aplicar los límites correspondientes (ver sección 2.5).</p>
+<p>Los planes de suscripción opcionales <strong>Plus</strong> y <strong>Familia</strong> se gestionan íntegramente por Apple mediante <strong>StoreKit</strong>. El Desarrollador no recibe ni almacena datos de tu tarjeta de pago; Apple gestiona el cobro conforme a su propia política de privacidad. El Desarrollador únicamente conoce qué plan está activo en tu instalación, para aplicar los límites correspondientes (ver sección 2.5).</p>
 
 <h3>2.9 Notificaciones</h3>
 <p>La Aplicación puede recordarte los vencimientos de ITV, seguro y mantenimiento.</p>
@@ -147,7 +148,7 @@
   <li>Todos tus vehículos y su historial (mantenimiento, ITV, seguro, combustible) guardados en este dispositivo.</li>
   <li>Todas las fotografías y facturas asociadas.</li>
   <li>Tu perfil y los perfiles de familia.</li>
-  <li>La copia de seguridad sincronizada en tu iCloud privado.</li>
+  <li>Los datos sincronizados en tu base de datos privada de iCloud (CloudKit).</li>
   <li>Los datos técnicos asociados a tu instalación en el servidor: el identificador aleatorio de instalación, el plan y los contadores de escaneo descritos en la sección 2.5.</li>
   <li>Tu sesión iniciada con Apple ID y las credenciales guardadas en el dispositivo.</li>
   <li>La autorización de «Iniciar sesión con Apple» concedida a la Aplicación: el Desarrollador solicita a Apple su revocación mediante la API oficial de Sign in with Apple.</li>
@@ -159,7 +160,11 @@
   <li><strong>Vehículos compartidos:</strong> al eliminar los datos de tu iCloud se destruyen también las comparticiones activas, por lo que las personas a las que hubieras invitado pierden el acceso automáticamente. No necesitas dejar de compartir manualmente antes de eliminar tu cuenta.</li>
   <li><strong>Sign in with Apple:</strong> la Aplicación cierra tu sesión, elimina las credenciales almacenadas en el dispositivo y solicita a Apple la revocación de la autorización asociada, mediante la API oficial de Sign in with Apple. La Aplicación dejará de aparecer en <em>Ajustes de iOS → tu nombre → Inicio de sesión y seguridad → Iniciar sesión con Apple</em>. Eliminar tu cuenta en la Aplicación no afecta a tu Apple ID ni a ningún otro servicio o aplicación vinculados a él.</li>
 </ul>
-<p>Si algún paso del borrado no se completa (por ejemplo, por falta de conexión), la Aplicación te lo indica de forma explícita al finalizar, señalando qué no pudo eliminarse, incluido el resultado de la revocación de Sign in with Apple. Los datos de tu dispositivo se eliminan en todo caso, ya que es la acción que has solicitado de forma expresa. Si la copia de iCloud no pudo borrarse, puedes eliminarla más tarde desde los Ajustes de iCloud de tu dispositivo. Si la revocación de la autorización de Apple no pudo completarse, puedes retirarla tú mismo desde <em>Ajustes de iOS → tu nombre → Inicio de sesión y seguridad → Iniciar sesión con Apple</em>. Los contadores técnicos del servidor son pseudónimos y caducan automáticamente, según lo indicado en la sección 9.</p>
+<p><strong>La eliminación de cuenta requiere conexión a Internet y una reautenticación reciente.</strong> Antes de eliminar nada, la Aplicación te pide que vuelvas a identificarte mediante Sign in with Apple. Es una medida de seguridad: así se comprueba que la solicitud proviene realmente de tu cuenta y no de un dispositivo o proceso que solo conociera un identificador técnico.</p>
+<p>Durante esa verificación, la Aplicación envía de forma cifrada (HTTPS) al servidor del Desarrollador el testigo de identidad (<em>identityToken</em>) y el código de autorización (<em>authorizationCode</em>) que Apple genera en el momento. El servidor los emplea exclusivamente para confirmar tu identidad y solicitar a Apple la revocación de la autorización; no se almacenan de forma permanente, y se descartan una vez completado o descartado el proceso.</p>
+<p><strong>Si la reautenticación o el servidor no pueden completarse, no se elimina nada.</strong> A diferencia de versiones anteriores de la Aplicación, ya no se borran los datos de tu dispositivo cuando falta conexión o cuando el servidor no puede confirmar la eliminación: la Aplicación te lo indica explícitamente, tus datos permanecen intactos, y puedes intentarlo de nuevo.</p>
+<p>Si algún paso posterior a la verificación no se completa del todo (por ejemplo, la copia de iCloud), la Aplicación te lo indica de forma explícita al finalizar, señalando qué no pudo eliminarse, incluido el resultado de la revocación de Sign in with Apple. Si la copia de iCloud no pudo borrarse, puedes eliminarla más tarde desde los Ajustes de iCloud de tu dispositivo. Si la revocación de la autorización de Apple no pudo completarse, puedes retirarla tú mismo desde <em>Ajustes de iOS → tu nombre → Inicio de sesión y seguridad → Iniciar sesión con Apple</em>.</p>
+<p><strong>Alcance del borrado en el servidor:</strong> los datos técnicos que se eliminan del servidor son los asociados a la instalación desde la que solicitas la eliminación. Si usas la Aplicación en más de un dispositivo con la misma cuenta, sus datos técnicos y locales no se eliminan automáticamente al realizar la solicitud desde este dispositivo: los datos técnicos del servidor caducan automáticamente según lo indicado en la sección 9, y deberás gestionar los datos locales de esos otros dispositivos por separado, o mediante las opciones correspondientes de Apple.</p>
 
 <h2>3. Finalidades del tratamiento</h2>
 <ul>
@@ -186,7 +191,7 @@
 <p>Determinados proveedores que hacen posible la Aplicación pueden tratar datos, o permitir el acceso a ellos, desde fuera del Espacio Económico Europeo, principalmente desde Estados Unidos:</p>
 <ul>
   <li><strong>Apple</strong> — autenticación, iCloud/CloudKit, notificaciones y StoreKit.</li>
-  <li><strong>Cloudflare</strong> — servidor intermediario del escaneo y almacenamiento de los contadores técnicos.</li>
+  <li><strong>Cloudflare</strong> — servidor intermediario del escaneo, gestión de los límites técnicos, validación de suscripciones y soporte del proceso de autenticación y eliminación de cuenta.</li>
   <li><strong>Anthropic</strong> — análisis de la imagen de la factura.</li>
 </ul>
 <p>Estas transferencias se amparan en los mecanismos previstos por el RGPD, tales como las Cláusulas Contractuales Tipo aprobadas por la Comisión Europea u otros mecanismos equivalentes adoptados por dichos proveedores. Puedes consultar los detalles en sus respectivas políticas de privacidad y acuerdos de tratamiento de datos.</p>
@@ -227,7 +232,7 @@
 <p>El Desarrollador no comparte tu información personal con terceros, salvo en los siguientes casos:</p>
 <ul>
   <li><strong>Apple:</strong> autenticación (Sign in with Apple), sincronización y compartición (iCloud/CloudKit), notificaciones (APNs) y gestión de suscripciones (StoreKit).</li>
-  <li><strong>Cloudflare:</strong> la fotografía de la factura en el momento del escaneo, y los datos técnicos pseudónimos descritos en la sección 2.5 (identificador aleatorio de instalación, identificador interno del vehículo, contador de escaneos, plan, fecha de caducidad y, si inicias sesión con Apple ID, el testigo de actualización emitido por Apple).</li>
+  <li><strong>Cloudflare:</strong> la fotografía de la factura en el momento del escaneo, y los datos técnicos pseudónimos descritos en la sección 2.5 (identificador aleatorio de instalación, contador de escaneos, plan, fecha de caducidad y, si inicias sesión con Apple ID, el testigo de actualización emitido por Apple). Durante la eliminación de cuenta, también trata temporalmente el testigo de identidad, el código de autorización y el desafío técnico necesarios para verificar tu identidad y solicitar la revocación a Apple. Estos datos se utilizan exclusivamente durante el proceso de eliminación de la cuenta y se descartan una vez completado o cancelado dicho proceso.</li>
   <li><strong>Anthropic:</strong> únicamente la fotografía de la factura, en el momento en que tú decides usar el escaneo con IA, para devolver los datos extraídos. Anthropic no recibe los identificadores de la sección 2.5.</li>
   <li><strong>Otras personas,</strong> si tú decides compartir un vehículo: acceden solo al vehículo y al historial que tú eliges compartir, nunca al resto de tus vehículos ni a tus perfiles.</li>
   <li><strong>Autoridades competentes,</strong> cuando exista una obligación legal de facilitar información.</li>
@@ -239,7 +244,7 @@
 <ul>
   <li><strong>Acceso:</strong> conocer qué datos se tratan sobre ti. La práctica totalidad de tus datos son visibles y consultables en la propia Aplicación en todo momento.</li>
   <li><strong>Rectificación:</strong> corregir información inexacta, editable directamente desde la Aplicación.</li>
-  <li><strong>Supresión:</strong> puedes <strong>eliminar tu cuenta y todos tus datos directamente desde la Aplicación</strong>, en <em>Perfil → Cuenta → Eliminar cuenta</em> (ver sección 2.14). Este proceso borra los datos locales, la copia de iCloud y los datos técnicos asociados a tu instalación en el servidor, sin necesidad de solicitarlo por escrito. También puedes borrar vehículos y registros de forma individual, o eliminar únicamente la copia de iCloud desde <em>Perfil → Copia de seguridad</em>.</li>
+  <li><strong>Supresión:</strong> puedes iniciar desde la Aplicación la <strong>eliminación de tu cuenta y de los datos asociados</strong>, en <em>Perfil → Cuenta → Eliminar cuenta</em> (ver sección 2.14). Este proceso borra los datos locales de este dispositivo, la copia de iCloud y los datos técnicos asociados a la instalación solicitante en el servidor, sin necesidad de solicitarlo por escrito. También puedes borrar vehículos y registros de forma individual, o eliminar únicamente la copia de iCloud desde <em>Perfil → Copia de seguridad</em>.</li>
   <li><strong>Limitación</strong> del tratamiento y <strong>oposición</strong> al mismo.</li>
   <li><strong>Portabilidad:</strong> puedes solicitar al Desarrollador la entrega de los datos que trata sobre ti en un formato estructurado, de uso común y lectura mecánica, cuando resulte aplicable. Adicionalmente, la Aplicación te permite exportar el historial de tus vehículos en formato PDF, pensado para consulta y compartición.</li>
   <li><strong>Retirada del consentimiento</strong> en cualquier momento, sin que ello afecte a la licitud del tratamiento previo (ver sección 4).</li>
