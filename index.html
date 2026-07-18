@@ -202,6 +202,21 @@
     color: var(--deep-soft);
   }
 
+  .app-card-link {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .app-privacy-link {
+    align-self: flex-start;
+    font-size: 11px;
+    color: var(--deep-soft);
+    text-decoration: underline;
+  }
+  .app-privacy-link:hover { color: var(--jade); }
+
   .app-card.placeholder {
     border-style: dashed;
     background: transparent;
@@ -323,32 +338,41 @@
     </div>
 
     <div class="app-grid">
-      <a class="app-card" href="/twoclicks/privacy.html">
-        <div class="app-icon"><img src="/twoclicks.png" alt="TwoClicks"></div>
-        <div class="app-info">
-          <h3>TwoClicks</h3>
-          <p>Recordatorios multimedia con foto, vídeo, voz y ubicación.</p>
-        </div>
-        <span class="app-status live">En TestFlight</span>
-      </a>
+      <div class="app-card">
+        <a class="app-card-link" href="https://testflight.apple.com/join/ECKjRUTF" target="_blank" rel="noopener noreferrer">
+          <div class="app-icon"><img src="/twoclicks.png" alt="TwoClicks"></div>
+          <div class="app-info">
+            <h3>TwoClicks</h3>
+            <p>Recordatorios multimedia con foto, vídeo, voz y ubicación.</p>
+          </div>
+          <span class="app-status live">En TestFlight</span>
+        </a>
+        <a class="app-privacy-link" href="/twoclicks/privacy.html">Privacidad</a>
+      </div>
 
-      <a class="app-card" href="/aakradio/privacy.html">
-        <div class="app-icon"><img src="/aakradio.png" alt="AAK Radio"></div>
-        <div class="app-info">
-          <h3>AAK Radio</h3>
-          <p>Emisoras de radio de todo el mundo, en directo.</p>
-        </div>
-        <span class="app-status live">Verificando en App Store</span>
-      </a>
+      <div class="app-card">
+        <a class="app-card-link" href="https://apps.apple.com/es/app/aakradio/id6788845813" target="_blank" rel="noopener noreferrer">
+          <div class="app-icon"><img src="/aakradio.png" alt="AAK Radio"></div>
+          <div class="app-info">
+            <h3>AAK Radio</h3>
+            <p>Emisoras de radio de todo el mundo, en directo.</p>
+          </div>
+          <span class="app-status live">Disponible en App Store</span>
+        </a>
+        <a class="app-privacy-link" href="/aakradio/privacy.html">Privacidad</a>
+      </div>
 
-      <a class="app-card" href="/aakmotorlog/privacy.html">
-        <div class="app-icon"><img src="/motorlog.png" alt="AAK MotorLog"></div>
-        <div class="app-info">
-          <h3>AAK MotorLog</h3>
-          <p>Todos los vehículos de tu familia, mantenidos y documentados.</p>
-        </div>
-        <span class="app-status live">Verificando en App Store</span>
-      </a>
+      <div class="app-card">
+        <a class="app-card-link" href="https://testflight.apple.com/join/guRrRx2a" target="_blank" rel="noopener noreferrer">
+          <div class="app-icon"><img src="/motorlog.png" alt="AAK MotorLog"></div>
+          <div class="app-info">
+            <h3>AAK MotorLog</h3>
+            <p>Todos los vehículos de tu familia, mantenidos y documentados.</p>
+          </div>
+          <span class="app-status live">En TestFlight</span>
+        </a>
+        <a class="app-privacy-link" href="/aakmotorlog/privacy.html">Privacidad</a>
+      </div>
 
       <a class="app-card placeholder" href="#">
         <div class="app-icon">·</div>
