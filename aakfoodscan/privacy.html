@@ -1,1 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad · AAK FoodScan</title>
+<style>
+  :root{
+    --tinta:#1a2b33;
+    --tinta-suave:#4a5c64;
+    --verde:#2f7d52;
+    --ambar:#c47d1a;
+    --rojo:#b23b3b;
+    --linea:#e2e8ea;
+    --fondo:#ffffff;
+    --fondo-suave:#f6f9f9;
+    --acento:#2f7d52;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--tinta);
+    line-height:1.62;
+    max-width:820px;
+    margin:0 auto;
+    padding:48px 28px 96px;
+    background:var(--fondo);
+    font-size:16px;
+  }
+  header{
+    border-bottom:2px solid var(--acento);
+    padding-bottom:22px;
+    margin-bottom:34px;
+  }
+  h1{font-size:1.9rem;margin:0 0 6px;letter-spacing:-0.02em;}
+  .sub{color:var(--tinta-suave);font-size:0.95rem;margin:0;}
+  h2{font-size:1.25rem;margin:38px 0 12px;padding-top:8px;letter-spacing:-0.01em;}
+  h3{font-size:1.02rem;margin:24px 0 8px;color:var(--tinta);}
+  p,li{color:var(--tinta);}
+  ul{padding-left:20px;}
+  li{margin-bottom:7px;}
+  .aviso{
+    background:var(--fondo-suave);
+    border-left:4px solid var(--acento);
+    padding:16px 20px;
+    border-radius:6px;
+    margin:22px 0;
+    font-size:0.96rem;
+  }
+  .aviso strong{color:var(--acento);}
+  .semaforo{display:inline-flex;gap:6px;vertical-align:middle;margin-left:4px;}
+  .punto{width:12px;height:12px;border-radius:50%;display:inline-block;}
+  .p-rojo{background:var(--rojo);}
+  .p-ambar{background:var(--ambar);}
+  .p-verde{background:var(--verde);}
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:0.9rem;}
+  th,td{text-align:left;padding:10px 12px;border:1px solid var(--linea);vertical-align:top;}
+  th{background:var(--fondo-suave);font-weight:600;}
+  .meta{color:var(--tinta-suave);font-size:0.9rem;}
+  footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--linea);color:var(--tinta-suave);font-size:0.88rem;}
+  code{background:var(--fondo-suave);padding:1px 6px;border-radius:4px;font-size:0.88em;}
+  a{color:var(--acento);}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Política de Privacidad de AAK FoodScan</h1>
+  <p class="sub">Última actualización: 18 de julio de 2026 · Versión 1.0</p>
+</header>
+
+<div class="aviso">
+  <strong>Aviso importante.</strong> AAK FoodScan es una herramienta de apoyo. No sustituye a la
+  etiqueta del fabricante, al envase físico ni al consejo de un profesional sanitario. La información
+  de productos procede de una base de datos colaborativa que puede estar incompleta, ser incorrecta o
+  estar desactualizada. Ante cualquier duda, y especialmente si tienes una alergia o intolerancia,
+  comprueba siempre el envase y consulta a tu médico.
+</div>
+
+<h2>1. Responsable del tratamiento</h2>
+<p>
+  El responsable del tratamiento de los datos descritos en esta política es Enrique Morón Campos,
+  desarrollador de AAK FoodScan:
+</p>
+<ul>
+  <li><strong>Responsable:</strong> Enrique Morón Campos</li>
+  <li><strong>Correo de privacidad:</strong> henryinfomaps@gmail.com</li>
+  <li><strong>País:</strong> España</li>
+</ul>
+<p class="meta">
+  La identidad completa del responsable, su domicilio o establecimiento y las condiciones del servicio
+  están disponibles de forma permanente en el
+  <a href="aviso-legal.html">Aviso Legal</a> de AAK FoodScan.
+</p>
+
+<h2>2. Qué datos trata la Aplicación y con qué finalidad</h2>
+
+<h3>2.1 Principio general</h3>
+<p>
+  AAK FoodScan está diseñada para tratar la mínima cantidad de datos posible. La mayor parte de tu
+  información —incluidos tu perfil de alérgenos y tu historial— permanece <strong>exclusivamente en tu
+  dispositivo</strong> y no se envía al Desarrollador ni a terceros.
+</p>
+<p>
+  Crear una cuenta y utilizar el análisis con IA son opciones voluntarias. Puedes escanear códigos de
+  barras como invitado, sin cuenta. Si no configuras un perfil de alérgenos, la Aplicación no podrá
+  mostrarte alertas personalizadas. Si no autorizas el análisis con IA, podrás seguir usando el escáner
+  de códigos y las demás funciones que no requieran enviar una imagen.
+</p>
+
+<h3>2.2 Perfil de alérgenos <span class="semaforo"><span class="punto p-rojo"></span><span class="punto p-ambar"></span><span class="punto p-verde"></span></span></h3>
+<p>
+  La Aplicación te permite configurar voluntariamente los alérgenos, sustancias o ingredientes que
+  quieres vigilar, así como tu preferencia sobre las trazas. <strong>Esta selección puede revelar
+  información relacionada con tu salud</strong> o con la de la persona para la que utilizas la
+  Aplicación (por ejemplo, una alergia o intolerancia).
+</p>
+<p>
+  Este perfil se utiliza exclusivamente para comparar la información de los productos que escaneas y
+  mostrarte alertas personalizadas. El perfil se almacena únicamente en el dispositivo y no se envía al
+  Desarrollador, a Cloudflare, a Anthropic ni a Open Food Facts. AAK FoodScan no utiliza CloudKit ni
+  otros mecanismos de sincronización de iCloud para este perfil, y marca los archivos que lo contienen
+  como excluidos de las copias de seguridad mediante el mecanismo proporcionado por iOS. Puedes retirar
+  tu consentimiento y borrar o desactivar el perfil en cualquier momento desde los ajustes de la
+  Aplicación.
+</p>
+
+<h3>2.3 Historial de productos</h3>
+<p>
+  La Aplicación puede guardar en tu dispositivo un historial de los productos que has consultado, con
+  su código de barras, nombre, imagen pública cuando esté disponible y fecha. El resultado de la
+  evaluación (rojo, ámbar o verde) se calcula en el momento de mostrarlo, comparando el producto con tu
+  perfil actual, y no se conserva como un registro separado.
+</p>
+<p>
+  El historial permanece exclusivamente en el almacenamiento local de la Aplicación, que marca sus
+  archivos como excluidos de las copias de seguridad mediante el mecanismo proporcionado por iOS, y no
+  se sincroniza con iCloud ni con servidores del Desarrollador. Puedes eliminar elementos concretos o
+  borrar todo el historial desde la propia Aplicación. Desinstalar la Aplicación elimina el historial
+  local.
+</p>
+
+<h3>2.4 Consulta a Open Food Facts</h3>
+<p>
+  Cuando escaneas un producto, la Aplicación consulta la base de datos pública Open Food Facts enviando
+  el código de barras y <strong>los datos técnicos necesarios para realizar la conexión</strong>, como
+  la dirección IP, la fecha y hora, las cabeceras de red y el identificador público de la Aplicación
+  incluido en el User-Agent.
+</p>
+<p>
+  No se envían a Open Food Facts tu perfil de alérgenos, tu nombre ni el identificador de tu cuenta.
+  Open Food Facts es una asociación francesa sin ánimo de lucro que puede tratar los datos técnicos de
+  conexión conforme a sus propias condiciones y política de privacidad. La información de productos
+  procede de una base colaborativa y puede ser incompleta, incorrecta o estar desactualizada.
+</p>
+
+<h3>2.5 Lectura de etiquetas con IA (función opcional)</h3>
+<p>
+  Cuando lo solicitas, la Aplicación envía la imagen de la etiqueta a un Cloudflare Worker gestionado
+  por el Desarrollador, que la reenvía a la API comercial de Anthropic. Anthropic transcribe, extrae y
+  estructura la información visible de ingredientes y alérgenos. <strong>El veredicto rojo, ámbar o
+  verde se calcula posteriormente en tu dispositivo</strong> mediante las reglas de AAK FoodScan; la IA
+  no decide si el producto es adecuado para ti.
+</p>
+<p>
+  La primera vez que uses esta función, la Aplicación te muestra un aviso específico que identifica a
+  Cloudflare y Anthropic, explica la finalidad y la retención aplicable, y te pide permiso explícito
+  antes de enviar nada. <strong>Puedes retirar este permiso en cualquier momento</strong> desde Ajustes
+  de AAK FoodScan › Privacidad › Análisis con IA; al retirarlo, la Aplicación no enviará nuevas imágenes
+  a Cloudflare ni a Anthropic hasta que vuelvas a autorizarlo. Antes del envío, la Aplicación
+  redimensiona la imagen a lo necesario para leer la etiqueta y genera un archivo nuevo sin metadatos
+  EXIF ni de ubicación. Procura fotografiar únicamente la lista de ingredientes y evita incluir
+  personas, documentos, direcciones u otra información personal.
+</p>
+<p>
+  Anthropic no utiliza por defecto las entradas y salidas de su API comercial para entrenar sus
+  modelos, y normalmente las elimina en un plazo de hasta 30 días, salvo las excepciones previstas en
+  sus condiciones (por ejemplo, obligaciones legales o de seguridad).
+</p>
+
+<h3>2.6 Cuenta e inicio de sesión (Sign in with Apple)</h3>
+<p>
+  AAK FoodScan utiliza Sign in with Apple para crear y autenticar tu cuenta. La Aplicación recibe un
+  identificador seudónimo específico para esta app y las credenciales técnicas necesarias para validar
+  la sesión. <strong>No solicita a Apple tu nombre ni tu dirección de correo electrónico.</strong>
+</p>
+<p>
+  Para mantener tu sesión, el servidor del Desarrollador (Cloudflare) conserva de forma protegida un
+  token de actualización (refresh token) asociado al identificador de tu cuenta. Cuando borras tu
+  cuenta, este token se revoca ante Apple mediante su API oficial y se elimina.
+</p>
+
+<h3>2.7 Suscripción Premium (compras)</h3>
+<p>
+  La suscripción Premium se gestiona mediante StoreKit y el sistema de compras de Apple.
+  <strong>Apple gestiona íntegramente los datos de pago y de tarjeta; el Desarrollador no los recibe
+  ni los almacena.</strong> Para validar y mantener tu acceso Premium, la Aplicación y el servidor
+  pueden tratar el identificador del producto adquirido, los identificadores de transacción y de
+  transacción original asignados por Apple, las fechas de compra, renovación, caducidad, revocación o
+  reembolso, el estado de la suscripción y el comprobante o información de transacción firmada por
+  Apple. Estos datos se utilizan exclusivamente para validar y mantener el acceso Premium, restaurar
+  compras, prevenir el fraude y atender incidencias de facturación.
+</p>
+<p>
+  Al iniciar una compra, la Aplicación genera o recupera un UUID seudónimo asociado a la cuenta y lo
+  comunica a Apple como <code>appAccountToken</code>. El servidor lo usa únicamente para asociar la
+  transacción con la cuenta correcta, validar el acceso Premium y prevenir la reutilización indebida de
+  compras. No contiene tu nombre, correo, contraseña ni datos de tarjeta y no se usa para publicidad ni
+  seguimiento.
+</p>
+<p class="meta">
+  Ten en cuenta que borrar tu cuenta en la Aplicación no cancela automáticamente tu suscripción. La
+  suscripción se gestiona y cancela desde los Ajustes de tu cuenta de Apple. Apple puede conservar los
+  registros de compra conforme a sus propias obligaciones.
+</p>
+
+<h3>2.8 Identificador de instalación y contadores de uso</h3>
+<p>
+  Para aplicar los análisis gratuitos de bienvenida, el límite semanal Premium y las medidas antiabuso,
+  el servidor del Desarrollador (Cloudflare) almacena un identificador aleatorio de instalación y los
+  contadores asociados (por ejemplo, el número de análisis de IA realizados y su reinicio semanal).
+</p>
+<p>
+  Estos datos son <strong>seudónimos, no anónimos</strong>: un identificador persistente combinado con
+  un historial de uso puede constituir un dato personal. No incluyen tu nombre ni tu correo. El
+  identificador de instalación y el registro necesario para impedir la reutilización de los análisis
+  gratuitos de bienvenida se conservan durante un máximo de 400 días desde su última actualización. El
+  contador semanal Premium se reinicia cada lunes y el valor de la semana anterior se sobrescribe o
+  elimina.
+</p>
+<p>
+  Si utilizas la Aplicación sin crear una cuenta, puedes borrar el identificador de instalación y los
+  contadores almacenados en el servidor desde <strong>Ajustes › Privacidad › Borrar datos técnicos del
+  servidor</strong>. Desinstalar la Aplicación elimina los datos locales, pero no borra automáticamente
+  los registros técnicos ya enviados al servidor; estos se eliminan mediante la opción anterior o, en
+  todo caso, al cumplirse el plazo máximo de 400 días desde su última actualización.
+</p>
+
+<h3>2.9 Datos técnicos tratados por Cloudflare</h3>
+<p>
+  Como servidor intermedio, Cloudflare trata los datos técnicos necesarios para recibir y proteger las
+  solicitudes, como la dirección IP, la fecha y hora, la ruta solicitada, las cabeceras de red, el
+  User-Agent y el estado de respuesta. Los registros de invocación del Worker (Workers Logs) se
+  conservan durante 3 días y están configurados para no registrar cuerpos de solicitud, fotografías,
+  códigos de autorización, identity tokens, refresh tokens, appAccountToken ni claves de API.
+</p>
+
+<h3>2.10 Cámara y selector de fotos</h3>
+<p>
+  La cámara se utiliza únicamente para escanear códigos de barras y, si lo solicitas, para fotografiar
+  una etiqueta. Para elegir una imagen de tu galería, la Aplicación utiliza el selector nativo de fotos
+  del sistema (PhotosPicker/PHPicker), que te permite seleccionar una foto concreta
+  <strong>sin conceder acceso a toda tu fototeca</strong>. Los permisos de cámara y fotos son controles
+  del sistema operativo y puedes revocarlos en cualquier momento desde los Ajustes de iOS.
+</p>
+
+<h3>2.11 Correo de soporte y ejercicio de derechos</h3>
+<p>
+  Cuando nos escribes por correo electrónico, tratamos tu dirección, el contenido del mensaje y los
+  datos que decidas aportar para responder a tu consulta o tramitar tus derechos. El correo se gestiona
+  mediante el servicio Gmail de Google, que lo presta conforme a sus propias condiciones y política de
+  privacidad. Para proteger tu información, te pedimos que no incluyas en estos mensajes informes
+  médicos ni datos personales que no sean necesarios para atender tu solicitud. Los mensajes se
+  conservan durante el tiempo necesario para atender la solicitud y, cuando proceda, durante los plazos
+  legales aplicables para acreditar su gestión.
+</p>
+
+<h3>2.12 Qué NO trata la Aplicación</h3>
+<p>La Aplicación <strong>no</strong> trata los siguientes datos:</p>
+<ul>
+  <li>No solicita acceso a los servicios de localización de iOS ni recoge coordenadas GPS. Cloudflare y
+  Open Food Facts reciben la dirección IP y otros datos técnicos necesarios para establecer y proteger
+  la conexión, según se explica en esta política.</li>
+  <li>No accede a tus contactos.</li>
+  <li>No muestra publicidad ni contiene SDK publicitarios.</li>
+  <li>No utiliza IDFA ni realiza seguimiento con fines publicitarios.</li>
+  <li>No realiza analítica de marketing ni fingerprinting.</li>
+  <li>No vende ni comparte tus datos con intermediarios de datos (data brokers).</li>
+</ul>
+<p class="meta">
+  Sí trata los datos técnicos de conexión expresamente descritos en esta política (por ejemplo, la IP y
+  las cabeceras necesarias para consultar Open Food Facts o enviar una imagen para su transcripción).
+</p>
+
+<h2>3. Base jurídica del tratamiento (RGPD)</h2>
+<p>
+  La cuenta, las consultas de productos, el análisis de una etiqueta solicitado por ti y la gestión de
+  la suscripción se tratan porque son necesarios para prestar las funciones que solicitas y ejecutar la
+  relación contractual (<strong>art. 6.1.b RGPD</strong>).
+</p>
+<p>
+  La configuración voluntaria del perfil de alérgenos se basa en tu consentimiento y, cuando pueda
+  revelar información relativa a la salud, en tu <strong>consentimiento explícito</strong>
+  (<strong>arts. 6.1.a y 9.2.a RGPD</strong>). Antes de crear el perfil, la Aplicación te informa de
+  forma específica y te pide una aceptación no premarcada. Puedes retirar el consentimiento borrando o
+  desactivando el perfil en cualquier momento. La retirada del consentimiento no afecta a la licitud del
+  tratamiento realizado antes de retirarlo.
+</p>
+<p>
+  Los identificadores y contadores mínimos necesarios para prevenir el abuso y el fraude se tratan
+  sobre la base del <strong>interés legítimo</strong> del Desarrollador (<strong>art. 6.1.f
+  RGPD</strong>), tras valorar que no prevalecen tus derechos y libertades. El cumplimiento de
+  obligaciones legales aplicables se basa en el <strong>art. 6.1.c RGPD</strong>. Los permisos de
+  cámara y fotos son controles del sistema operativo, no una base jurídica en sí mismos.
+</p>
+<p>
+  Las consultas de soporte relacionadas con el uso de la Aplicación se tratan para atender la relación
+  contractual o las medidas solicitadas por ti (<strong>art. 6.1.b RGPD</strong>). Las solicitudes de
+  ejercicio de derechos se tratan para cumplir las obligaciones legales del Desarrollador
+  (<strong>art. 6.1.c RGPD</strong>). Cuando sea necesario conservar comunicaciones para prevenir
+  abusos, acreditar la atención prestada o formular, ejercer o defender reclamaciones, el tratamiento se
+  basa en el <strong>interés legítimo</strong> del Desarrollador (<strong>art. 6.1.f RGPD</strong>)
+  durante los plazos aplicables.
+</p>
+
+<h2>4. Destinatarios y encargados de tratamiento</h2>
+<table>
+  <tr><th>Proveedor</th><th>Finalidad</th><th>Datos implicados</th></tr>
+  <tr>
+    <td>Apple</td>
+    <td>Inicio de sesión, gestión de compras y suscripciones</td>
+    <td>Identificador de Sign in with Apple, datos de compra (Apple gestiona el pago)</td>
+  </tr>
+  <tr>
+    <td>Cloudflare</td>
+    <td>Servidor intermedio, control del plan y prevención de abuso</td>
+    <td>Identificador de instalación, contadores, refresh token cifrado, tránsito de la imagen, IP, cabeceras, ruta, User-Agent y estado de respuesta</td>
+  </tr>
+  <tr>
+    <td>Anthropic</td>
+    <td>Transcripción y estructuración de la etiqueta mediante IA</td>
+    <td>Imagen de la etiqueta enviada por el usuario</td>
+  </tr>
+  <tr>
+    <td>Open Food Facts</td>
+    <td>Consulta de información de productos</td>
+    <td>Código de barras y datos técnicos de conexión (IP, cabeceras, User-Agent)</td>
+  </tr>
+  <tr>
+    <td>Google (Gmail)</td>
+    <td>Gestión del correo de soporte y ejercicio de derechos</td>
+    <td>Dirección de correo, contenido y metadatos de los mensajes que nos envías</td>
+  </tr>
+</table>
+<p class="meta">
+  Cloudflare y Anthropic actúan como encargados del tratamiento para la función contratada. Apple y
+  Open Food Facts actúan como responsables independientes en sus respectivos ámbitos. Google presta el
+  servicio Gmail conforme a sus propias condiciones y política de privacidad. Cloudflare y Anthropic
+  ofrecen acuerdos de tratamiento de datos (DPA) con cláusulas contractuales tipo para clientes
+  comerciales.
+</p>
+<p class="meta">
+  Puedes consultar sus políticas de privacidad en:
+  <a href="https://www.apple.com/legal/privacy/">Apple</a>,
+  <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a>,
+  <a href="https://www.anthropic.com/legal/privacy">Anthropic</a>,
+  <a href="https://world.openfoodfacts.org/privacy">Open Food Facts</a> y
+  <a href="https://policies.google.com/privacy">Google</a>.
+</p>
+
+<h2>5. Transferencias internacionales</h2>
+<p>
+  Apple, Cloudflare, Anthropic y Google pueden tratar datos o permitir el acceso a ellos desde países
+  situados fuera del Espacio Económico Europeo, principalmente Estados Unidos. Estas transferencias se
+  realizan mediante los mecanismos que correspondan a cada proveedor, como decisiones de adecuación
+  aplicables, el Marco de Privacidad de Datos UE-EE. UU. cuando proceda o las Cláusulas Contractuales
+  Tipo (SCC). Puedes consultar las garantías y marcos vigentes en las políticas y documentos
+  contractuales enlazados en esta política, o solicitar información adicional escribiendo a
+  henryinfomaps@gmail.com. Open Food Facts es una asociación con sede en Francia, sin perjuicio de que
+  pueda utilizar proveedores técnicos internacionales.
+</p>
+
+<h2>6. Conservación de los datos</h2>
+<ul>
+  <li><strong>Perfil de alérgenos e historial:</strong> permanecen en tu dispositivo hasta que los
+  borres o desinstales la Aplicación. No se sincronizan con iCloud ni se incluyen en las copias de
+  seguridad del dispositivo.</li>
+  <li><strong>Identificador de instalación y análisis gratuitos de bienvenida:</strong> se conservan
+  durante un máximo de 400 días desde su última actualización. El contador semanal Premium se reinicia
+  cada lunes y el valor de la semana anterior se sobrescribe o elimina.</li>
+  <li><strong>Datos de cuenta, compra, transacción y suscripción:</strong> el identificador de cuenta,
+  appAccountToken, los identificadores y datos firmados de transacción, el estado y la vigencia de la
+  suscripción y el refresh token se conservan mientras la cuenta permanezca activa o durante el tiempo
+  necesario para validar compras, restaurarlas, prevenir el fraude, atender incidencias y cumplir
+  obligaciones legales. Al borrar la cuenta se elimina la asociación propia que no deba conservarse por
+  una obligación legal o para formular, ejercer o defender reclamaciones.</li>
+  <li><strong>Registros técnicos de Cloudflare:</strong> los registros de invocación del Worker se
+  conservan durante 3 días, sin registrar cuerpos de solicitud, imágenes ni tokens.</li>
+  <li><strong>Imágenes de etiquetas:</strong> no se almacenan en el servidor del Desarrollador;
+  Anthropic aplica su retención estándar de hasta 30 días.</li>
+  <li><strong>Datos exigidos por ley o para reclamaciones:</strong> cuando sea necesario conservarlos,
+  permanecen bloqueados durante los plazos de prescripción aplicables y se eliminan al finalizar
+  estos.</li>
+  <li><strong>Correos de soporte y solicitudes de derechos:</strong> se conservan durante el tiempo
+  necesario para responder y gestionar la solicitud. Cuando sea necesario acreditar su atención o
+  defender reclamaciones, se mantienen bloqueados durante los plazos legales aplicables y se eliminan al
+  finalizar estos.</li>
+</ul>
+
+<h2>7. Seguridad</h2>
+<p>
+  Las comunicaciones entre la Aplicación y sus servidores se realizan mediante conexiones cifradas
+  (HTTPS/TLS). Las claves y secretos de acceso a servicios externos residen únicamente en el servidor
+  (Cloudflare Worker) y no se incluyen en la aplicación distribuida. Los datos que permanecen en tu
+  dispositivo se apoyan en los mecanismos de protección de datos de iOS. Aplicamos controles de acceso
+  razonables a la información tratada en el servidor.
+</p>
+
+<h2>8. Tus derechos</h2>
+<p>
+  Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y
+  portabilidad, así como retirar tu consentimiento, escribiendo a henryinfomaps@gmail.com.
+  Responderemos sin dilación indebida y, en todo caso, en el plazo de un mes desde la recepción. Cuando
+  resulte necesario por la complejidad o el número de solicitudes, ese plazo podrá prorrogarse hasta dos
+  meses adicionales, informándote de la prórroga y de sus motivos dentro del primer mes.
+</p>
+<p>
+  Ten en cuenta que buena parte de tus datos (perfil e historial) se almacenan únicamente en tu
+  dispositivo y son directamente accesibles y eliminables por ti desde la Aplicación; el Desarrollador
+  no puede acceder a ellos ni exportarlos. Para el derecho de portabilidad, la Aplicación te permite
+  exportar tu perfil y tu historial en un archivo local (JSON o CSV) desde sus ajustes. También tienes
+  derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD,
+  <a href="https://www.aepd.es">www.aepd.es</a>).
+</p>
+
+<h2>9. Eliminación de cuenta</h2>
+<p>
+  Puedes iniciar la eliminación de tu cuenta directamente desde la Aplicación. El proceso elimina los
+  datos locales, la asociación de cuenta, el identificador y los contadores del servidor, y las
+  credenciales conservadas. AAK FoodScan solicita a Apple la revocación de la autorización de Sign in
+  with Apple mediante su API oficial. Si Apple no pudiera completar la revocación en ese momento, se te
+  informará del resultado y de los pasos disponibles para revocar manualmente el acceso desde los
+  ajustes de tu cuenta de Apple. Recuerda que eliminar la cuenta no cancela una suscripción activa
+  (véase la sección 2.7).
+</p>
+
+<h2>10. Menores y perfiles de terceras personas</h2>
+<p>
+  AAK FoodScan no está dirigida a menores. En España, el tratamiento de datos basado en el
+  consentimiento requiere una edad mínima de 14 años. Si configuras un perfil de alérgenos que
+  corresponde a otra persona, debes estar autorizado para hacerlo; en el caso de un menor, debes actuar
+  como su progenitor o tutor legal. Si crees que un menor ha facilitado datos sin autorización, contacta
+  con nosotros para eliminarlos.
+</p>
+
+<h2>11. Cambios en esta política</h2>
+<p>
+  Podemos actualizar esta política para reflejar cambios en la Aplicación o en la normativa aplicable.
+  Publicaremos la versión actualizada con una nueva fecha de "última actualización" y, cuando el cambio
+  sea significativo, te informaremos dentro de la Aplicación.
+</p>
+
+<footer>
+  <p>
+    AAK FoodScan · Política de Privacidad · Versión 1.0 · 18 de julio de 2026<br>
+    Este documento describe el tratamiento de datos de la versión de la Aplicación enviada a revisión.
+    Para cualquier consulta relativa a privacidad, escribe a henryinfomaps@gmail.com.
+  </p>
+</footer>
+
+</body>
+</html>
 
