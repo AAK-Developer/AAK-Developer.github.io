@@ -1,430 +1,772 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AAK Developer</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AAK Developer crea aplicaciones útiles, privadas y cuidadas para iPhone y Apple Watch.">
+  <meta name="theme-color" content="#070B14">
+  <title>AAK Developer — Apps para la vida real</title>
+  <style>
+    :root {
+      --bg: #070b14;
+      --panel: rgba(255,255,255,.065);
+      --panel-strong: rgba(255,255,255,.10);
+      --line: rgba(255,255,255,.12);
+      --text: #f7f9ff;
+      --muted: #aeb8cf;
+      --blue: #4f7cff;
+      --cyan: #64d9ff;
+      --pink: #ff7aa8;
+      --yellow: #ffc85a;
+      --green: #8ed6a1;
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --shadow: 0 30px 80px rgba(0,0,0,.35);
+    }
 
-  :root {
-    --shell: #EDE7DA;
-    --deep: #1F3D3A;
-    --deep-soft: #2C4E48;
-    --jade: #4C7A6F;
-    --shell-line: #D9CFB8;
-    --clay: #B5714B;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--shell);
-    color: var(--deep);
-    font-family: 'Space Grotesk', sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 10% -10%, rgba(79,124,255,.34), transparent 34%),
+        radial-gradient(circle at 100% 10%, rgba(255,122,168,.22), transparent 30%),
+        radial-gradient(circle at 60% 120%, rgba(100,217,255,.15), transparent 36%),
+        var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-  .wrap { max-width: 920px; margin: 0 auto; padding: 0 28px; }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
 
-  /* HERO */
-  header.hero {
-    padding: 88px 0 64px;
-    position: relative;
-    overflow: hidden;
-  }
-  .glyph {
-    position: absolute;
-    right: -70px;
-    top: 10px;
-    width: 620px;
-    height: 403px;
-    opacity: 0.1;
-    z-index: 0;
-  }
-  .eyebrow {
-    font-size: 13px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--jade);
-    font-weight: 500;
-    margin: 0 0 18px;
-    position: relative;
-    z-index: 1;
-  }
-  h1.wordmark {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: clamp(48px, 9vw, 84px);
-    line-height: 0.98;
-    margin: 0;
-    letter-spacing: -0.01em;
-    position: relative;
-    z-index: 1;
-  }
-  h1.wordmark em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--clay);
-  }
-  .tagline {
-    font-size: 17px;
-    line-height: 1.6;
-    max-width: 460px;
-    color: var(--deep-soft);
-    margin: 24px 0 0;
-    position: relative;
-    z-index: 1;
-  }
-  .tagline strong { color: var(--deep); font-weight: 600; }
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .045;
+      z-index: 20;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+    }
 
-  /* PHILOSOPHY STRIP */
-  .strip {
-    border-top: 1px solid var(--shell-line);
-    border-bottom: 1px solid var(--shell-line);
-    padding: 26px 0;
-  }
-  .strip .wrap {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-    font-size: 14px;
-    color: var(--deep-soft);
-  }
-  .strip .item { display: flex; align-items: baseline; gap: 8px; }
-  .strip .item b { color: var(--deep); font-weight: 600; }
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
 
-  /* APPS */
-  section.apps { padding: 72px 0 40px; }
-  .section-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 34px;
-  }
-  .section-head h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: 28px;
-    margin: 0;
-  }
-  .section-head span {
-    font-size: 13px;
-    color: var(--jade);
-    font-weight: 500;
-  }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      background: rgba(7,11,20,.68);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
 
-  .app-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 14px;
-  }
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-  .app-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 18px 16px;
-    border: 1px solid var(--shell-line);
-    border-radius: 16px;
-    text-decoration: none;
-    color: inherit;
-    background: rgba(255,255,255,0.35);
-    transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
-  }
-  .app-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--jade);
-    background: rgba(255,255,255,0.6);
-  }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
 
-  .app-icon {
-    width: 42px;
-    height: 42px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 16px;
-    color: var(--shell);
-    background: var(--deep);
-    flex-shrink: 0;
-    overflow: hidden;
-  }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #5c84ff, #76e1ff);
+      color: #06101f;
+      box-shadow: 0 10px 30px rgba(79,124,255,.35);
+      font-size: 15px;
+      font-weight: 900;
+    }
 
-  /* Iconos reales de las apps.
-     object-fit: cover recorta si la imagen no fuese cuadrada,
-     y el border-radius del contenedor la redondea. */
-  .app-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 14px;
+      color: var(--muted);
+    }
 
-  .app-info h3 {
-    margin: 0;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.25;
-  }
-  .app-info p {
-    margin: 4px 0 0;
-    font-size: 12.5px;
-    color: var(--deep-soft);
-    line-height: 1.45;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
+    .nav-links a {
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: white; }
 
-  .app-status {
-    align-self: flex-start;
-    font-size: 10.5px;
-    font-weight: 500;
-    letter-spacing: 0.03em;
-    padding: 4px 9px;
-    border-radius: 100px;
-    max-width: 100%;
-    white-space: normal;
-    line-height: 1.3;
-  }
-  .app-status.live {
-    background: rgba(76,122,111,0.15);
-    color: var(--jade);
-  }
-  .app-status.soon {
-    background: rgba(31,61,58,0.06);
-    color: var(--deep-soft);
-  }
+    .contact-btn {
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: white;
+      color: #08111f !important;
+      font-weight: 800;
+    }
 
-  .app-card-link {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-decoration: none;
-    color: inherit;
-  }
-  .app-links {
-    align-self: flex-start;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  .app-privacy-link {
-    font-size: 11px;
-    color: var(--deep-soft);
-    text-decoration: underline;
-  }
-  .app-privacy-link:hover { color: var(--jade); }
+    .hero {
+      padding: 104px 0 72px;
+      position: relative;
+    }
 
-  .app-card.placeholder {
-    border-style: dashed;
-    background: transparent;
-  }
-  .app-card.placeholder:hover { transform: none; border-color: var(--shell-line); }
-  .app-card.placeholder .app-icon {
-    background: transparent;
-    border: 1.5px dashed var(--shell-line);
-    color: var(--shell-line);
-  }
-  .app-card.placeholder .app-info p,
-  .app-card.placeholder .app-info h3 { color: var(--shell-line); }
-  .app-card.placeholder { pointer-events: none; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 70px;
+    }
 
-  /* FOOTER */
-  footer {
-    padding: 56px 0 64px;
-    font-size: 13px;
-    color: var(--deep-soft);
-  }
-  footer .wrap {
-    border-top: 1px solid var(--shell-line);
-    padding-top: 28px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  footer a { color: var(--deep-soft); }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 999px;
+      color: #d9e1f3;
+      background: rgba(255,255,255,.05);
+      font-size: 13px;
+      margin-bottom: 26px;
+    }
 
-  @media (max-width: 560px) {
-    .app-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
-  }
-</style>
+    .badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #65f4a6;
+      box-shadow: 0 0 16px #65f4a6;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(58px, 8.2vw, 112px);
+      line-height: .9;
+      letter-spacing: -.075em;
+      max-width: 860px;
+    }
+
+    h1 span {
+      display: block;
+      background: linear-gradient(100deg, #fff 8%, #8fb0ff 50%, #69e8ff 85%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      margin: 30px 0 0;
+      max-width: 650px;
+      color: var(--muted);
+      font-size: clamp(18px, 2.1vw, 23px);
+      line-height: 1.55;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      border-radius: 15px;
+      padding: 15px 20px;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, #5d83ff, #63ddff);
+      color: #07101e;
+      border-color: transparent;
+      box-shadow: 0 18px 50px rgba(79,124,255,.25);
+    }
+    .btn-secondary { background: rgba(255,255,255,.055); }
+
+    .hero-stack {
+      position: relative;
+      min-height: 520px;
+    }
+
+    .float-card {
+      position: absolute;
+      width: 240px;
+      padding: 16px;
+      border-radius: 28px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.13);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .float-card img {
+      border-radius: 22px;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+
+    .float-card strong {
+      display: block;
+      margin-top: 12px;
+      font-size: 15px;
+    }
+    .float-card small { color: var(--muted); }
+
+    .card-1 { left: 12px; top: 82px; transform: rotate(-8deg); }
+    .card-2 { right: 0; top: 6px; transform: rotate(7deg); animation-delay: -2s; }
+    .card-3 { right: 55px; bottom: 10px; transform: rotate(-2deg); animation-delay: -4s; }
+
+    @keyframes float {
+      0%,100% { translate: 0 0; }
+      50% { translate: 0 -12px; }
+    }
+
+    .metrics {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 34px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .metrics b {
+      display: block;
+      color: white;
+      font-size: 22px;
+      margin-bottom: 3px;
+    }
+
+    section { padding: 86px 0; }
+
+    .section-kicker {
+      color: #7bdfff;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: 1;
+      letter-spacing: -.055em;
+    }
+
+    .section-intro {
+      margin-top: 18px;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 22px;
+      margin-top: 42px;
+    }
+
+    .app {
+      position: relative;
+      grid-column: span 6;
+      min-height: 440px;
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background:
+        linear-gradient(160deg, rgba(255,255,255,.09), rgba(255,255,255,.035));
+      box-shadow: 0 24px 70px rgba(0,0,0,.23);
+      transition: transform .28s ease, border-color .28s ease;
+    }
+
+    .app:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,255,255,.22);
+    }
+
+    .app.featured { grid-column: span 12; min-height: 520px; }
+
+    .app-inner {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 28px;
+      padding: 38px;
+    }
+
+    .app:not(.featured) .app-inner {
+      grid-template-columns: 1fr;
+      align-content: space-between;
+    }
+
+    .app-copy { position: relative; z-index: 2; }
+
+    .app-label {
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      background: rgba(255,255,255,.09);
+      color: #dce5f7;
+    }
+
+    .app h3 {
+      margin: 18px 0 12px;
+      font-size: clamp(32px, 4vw, 58px);
+      line-height: 1;
+      letter-spacing: -.05em;
+    }
+
+    .app:not(.featured) h3 { font-size: 36px; }
+
+    .app p {
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 540px;
+      margin: 0;
+    }
+
+    .app-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 24px;
+    }
+
+    .mini-link {
+      padding: 10px 13px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+
+    .mini-link.primary {
+      background: white;
+      color: #07101e;
+    }
+
+    .app-art {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 250px;
+    }
+
+    .app-art img {
+      width: min(320px, 92%);
+      border-radius: 29%;
+      box-shadow: 0 30px 80px rgba(0,0,0,.32);
+      transition: transform .35s ease;
+    }
+
+    .app:hover .app-art img {
+      transform: scale(1.035) rotate(-1deg);
+    }
+
+    .motorlog {
+      background:
+        radial-gradient(circle at 80% 15%, rgba(55,130,255,.42), transparent 35%),
+        linear-gradient(160deg, rgba(33,92,221,.20), rgba(255,255,255,.035));
+    }
+    .pills {
+      background:
+        radial-gradient(circle at 90% 10%, rgba(255,122,168,.34), transparent 32%),
+        linear-gradient(160deg, rgba(255,122,168,.13), rgba(255,255,255,.035));
+    }
+    .foodscan {
+      background:
+        radial-gradient(circle at 92% 10%, rgba(255,200,90,.35), transparent 35%),
+        linear-gradient(160deg, rgba(255,189,61,.13), rgba(255,255,255,.035));
+    }
+    .radio {
+      background:
+        radial-gradient(circle at 92% 10%, rgba(142,214,161,.34), transparent 34%),
+        linear-gradient(160deg, rgba(96,177,117,.12), rgba(255,255,255,.035));
+    }
+    .twoclicks {
+      background:
+        radial-gradient(circle at 92% 10%, rgba(68,112,255,.42), transparent 34%),
+        linear-gradient(160deg, rgba(50,100,255,.14), rgba(255,255,255,.035));
+    }
+
+    .principles-grid {
+      margin-top: 42px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .principle {
+      padding: 25px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.09);
+    }
+
+    .principle-number {
+      color: #7bdfff;
+      font-weight: 900;
+      font-size: 13px;
+      margin-bottom: 36px;
+    }
+
+    .principle h4 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .principle p {
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .cta {
+      padding: 72px 0 100px;
+    }
+
+    .cta-card {
+      padding: clamp(34px, 6vw, 70px);
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 85% 0%, rgba(99,221,255,.25), transparent 36%),
+        linear-gradient(135deg, rgba(79,124,255,.20), rgba(255,255,255,.07));
+      border: 1px solid rgba(255,255,255,.12);
+      text-align: center;
+    }
+
+    .cta-card h2 {
+      margin: 0;
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+
+    .cta-card p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 20px auto 28px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    footer {
+      padding: 34px 0 50px;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-stack { min-height: 430px; }
+      .float-card { width: 210px; }
+      .app, .app.featured { grid-column: span 12; }
+      .app-inner { grid-template-columns: 1fr; }
+      .principles-grid { grid-template-columns: 1fr; }
+      .nav-links a:not(.contact-btn) { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .container { width: min(100% - 24px, 1180px); }
+      nav .nav-inner { height: 64px; }
+      .hero { padding-top: 78px; }
+      h1 { font-size: 58px; }
+      .hero-stack { min-height: 360px; margin-top: 10px; }
+      .float-card { width: 155px; padding: 10px; border-radius: 20px; }
+      .float-card img { border-radius: 16px; }
+      .card-1 { left: 0; top: 92px; }
+      .card-2 { right: 4px; top: 10px; }
+      .card-3 { right: 38px; bottom: 0; }
+      section { padding: 65px 0; }
+      .app, .app.featured { min-height: auto; }
+      .app-inner { padding: 25px; }
+      .app-art img { width: min(240px, 84%); }
+      .metrics { gap: 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; }
+      .float-card { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
 </head>
 <body>
+  <div class="noise"></div>
 
-<header class="hero">
-  <svg class="glyph" viewBox="0 0 400 260" fill="none">
-    <!-- aleta trasera (detrás del caparazón) -->
-    <path d="M108 178 C 88 196, 76 214, 82 228 C 87 239, 103 238, 116 224 C 126 213, 130 198, 126 184 Z"
-          stroke="#1F3D3A" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
-    <!-- aleta delantera trasera (la del fondo, apenas visible) -->
-    <path d="M232 88 C 258 66, 288 56, 302 66 C 310 72, 306 84, 288 96 C 268 108, 246 108, 232 100 Z"
-          stroke="#1F3D3A" stroke-width="1.6" fill="none" opacity="0.55" stroke-linejoin="round"/>
-    <!-- caparazón: silueta general en forma de gota/óvalo alargado -->
-    <path d="M340 132
-             C 340 100, 300 72, 240 66
-             C 180 60, 110 70, 78 96
-             C 56 114, 50 132, 60 148
-             C 74 170, 120 188, 190 190
-             C 260 192, 320 174, 336 152
-             C 340 146, 340 139, 340 132 Z"
-          stroke="#1F3D3A" stroke-width="2.2" fill="none" stroke-linejoin="round"/>
-    <!-- borde festoneado del caparazón (escudos marginales) -->
-    <path d="M64 100 C 68 108, 66 118, 60 126 M60 126 C 58 136, 62 146, 70 154
-             M70 154 C 80 166, 96 176, 116 182 M320 84 C 328 92, 332 102, 330 112
-             M330 112 C 332 124, 328 136, 318 146"
-          stroke="#1F3D3A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-    <!-- costuras internas del caparazón (escudos vertebrales y costales) -->
-    <path d="M115 78 C 108 108, 108 140, 118 172 M170 68 C 160 102, 160 140, 172 178
-             M228 65 C 222 100, 222 140, 232 182 M282 74 C 280 106, 278 138, 284 170"
-          stroke="#1F3D3A" stroke-width="1.1" fill="none" opacity="0.85"/>
-    <path d="M90 108 C 140 118, 220 118, 300 100 M82 138 C 145 150, 235 150, 322 130"
-          stroke="#1F3D3A" stroke-width="1.1" fill="none" opacity="0.85"/>
-    <!-- cuello -->
-    <path d="M340 128 C 356 122, 368 116, 374 110" stroke="#1F3D3A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-    <!-- cabeza en perfil -->
-    <path d="M368 96
-             C 380 88, 396 88, 404 96
-             C 410 102, 408 110, 400 116
-             C 408 118, 412 124, 408 130
-             C 403 137, 392 138, 382 133
-             C 372 128, 364 118, 362 108
-             C 361 103, 363 99, 368 96 Z"
-          stroke="#1F3D3A" stroke-width="2" fill="none" stroke-linejoin="round"/>
-    <!-- ojo -->
-    <circle cx="388" cy="106" r="2.6" fill="#1F3D3A"/>
-    <!-- línea de la boca -->
-    <path d="M368 112 C 378 116, 390 117, 400 114" stroke="#1F3D3A" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-    <!-- aleta delantera principal (en primer plano, extendida hacia atrás como nadando) -->
-    <path d="M300 120
-             C 330 112, 358 108, 372 116
-             C 380 121, 378 130, 366 136
-             C 344 146, 316 146, 296 138
-             C 288 135, 286 126, 292 122
-             C 295 120, 297 120, 300 120 Z"
-          stroke="#1F3D3A" stroke-width="2.1" fill="none" stroke-linejoin="round"/>
-    <!-- estrías de la aleta -->
-    <path d="M310 118 L322 140 M330 114 L340 140 M350 112 L356 138"
-          stroke="#1F3D3A" stroke-width="1" fill="none" opacity="0.7" stroke-linecap="round"/>
-    <!-- burbujas / agua -->
-    <circle cx="46" cy="60" r="2.5" stroke="#1F3D3A" stroke-width="1"/>
-    <circle cx="60" cy="44" r="1.5" stroke="#1F3D3A" stroke-width="1"/>
-    <circle cx="360" cy="200" r="2" stroke="#1F3D3A" stroke-width="1"/>
-    <path d="M10 60 C 30 54, 44 58, 58 66" stroke="#1F3D3A" stroke-width="1" fill="none" opacity="0.5" stroke-linecap="round"/>
-    <path d="M0 210 C 40 200, 90 214, 130 206" stroke="#1F3D3A" stroke-width="1" fill="none" opacity="0.5" stroke-linecap="round"/>
-  </svg>
-  <div class="wrap">
-    <p class="eyebrow">Enrique Morón Campos · España</p>
-    <h1 class="wordmark">AAK <em>Developer</em></h1>
-    <p class="tagline">Paso firme, sin prisa. Un caparazón donde guardar lo importante. Aplicaciones para iOS pensadas con ese criterio.</p>
-  </div>
-</header>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#inicio" aria-label="AAK Developer, inicio">
+        <span class="brand-mark">AAK</span>
+        <span>AAK Developer</span>
+      </a>
 
-<div class="strip">
-  <div class="wrap">
-    <div class="item"><b>Sin cuentas por defecto</b>&nbsp;— tus datos, en tu dispositivo</div>
-    <div class="item"><b>iOS nativo</b>&nbsp;— Swift &amp; SwiftUI</div>
-    <div class="item"><b>Con base en</b>&nbsp;España 🇪🇸</div>
-  </div>
-</div>
-
-<section class="apps">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Aplicaciones</h2>
-      <span>03 en marcha</span>
-    </div>
-
-    <div class="app-grid">
-      <div class="app-card">
-        <a class="app-card-link" href="https://testflight.apple.com/join/ECKjRUTF" target="_blank" rel="noopener noreferrer">
-          <div class="app-icon"><img src="/twoclicks/twoclicks.png" alt="TwoClicks"></div>
-          <div class="app-info">
-            <h3>TwoClicks</h3>
-            <p>Recordatorios multimedia con foto, vídeo, voz y ubicación.</p>
-          </div>
-          <span class="app-status live">En TestFlight</span>
-        </a>
-        <div class="app-links">
-          <a class="app-privacy-link" href="/twoclicks/">Detalles</a>
-          <a class="app-privacy-link" href="/twoclicks/privacy/">Privacidad</a>
-          <a class="app-privacy-link" href="/twoclicks/support/">Soporte</a>
-        </div>
-      </div>
-
-      <div class="app-card">
-        <a class="app-card-link" href="https://apps.apple.com/es/app/aakradio/id6788845813" target="_blank" rel="noopener noreferrer">
-          <div class="app-icon"><img src="/aakradio/aakradio.png" alt="AAK Radio"></div>
-          <div class="app-info">
-            <h3>AAK Radio</h3>
-            <p>Emisoras de radio de todo el mundo, en directo.</p>
-          </div>
-          <span class="app-status live">Disponible en App Store</span>
-        </a>
-        <div class="app-links">
-          <a class="app-privacy-link" href="/aakradio/">Detalles</a>
-          <a class="app-privacy-link" href="/aakradio/privacy/">Privacidad</a>
-          <a class="app-privacy-link" href="/aakradio/support/">Soporte</a>
-        </div>
-      </div>
-
-      <div class="app-card">
-        <a class="app-card-link" href="https://testflight.apple.com/join/guRrRx2a" target="_blank" rel="noopener noreferrer">
-          <div class="app-icon"><img src="/aakmotorlog/motorlog.png" alt="AAK MotorLog"></div>
-          <div class="app-info">
-            <h3>AAK MotorLog</h3>
-            <p>Todos los vehículos de tu familia, mantenidos y documentados.</p>
-          </div>
-          <span class="app-status live">En TestFlight</span>
-        </a>
-        <div class="app-links">
-          <a class="app-privacy-link" href="/aakmotorlog/">Detalles</a>
-          <a class="app-privacy-link" href="/aakmotorlog/privacy/">Privacidad</a>
-          <a class="app-privacy-link" href="/aakmotorlog/support/">Soporte</a>
-        </div>
-      </div>
-
-      <div class="app-card">
-        <div class="app-icon"><img src="/aakfoodscan/aakfoodscan.png" alt="AAK FoodScan"></div>
-        <div class="app-info">
-          <h3>AAK FoodScan</h3>
-        </div>
-        <span class="app-status soon">Próximamente</span>
-        <div class="app-links">
-          <a class="app-privacy-link" href="/aakfoodscan/">Detalles</a>
-          <a class="app-privacy-link" href="/aakfoodscan/privacy/">Privacidad</a>
-        </div>
-      </div>
-
-      <div class="app-card">
-        <div class="app-icon"><img src="/aakpills/aakpills.png" alt="AAK Pills"></div>
-        <div class="app-info">
-          <h3>AAK Pills</h3>
-          <p>Medicación y cuidado familiar, fácil y a distancia.</p>
-        </div>
-        <span class="app-status soon">Próximamente</span>
-        <div class="app-links">
-          <a class="app-privacy-link" href="/aakpills/">Detalles</a>
-          <a class="app-privacy-link" href="/aakpills/privacy/">Privacidad</a>
-        </div>
+      <div class="nav-links">
+        <a href="#apps">Aplicaciones</a>
+        <a href="#filosofia">Filosofía</a>
+        <a class="contact-btn" href="mailto:henryinfomaps@gmail.com">Contacto</a>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<footer>
-  <div class="wrap">
-    <span>© 2026 Enrique Morón Campos — AAK Developer</span>
-    <span><a href="mailto:henryinfomaps@gmail.com">henryinfomaps@gmail.com</a></span>
-  </div>
-</footer>
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">Desarrollo independiente desde España</div>
+          <h1>Apps que <span>sirven de verdad.</span></h1>
+          <p class="hero-copy">
+            AAK Developer crea aplicaciones claras, privadas y cuidadas para resolver problemas cotidianos sin añadir más ruido.
+          </p>
 
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#apps">Explorar aplicaciones ↓</a>
+            <a class="btn btn-secondary" href="mailto:henryinfomaps@gmail.com">Hablar conmigo</a>
+          </div>
+
+          <div class="metrics">
+            <div><b>5</b>aplicaciones</div>
+            <div><b>iOS</b>nativo</div>
+            <div><b>Privacidad</b>desde el diseño</div>
+          </div>
+        </div>
+
+        <div class="hero-stack" aria-hidden="true">
+          <div class="float-card card-1">
+            <img src="assets/aakpills.png" alt="">
+            <strong>AAK Pills</strong>
+            <small>Cuidado familiar</small>
+          </div>
+          <div class="float-card card-2">
+            <img src="assets/motorlog.png" alt="">
+            <strong>AAK MotorLog</strong>
+            <small>Tu garaje, ordenado</small>
+          </div>
+          <div class="float-card card-3">
+            <img src="assets/aakradio.png" alt="">
+            <strong>AAK Radio</strong>
+            <small>Radio sin fronteras</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="apps">
+      <div class="container">
+        <div class="section-kicker">El catálogo</div>
+        <h2 class="section-title">Cinco ideas. Una misma obsesión por hacerlo fácil.</h2>
+        <p class="section-intro">
+          Cada aplicación parte de una necesidad concreta y se diseña para ser útil desde el primer minuto.
+        </p>
+
+        <div class="apps-grid">
+          <article class="app featured motorlog reveal">
+            <div class="app-inner">
+              <div class="app-copy">
+                <span class="app-label">En TestFlight</span>
+                <h3>AAK MotorLog</h3>
+                <p>Todos los vehículos de tu familia, con mantenimientos, ITV, seguros, combustible, gastos y documentación siempre a mano.</p>
+                <div class="app-actions">
+                  <a class="mini-link primary" href="https://testflight.apple.com/join/guRrRx2a" target="_blank" rel="noopener noreferrer">Probar en TestFlight</a>
+                  <a class="mini-link" href="/aakmotorlog/">Detalles</a>
+                  <a class="mini-link" href="/aakmotorlog/privacy/">Privacidad</a>
+                  <a class="mini-link" href="/aakmotorlog/support/">Soporte</a>
+                </div>
+              </div>
+              <div class="app-art">
+                <img src="assets/motorlog.png" alt="Icono de AAK MotorLog">
+              </div>
+            </div>
+          </article>
+
+          <article class="app pills reveal">
+            <div class="app-inner">
+              <div class="app-copy">
+                <span class="app-label">Próximamente</span>
+                <h3>AAK Pills</h3>
+                <p>Medicación, avisos y cuidado familiar con una experiencia clara y pensada para todas las edades.</p>
+                <div class="app-actions">
+                  <a class="mini-link primary" href="/aakpills/">Detalles</a>
+                  <a class="mini-link" href="/aakpills/privacy/">Privacidad</a>
+                  <a class="mini-link" href="/aakpills/support/">Soporte</a>
+                </div>
+              </div>
+              <div class="app-art">
+                <img src="assets/aakpills.png" alt="Icono de AAK Pills">
+              </div>
+            </div>
+          </article>
+
+          <article class="app foodscan reveal">
+            <div class="app-inner">
+              <div class="app-copy">
+                <span class="app-label">Próximamente</span>
+                <h3>AAK FoodScan</h3>
+                <p>Escanea productos y obtén información útil de forma rápida, visual y comprensible.</p>
+                <div class="app-actions">
+                  <a class="mini-link primary" href="/aakfoodscan/">Detalles</a>
+                  <a class="mini-link" href="/aakfoodscan/privacy/">Privacidad</a>
+                  <a class="mini-link" href="/aakfoodscan/support/">Soporte</a>
+                </div>
+              </div>
+              <div class="app-art">
+                <img src="assets/aakfoodscan.png" alt="Icono de AAK FoodScan">
+              </div>
+            </div>
+          </article>
+
+          <article class="app radio reveal">
+            <div class="app-inner">
+              <div class="app-copy">
+                <span class="app-label">Disponible en App Store</span>
+                <h3>AAK Radio</h3>
+                <p>Emisoras de todo el mundo en directo, con una experiencia sencilla en iPhone y Apple Watch.</p>
+                <div class="app-actions">
+                  <a class="mini-link primary" href="https://apps.apple.com/es/app/aakradio/id6788845813" target="_blank" rel="noopener noreferrer">Ver en App Store</a>
+                  <a class="mini-link" href="/aakradio/">Detalles</a>
+                  <a class="mini-link" href="/aakradio/privacy/">Privacidad</a>
+                  <a class="mini-link" href="/aakradio/support/">Soporte</a>
+                </div>
+              </div>
+              <div class="app-art">
+                <img src="assets/aakradio.png" alt="Icono de AAK Radio">
+              </div>
+            </div>
+          </article>
+
+          <article class="app twoclicks reveal">
+            <div class="app-inner">
+              <div class="app-copy">
+                <span class="app-label">En TestFlight</span>
+                <h3>TwoClicks</h3>
+                <p>Recordatorios multimedia con foto, vídeo, voz y ubicación, creados de forma rápida y directa.</p>
+                <div class="app-actions">
+                  <a class="mini-link primary" href="https://testflight.apple.com/join/ECKjRUTF" target="_blank" rel="noopener noreferrer">Probar en TestFlight</a>
+                  <a class="mini-link" href="/twoclicks/">Detalles</a>
+                  <a class="mini-link" href="/twoclicks/privacy/">Privacidad</a>
+                  <a class="mini-link" href="/twoclicks/support/">Soporte</a>
+                </div>
+              </div>
+              <div class="app-art">
+                <img src="assets/twoclicks.png" alt="Icono de TwoClicks">
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="filosofia">
+      <div class="container">
+        <div class="section-kicker">Cómo trabajo</div>
+        <h2 class="section-title">Menos ruido. Más utilidad.</h2>
+        <p class="section-intro">
+          Productos claros, con diseño cuidado y una relación honesta con los datos del usuario.
+        </p>
+
+        <div class="principles-grid">
+          <div class="principle reveal">
+            <div class="principle-number">01</div>
+            <h4>Privacidad primero</h4>
+            <p>Datos locales o en el iCloud privado del usuario siempre que la arquitectura lo permite.</p>
+          </div>
+          <div class="principle reveal">
+            <div class="principle-number">02</div>
+            <h4>Uso inmediato</h4>
+            <p>Interfaces comprensibles, decisiones simples y funciones que se explican solas.</p>
+          </div>
+          <div class="principle reveal">
+            <div class="principle-number">03</div>
+            <h4>Hecho con intención</h4>
+            <p>Cada app nace de una necesidad real, no de añadir otra aplicación más al teléfono.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-card reveal">
+          <h2>¿Tienes una idea o quieres hablar de una app?</h2>
+          <p>AAK Developer es un proyecto independiente construido desde España, aplicación a aplicación.</p>
+          <a class="btn btn-primary" href="mailto:henryinfomaps@gmail.com">henryinfomaps@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Enrique Morón Campos — AAK Developer</span>
+      <span>iOS · Swift · SwiftUI · España</span>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
