@@ -7,32 +7,184 @@
 <style>
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    max-width: 640px;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 60px 20px;
-    line-height: 1.7;
+    padding: 40px 20px 80px;
+    line-height: 1.65;
     color: #1c1c1e;
     background: #fafafa;
-    text-align: center;
   }
-  h1 { font-size: 26px; color: #993556; }
+  header {
+    text-align: center;
+    padding-bottom: 24px;
+    border-bottom: 3px solid #E94553;
+    margin-bottom: 36px;
+  }
+  h1 { font-size: 30px; color: #993556; margin-bottom: 6px; }
+  .subtitle { color: #666; font-size: 16px; }
+  h2 {
+    font-size: 20px;
+    color: #993556;
+    margin-top: 40px;
+    border-left: 4px solid #E94553;
+    padding-left: 12px;
+  }
+  details {
+    background: white;
+    border-radius: 12px;
+    padding: 4px 18px;
+    margin-bottom: 12px;
+    border: 1px solid #eee;
+  }
+  summary {
+    font-weight: 600;
+    cursor: pointer;
+    padding: 14px 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    font-size: 22px;
+    color: #E94553;
+    font-weight: 400;
+  }
+  details[open] summary::after { content: "–"; }
+  details p { padding-bottom: 16px; color: #333; margin-top: 0; }
+  .contact-box {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    margin-top: 44px;
+    border: 1px solid #eee;
+  }
+  .contact-box p { margin-bottom: 18px; color: #444; }
   a.button {
     display: inline-block;
-    margin-top: 24px;
     background: #E94553;
     color: white;
     text-decoration: none;
-    padding: 14px 28px;
+    padding: 14px 30px;
     border-radius: 12px;
     font-weight: 600;
   }
-  p { color: #444; }
+  footer { text-align: center; margin-top: 40px; font-size: 13px; color: #999; }
+  footer a { color: #993556; }
 </style>
 </head>
 <body>
-<h1>Soporte de AAK Pills</h1>
-<p>¿Tienes alguna duda, sugerencia o problema con la app?<br>
-Escríbenos y te responderemos lo antes posible.</p>
-<a class="button" href="mailto:henryinfomaps@gmail.com">henryinfomaps@gmail.com</a>
+
+<header>
+  <h1>Soporte de AAK Pills</h1>
+  <p class="subtitle">Ayuda y preguntas frecuentes</p>
+</header>
+
+<h2>Primeros pasos</h2>
+
+<details>
+  <summary>¿Cómo empiezo a usar la app?</summary>
+  <p>Al abrir AAK Pills por primera vez, elige "Gestionar mi salud o cuidar
+  a alguien". Verás una pantalla vacía: pulsa "+" para añadir tu primera
+  persona (tú mismo) y empieza a registrar tu medicación, médicos y citas.
+  Gestionar tu propia salud es siempre gratis.</p>
+</details>
+
+<details>
+  <summary>¿Qué diferencia hay entre el modo gestión y el modo receptor?</summary>
+  <p>El <strong>modo gestión</strong> es para quien organiza la medicación
+  (la tuya propia o la de un familiar): crear medicamentos, horarios,
+  médicos y citas. El <strong>modo receptor</strong> es una pantalla
+  simplificada, con voz y botones grandes, pensada para que la use
+  directamente la persona mayor o dependiente en su propio teléfono — solo
+  ve su medicación y sus avisos.</p>
+</details>
+
+<details>
+  <summary>¿Cómo vinculo el móvil de un familiar para que reciba sus avisos?</summary>
+  <p>Desde la ficha de esa persona, pulsa "Compartir con [nombre]". Se
+  abrirá la hoja de compartir de iOS: envía el enlace por Mensajes,
+  WhatsApp o AirDrop al teléfono de tu familiar. Al abrir ese enlace desde
+  su propio Apple ID, su dispositivo queda vinculado automáticamente — no
+  hace falta ningún código.</p>
+</details>
+
+<h2>Suscripción</h2>
+
+<details>
+  <summary>¿Es de pago?</summary>
+  <p>Gestionar tu propia medicación es <strong>gratis</strong>, siempre.
+  Solo necesitas la suscripción "AAK Pills Familia" si quieres añadir y
+  cuidar a una segunda persona. Tiene un plan mensual (con 7 días de prueba
+  gratis) y uno anual.</p>
+</details>
+
+<details>
+  <summary>¿Cómo cancelo mi suscripción?</summary>
+  <p>Las suscripciones se gestionan desde tu cuenta de Apple, no dentro de
+  la app: ve a Ajustes del iPhone → tu nombre → Suscripciones →
+  AAK Pills Familia → Cancelar suscripción.</p>
+</details>
+
+<details>
+  <summary>Si cancelo, ¿mi familiar deja de recibir avisos?</summary>
+  <p>Sí. El servicio del familiar depende de que la suscripción del
+  organizador esté activa. Si cancelas, su teléfono mostrará un aviso de
+  "servicio en pausa". Tú, como organizador, puedes seguir usando la app
+  gratis para gestionar tu propia salud.</p>
+</details>
+
+<h2>Problemas frecuentes</h2>
+
+<details>
+  <summary>No me suenan los avisos de medicación</summary>
+  <p>Comprueba en Ajustes del iPhone → Notificaciones → AAK Pills, que las
+  notificaciones estén activadas. Si tienes activado algún Modo de
+  Concentración o No Molestar, revisa que AAK Pills esté entre las apps
+  permitidas para que sus avisos puedan sonar igualmente.</p>
+</details>
+
+<details>
+  <summary>He editado un medicamento y no se actualiza en el otro móvil</summary>
+  <p>La sincronización entre el teléfono del organizador y el del familiar
+  puede tardar unos segundos. Abrir la app en ambos dispositivos fuerza una
+  sincronización inmediata.</p>
+</details>
+
+<details>
+  <summary>Quiero dejar de compartir con un familiar sin borrar sus datos</summary>
+  <p>Desde su ficha, puedes dejar de compartir en cualquier momento — su
+  dispositivo perderá el acceso de inmediato, pero sus datos siguen
+  guardados en tu cuenta hasta que decidas eliminarlos tú mismo.</p>
+</details>
+
+<h2>Privacidad y datos</h2>
+
+<details>
+  <summary>¿Dónde se guardan mis datos?</summary>
+  <p>En tu propia cuenta de iCloud, no en servidores nuestros. Puedes leer
+  el detalle completo en nuestra
+  <a href="https://aak-developer.github.io/aakpills/privacy.html">Política de Privacidad</a>.</p>
+</details>
+
+<details>
+  <summary>¿Cómo exporto o elimino todos mis datos?</summary>
+  <p>Ve a Ajustes dentro de la app → "Exportar mis datos" para descargar
+  una copia, o "Eliminar todos mis datos" para borrarlo todo de forma
+  permanente, tanto de este dispositivo como de tu iCloud.</p>
+</details>
+
+<div class="contact-box">
+  <p>¿No has encontrado lo que buscabas? Escríbenos directamente.</p>
+  <a class="button" href="mailto:henryinfomaps@gmail.com">henryinfomaps@gmail.com</a>
+</div>
+
+<footer>
+  AAK Pills — <a href="https://aak-developer.github.io/aakpills/privacy.html">Política de Privacidad</a>
+</footer>
+
 </body>
 </html>
