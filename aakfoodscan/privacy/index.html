@@ -72,7 +72,7 @@
 
 <header>
   <h1>Política de Privacidad de AAK FoodScan</h1>
-  <p class="sub">Última actualización: 18 de julio de 2026 · Versión 1.0</p>
+  <p class="sub">Última actualización: 8 de agosto de 2026 · Versión 1.1</p>
 </header>
 
 <div class="aviso">
@@ -184,7 +184,37 @@
   sus condiciones (por ejemplo, obligaciones legales o de seguridad).
 </p>
 
-<h3>2.6 Cuenta e inicio de sesión (Sign in with Apple)</h3>
+<h3>2.6 Biblioteca comunitaria de productos</h3>
+<p>
+  Cuando escaneas un código de barras que no está en Open Food Facts y decides fotografiar la etiqueta
+  con la función de lectura por IA descrita en el apartado anterior, el resultado de esa lectura
+  —nombre del producto, ingredientes y alérgenos o trazas detectados— se guarda en el servidor del
+  Desarrollador (Cloudflare) asociado a ese código de barras, para que otras personas que escaneen el
+  mismo producto puedan aprovecharlo sin repetir la fotografía.
+</p>
+<p>
+  Esta información se trata de forma <strong>anónima y desvinculada de tu cuenta o dispositivo</strong>:
+  no se guarda tu identificador de instalación, tu appAccountToken ni ningún otro dato que permita
+  relacionar la aportación contigo. La fotografía de la etiqueta no se almacena en ningún momento; solo
+  el texto ya transcrito por la IA, conforme a lo descrito en el apartado 2.5.
+</p>
+<p>Los datos aportados por la comunidad:</p>
+<ul>
+  <li>Son visibles para cualquier persona que use AAK FoodScan y escanee el mismo código de barras,
+  igual que ocurre con los datos de Open Food Facts, y la Aplicación te indica expresamente cuando el
+  resultado que ves procede de esta biblioteca y no de Open Food Facts.</li>
+  <li>No están verificados por el Desarrollador ni por Open Food Facts: proceden de la lectura por IA de
+  una fotografía tomada por otro usuario.</li>
+  <li>Se contrastan de forma automática: cuando varias personas aportan lecturas coincidentes para el
+  mismo producto, el dato gana confianza; si una aportación nueva discrepa de un dato ya contrastado
+  por varias personas distintas, prevalece el dato más contrastado.</li>
+</ul>
+<p>
+  Puedes seguir usando la Aplicación sin aportar nunca a la biblioteca comunitaria: esta función solo
+  se activa cuando, ante un código sin datos, eliges expresamente fotografiar la etiqueta.
+</p>
+
+<h3>2.7 Cuenta e inicio de sesión (Sign in with Apple)</h3>
 <p>
   AAK FoodScan utiliza Sign in with Apple para crear y autenticar tu cuenta. La Aplicación recibe un
   identificador seudónimo específico para esta app y las credenciales técnicas necesarias para validar
@@ -196,7 +226,7 @@
   cuenta, este token se revoca ante Apple mediante su API oficial y se elimina.
 </p>
 
-<h3>2.7 Suscripción Premium (compras)</h3>
+<h3>2.8 Suscripción Premium (compras)</h3>
 <p>
   La suscripción Premium se gestiona mediante StoreKit y el sistema de compras de Apple.
   <strong>Apple gestiona íntegramente los datos de pago y de tarjeta; el Desarrollador no los recibe
@@ -220,7 +250,7 @@
   registros de compra conforme a sus propias obligaciones.
 </p>
 
-<h3>2.8 Identificador de instalación y contadores de uso</h3>
+<h3>2.9 Identificador de instalación y contadores de uso</h3>
 <p>
   Para aplicar los análisis gratuitos de bienvenida, el límite semanal Premium y las medidas antiabuso,
   el servidor del Desarrollador (Cloudflare) almacena un identificador aleatorio de instalación y los
@@ -242,7 +272,7 @@
   todo caso, al cumplirse el plazo máximo de 400 días desde su última actualización.
 </p>
 
-<h3>2.9 Datos técnicos tratados por Cloudflare</h3>
+<h3>2.10 Datos técnicos tratados por Cloudflare</h3>
 <p>
   Como servidor intermedio, Cloudflare trata los datos técnicos necesarios para recibir y proteger las
   solicitudes, como la dirección IP, la fecha y hora, la ruta solicitada, las cabeceras de red, el
@@ -251,7 +281,7 @@
   códigos de autorización, identity tokens, refresh tokens, appAccountToken ni claves de API.
 </p>
 
-<h3>2.10 Cámara y selector de fotos</h3>
+<h3>2.11 Cámara y selector de fotos</h3>
 <p>
   La cámara se utiliza únicamente para escanear códigos de barras y, si lo solicitas, para fotografiar
   una etiqueta. Para elegir una imagen de tu galería, la Aplicación utiliza el selector nativo de fotos
@@ -260,7 +290,7 @@
   del sistema operativo y puedes revocarlos en cualquier momento desde los Ajustes de iOS.
 </p>
 
-<h3>2.11 Correo de soporte y ejercicio de derechos</h3>
+<h3>2.12 Correo de soporte y ejercicio de derechos</h3>
 <p>
   Cuando nos escribes por correo electrónico, tratamos tu dirección, el contenido del mensaje y los
   datos que decidas aportar para responder a tu consulta o tramitar tus derechos. El correo se gestiona
@@ -271,7 +301,7 @@
   legales aplicables para acreditar su gestión.
 </p>
 
-<h3>2.12 Qué NO trata la Aplicación</h3>
+<h3>2.13 Qué NO trata la Aplicación</h3>
 <p>La Aplicación <strong>no</strong> trata los siguientes datos:</p>
 <ul>
   <li>No solicita acceso a los servicios de localización de iOS ni recoge coordenadas GPS. Cloudflare y
@@ -281,7 +311,9 @@
   <li>No muestra publicidad ni contiene SDK publicitarios.</li>
   <li>No utiliza IDFA ni realiza seguimiento con fines publicitarios.</li>
   <li>No realiza analítica de marketing ni fingerprinting.</li>
-  <li>No vende ni comparte tus datos con intermediarios de datos (data brokers).</li>
+  <li>No vende ni comparte tus datos personales con intermediarios de datos (data brokers). Los datos de
+  producto aportados a la biblioteca comunitaria (apartado 2.6) no son datos personales: no identifican
+  ni permiten identificar a quien los aporta.</li>
 </ul>
 <p class="meta">
   Sí trata los datos técnicos de conexión expresamente descritos en esta política (por ejemplo, la IP y
@@ -310,6 +342,14 @@
   cámara y fotos son controles del sistema operativo, no una base jurídica en sí mismos.
 </p>
 <p>
+  Los datos de producto compartidos en la biblioteca comunitaria (apartado 2.6) no identifican ni
+  permiten identificar a la persona que los aporta, por lo que no constituyen datos personales conforme
+  al RGPD. Por transparencia, esta política describe igualmente su tratamiento. En la medida en que
+  pudiera considerarse un tratamiento de datos personales, su base jurídica sería el interés legítimo
+  del Desarrollador y de la comunidad de usuarios en mantener una base de datos de productos útil y
+  actualizada (<strong>art. 6.1.f RGPD</strong>).
+</p>
+<p>
   Las consultas de soporte relacionadas con el uso de la Aplicación se tratan para atender la relación
   contractual o las medidas solicitadas por ti (<strong>art. 6.1.b RGPD</strong>). Las solicitudes de
   ejercicio de derechos se tratan para cumplir las obligaciones legales del Desarrollador
@@ -329,8 +369,8 @@
   </tr>
   <tr>
     <td>Cloudflare</td>
-    <td>Servidor intermedio, control del plan y prevención de abuso</td>
-    <td>Identificador de instalación, contadores, refresh token cifrado, tránsito de la imagen, IP, cabeceras, ruta, User-Agent y estado de respuesta</td>
+    <td>Servidor intermedio, control del plan, prevención de abuso y biblioteca comunitaria de productos</td>
+    <td>Identificador de instalación, contadores, refresh token cifrado, tránsito de la imagen, IP, cabeceras, ruta, User-Agent, estado de respuesta, y datos de producto aportados a la biblioteca comunitaria (sin vincular a la instalación ni a la cuenta)</td>
   </tr>
   <tr>
     <td>Anthropic</td>
@@ -390,6 +430,11 @@
   necesario para validar compras, restaurarlas, prevenir el fraude, atender incidencias y cumplir
   obligaciones legales. Al borrar la cuenta se elimina la asociación propia que no deba conservarse por
   una obligación legal o para formular, ejercer o defender reclamaciones.</li>
+  <li><strong>Biblioteca comunitaria de productos:</strong> los datos de producto aportados (nombre,
+  ingredientes, alérgenos y trazas) se conservan durante un máximo de 1 año desde su última
+  confirmación o actualización. No están vinculados a tu identificador de instalación ni a tu cuenta,
+  por lo que no es posible identificar ni eliminar selectivamente las aportaciones de una persona
+  concreta.</li>
   <li><strong>Registros técnicos de Cloudflare:</strong> los registros de invocación del Worker se
   conservan durante 3 días, sin registrar cuerpos de solicitud, imágenes ni tokens.</li>
   <li><strong>Imágenes de etiquetas:</strong> no se almacenan en el servidor del Desarrollador;
@@ -437,7 +482,7 @@
   with Apple mediante su API oficial. Si Apple no pudiera completar la revocación en ese momento, se te
   informará del resultado y de los pasos disponibles para revocar manualmente el acceso desde los
   ajustes de tu cuenta de Apple. Recuerda que eliminar la cuenta no cancela una suscripción activa
-  (véase la sección 2.7).
+  (véase la sección 2.8).
 </p>
 
 <h2>10. Menores y perfiles de terceras personas</h2>
@@ -458,7 +503,7 @@
 
 <footer>
   <p>
-    AAK FoodScan · Política de Privacidad · Versión 1.0 · 18 de julio de 2026<br>
+    AAK FoodScan · Política de Privacidad · Versión 1.1 · 8 de agosto de 2026<br>
     Este documento describe el tratamiento de datos de la versión de la Aplicación enviada a revisión.
     Para cualquier consulta relativa a privacidad, escribe a privacidad@aakdeveloper.com.
   </p>
@@ -466,4 +511,3 @@
 
 </body>
 </html>
-
