@@ -111,11 +111,31 @@
 
 <details>
   <summary>¿Cómo vinculo el móvil de un familiar para que reciba sus avisos?</summary>
-  <p>Desde la ficha de esa persona, pulsa "Compartir con [nombre]". Se
-  abrirá la hoja de compartir de iOS: envía el enlace por Mensajes,
-  WhatsApp o AirDrop al teléfono de tu familiar. Al abrir ese enlace desde
-  su propio Apple ID, su dispositivo queda vinculado automáticamente — no
-  hace falta ningún código.</p>
+  <p>Desde la ficha de esa persona puedes elegir cómo enviar la invitación:</p>
+  <p><strong>Compartir enlace</strong>: utiliza la hoja de compartir de iOS para enviarlo
+  por Mensajes, WhatsApp, Mail, AirDrop u otra app compatible.</p>
+  <p><strong>Invitar por correo de iCloud</strong>: introduce el correo asociado a la
+  cuenta de Apple/iCloud del familiar. AAK Pills utiliza CloudKit para
+  localizar y autorizar esa cuenta y después prepara un correo en Mail con
+  el enlace de invitación. Tú revisas el mensaje y pulsas "Enviar".</p>
+  <p>En ambos casos el familiar abre la invitación desde su propio iPhone y
+  acepta el acceso con su propia cuenta de iCloud, tras la pantalla de
+  consentimiento — no hace falta ningún código.</p>
+</details>
+
+<details>
+  <summary>¿Qué correo debo introducir al usar "Invitar por email"?</summary>
+  <p>Utiliza el correo asociado a la cuenta de Apple/iCloud que el familiar
+  usa en su iPhone. Si CloudKit no puede localizar una cuenta compatible con
+  ese correo, AAK Pills te avisará y podrás utilizar la opción de compartir
+  el enlace manualmente.</p>
+</details>
+
+<details>
+  <summary>¿Qué ocurre si no tengo Mail configurado en el iPhone?</summary>
+  <p>AAK Pills no puede enviar correos por sí sola. Si el iPhone no tiene una
+  cuenta configurada para enviar desde Mail, puedes copiar el enlace de
+  invitación y enviarlo mediante Mensajes, WhatsApp u otro medio.</p>
 </details>
 
 <h2>Suscripción</h2>
@@ -137,10 +157,15 @@
 
 <details>
   <summary>Si cancelo, ¿mi familiar deja de recibir avisos?</summary>
-  <p>Sí. El servicio del familiar depende de que la suscripción del
-  organizador esté activa. Si cancelas, su teléfono mostrará un aviso de
-  "servicio en pausa". Tú, como organizador, puedes seguir usando la app
+  <p>El servicio del familiar depende de que la suscripción "AAK Pills
+  Familia" esté activa. Si cancelas, cuando finalice el periodo de servicio
+  autorizado su teléfono mostrará "Servicio en pausa"; la vinculación no se
+  destruye solo por eso. Tú, como organizador, puedes seguir usando la app
   gratis para gestionar tu propia salud.</p>
+  <p>Si vuelves a suscribirte más adelante y la vinculación sigue vigente, el
+  servicio puede reanudarse sin tener que crear una invitación nueva. Dejar
+  de compartir o eliminar a esa persona sigue siendo una acción distinta y
+  explícita, que si la realizas sí revoca el acceso.</p>
 </details>
 
 <h2>Problemas frecuentes</h2>

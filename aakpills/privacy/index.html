@@ -30,7 +30,7 @@
   <span style="color:#1c1c1e;">Privacidad</span>
 </nav>
 <h1>Política de Privacidad de AAK Pills</h1>
-<p><strong>Última actualización: 27 de julio de 2026</strong></p>
+<p><strong>Última actualización: 22 de agosto de 2026</strong></p>
 <hr />
 <h2>1. Responsable del tratamiento</h2>
 <p>AAK Pills ("la App") es una aplicación para iOS desarrollada por
@@ -78,8 +78,12 @@ a la licitud del tratamiento realizado antes de retirarla.</p>
 <li><strong>No vendemos tus datos, no los cedemos con fines comerciales y no los
   usamos para publicidad ni seguimiento (tracking).</strong></li>
 <li><strong>No usamos analítica de terceros ni SDKs de terceros.</strong></li>
-<li><strong>No te pedimos registro con correo ni contraseña</strong>; usas tu propia cuenta
-  de Apple (iCloud).</li>
+<li><strong>No necesitas crear una cuenta ni registrarte con correo y contraseña</strong> para
+  utilizar AAK Pills; la App utiliza tu propia cuenta de Apple/iCloud. Si decides
+  invitar a un familiar mediante la opción de correo, puedes introducir
+  voluntariamente el correo asociado a su cuenta de iCloud únicamente para
+  localizar y autorizar a ese participante mediante CloudKit y preparar la
+  invitación (apartado 7).</li>
 </ul>
 <h2>6. Qué datos se tratan</h2>
 <p>Al usar la App puedes introducir:</p>
@@ -89,8 +93,13 @@ a la licitud del tratamiento realizado antes de retirarla.</p>
   médicas; notas; y el <strong>historial de tomas</strong> (si una dosis se marcó como
   tomada, no tomada u omitida, con su fecha y hora).</li>
 <li><strong>Datos de contacto</strong>: nombre de la persona gestionada y, si lo rellenas,
-  nombre y teléfono de un contacto de emergencia; teléfonos de médicos y
-  centros que tú introduzcas.</li>
+  nombre y teléfono de un contacto de emergencia; teléfonos de médicos y centros
+  que tú introduzcas; y, opcionalmente, el correo asociado a la cuenta de
+  iCloud de un familiar cuando utilizas la función de invitación por correo
+  (apartado 7). Ese correo se guarda únicamente en tu propio dispositivo para
+  facilitarte futuras invitaciones: no forma parte de los registros que se
+  envían a CloudKit, y no disponemos de una base de datos propia con esos
+  correos.</li>
 <li><strong>Fotos</strong>: imágenes de medicamentos, recetas o de perfil que decidas
   añadir.</li>
 <li><strong>Datos técnicos de funcionamiento</strong>: identificadores internos de los
@@ -102,27 +111,56 @@ a la licitud del tratamiento realizado antes de retirarla.</p>
 de iCloud/CloudKit asociada a tu propia cuenta de Apple.</p>
 <p>Cuando gestionas a otra persona (un familiar), sus datos viven en un
 compartimento propio y separado dentro de <strong>tu</strong> base de datos privada. Para
-que esa persona reciba sus avisos en su propio teléfono, le envías una
-<strong>invitación</strong> (un enlace, por Mensajes, WhatsApp, AirDrop o el medio que
-elijas) que ella acepta desde su propia cuenta de Apple, tras ver la pantalla
-de consentimiento informado del apartado 4. A partir de ahí, su dispositivo
-accede exclusivamente a ese compartimento — nunca al resto de tu
-información, ni a la de cualquier otra familia que use la App. Esta
-compartición mediante <code>CKShare</code> desde una base de datos privada es el
-mecanismo que Apple pone a disposición de los desarrolladores específicamente
-para compartir registros entre usuarios autorizados.</p>
+que esa persona reciba sus avisos en su propio teléfono, la App prepara una
+<strong>invitación</strong> a ese compartimento mediante <code>CKShare</code>, el mecanismo que
+Apple pone a disposición de los desarrolladores específicamente para
+compartir registros entre usuarios autorizados desde una base de datos
+privada. Puedes entregar esa misma invitación de dos formas:</p>
+<ul>
+<li><strong>Compartir el enlace</strong>: se abre la hoja de compartir de iOS para
+  enviarlo por Mensajes, WhatsApp, Mail, AirDrop u otra app compatible, en el
+  medio que tú elijas.</li>
+<li><strong>Invitar por correo de iCloud</strong>: introduces voluntariamente el correo
+  asociado a la cuenta de Apple/iCloud de tu familiar. La App utiliza
+  CloudKit de Apple para localizar esa cuenta y añadirla como
+  <strong>participante autorizado</strong> de ese recurso compartido, que sigue siendo
+  privado. A continuación, la App prepara un correo en el compositor nativo
+  de Mail del iPhone, con el enlace de invitación y el asunto genérico
+  "Invitación a AAK Pills" (sin nombres de medicamentos ni información
+  clínica); tú decides si pulsas "Enviar". Ese correo sale mediante la cuenta
+  de correo que tú tengas configurada en Mail — <strong>no operamos un servidor de
+  correo propio y no recibimos ninguna copia de ese mensaje</strong>. Si Mail no
+  está configurado en tu iPhone, la App te permite copiar el enlace y
+  entregarlo por otro medio.</li>
+</ul>
+<p>En ambos casos, tu familiar acepta la invitación desde su propia cuenta de
+Apple, tras ver la pantalla de consentimiento informado del apartado 4. A
+partir de ahí, su dispositivo accede exclusivamente a ese compartimento —
+nunca al resto de tu información, ni a la de cualquier otra familia que use
+la App.</p>
+<p>El recurso compartido (<code>CKShare</code>) sigue siendo privado y revocable en
+cualquier momento (apartado 8). En la vía de invitación por correo, tu
+familiar debe quedar previamente autorizado como participante en CloudKit
+para poder aceptarlo: la mera posesión del enlace no convierte por sí sola a
+otra cuenta de iCloud en participante autorizado de ese recurso.</p>
 <p><strong>Como desarrolladores, no disponemos de acceso administrativo general que
 nos permita consultar el contenido de las bases de datos privadas de los
-usuarios.</strong></p>
+usuarios</strong>, ni almacenamos las URLs de invitación en servidores propios: esas
+URLs viajan dentro del correo o del mensaje que tú envías, a través de los
+servicios de Apple y, en su caso, de tu proveedor de correo.</p>
+<p>Una vez enviado, el correo con la invitación puede permanecer en tu carpeta
+de mensajes enviados y ser tratado por tu proveedor de correo y por el del
+destinatario conforme a sus propias condiciones y políticas; nosotros no
+intervenimos en ese envío ni operamos ese servicio.</p>
 <p>Los medicamentos que marques como "sin aviso" para una persona que gestionas
 quedan, además, en un compartimento aparte que <strong>nunca</strong> se comparte con esa
 persona — solo tú lo ves.</p>
 <h2>8. Vinculación y desvinculación</h2>
-<p>El cuidador envía una invitación desde su propio teléfono para que un
-familiar reciba sus avisos. El familiar la acepta desde su propio dispositivo
-y cuenta de Apple, tras ver la pantalla de consentimiento informado del
-apartado 4; a partir de ahí queda vinculado únicamente a los datos que se le
-han compartido.</p>
+<p>El cuidador prepara una invitación desde su propio teléfono (apartado 7)
+para que un familiar reciba sus avisos. El familiar la acepta desde su propio
+dispositivo y cuenta de Apple, tras ver la pantalla de consentimiento
+informado del apartado 4; a partir de ahí queda vinculado únicamente a los
+datos que se le han compartido.</p>
 <p>El cuidador puede <strong>dejar de compartir en cualquier momento</strong> desde la ficha
 de esa persona, lo que revoca el acceso del familiar de forma real e
 inmediata (no solo visual): el dispositivo del familiar pierde el acceso
@@ -130,11 +168,15 @@ técnico a los datos compartidos, y además borra automáticamente de ese
 dispositivo las fotos, la medicación, médicos y citas que tuviera
 descargados, y cancela sus avisos pendientes. Si el cuidador <strong>elimina</strong> a la
 persona gestionada, ocurre lo mismo.</p>
-<p><strong>Qué pasa si el cuidador deja de pagar la suscripción</strong>: en cuanto se
-confirma la baja, se revoca de la misma forma real e inmediata descrita
-arriba — no es solo un bloqueo de pantalla. Si el cuidador vuelve a
-suscribirse más adelante, deberá volver a compartir y el familiar aceptar una
-invitación nueva; no hay reactivación automática ni silenciosa.</p>
+<p><strong>Si la suscripción "AAK Pills Familia" deja de estar activa</strong>: el servicio
+del dispositivo familiar puede quedar en pausa cuando finalice el periodo de
+servicio autorizado. La App no elimina automáticamente el recurso compartido
+de CloudKit únicamente por la finalización de la suscripción. Si el servicio
+vuelve a activarse y la vinculación sigue vigente, puede reanudarse sin
+necesidad de crear una nueva invitación. El cuidador puede revocar
+expresamente el acceso en cualquier momento mediante las opciones de
+desvinculación o eliminación descritas arriba, que sí son las acciones que
+revocan de verdad el acceso al recurso compartido.</p>
 <h2>9. Menores y personas a cargo</h2>
 <p>La App permite que un cuidador organice la medicación de un tercero, que
 puede ser un menor o una persona dependiente. Al añadir a esa persona, el
@@ -149,7 +191,9 @@ persona, incluida la vinculación del dispositivo del familiar y el envío de
 sus avisos. Las compras las procesa <strong>Apple</strong>; <strong>no recibimos ni almacenamos
 los datos de tu método de pago</strong>, solo el estado de tu suscripción.
 Cancelarla se hace desde los ajustes de tu cuenta de Apple; <strong>desinstalar la
-App o borrar los datos no cancela la suscripción</strong>.</p>
+App o borrar los datos no cancela la suscripción</strong>. Qué ocurre con la
+vinculación de tu familiar si cancelas se explica en el apartado 8: cancelar
+no elimina automáticamente el recurso compartido de CloudKit.</p>
 <h2 id="eliminar-cuenta">11. Conservación, exportación y eliminación de datos</h2>
 <p>Tus datos permanecen en tu base de datos privada de iCloud <strong>mientras tú los
 mantengas</strong>: no hay un borrado automático por inactividad. Puedes:</p>
@@ -186,9 +230,21 @@ presentar una reclamación ante la <strong>Agencia Española de Protección de D
 <p>Tus datos de salud se guardan en tu base de datos <strong>privada</strong> de CloudKit,
 protegida por tu propia cuenta de Apple (incluida la verificación en dos
 factores, si la tienes activada) — no en un almacenamiento común accesible
-por otros usuarios de la App. Cuando compartes con un familiar, ese acceso se
-concede de forma explícita, nominal y revocable de verdad en cualquier
-momento (apartado 8), no mediante un código genérico.</p>
+por otros usuarios de la App.</p>
+<ul>
+<li>La compartición con un familiar se realiza mediante un <code>CKShare</code>
+  <strong>privado</strong> de CloudKit, no mediante un código genérico de acceso.</li>
+<li>El acceso solo se concede a <strong>participantes autorizados</strong> de ese recurso
+  compartido.</li>
+<li>El cuidador puede <strong>revocar ese acceso de forma explícita</strong> en cualquier
+  momento, dejando de compartir o eliminando a la persona gestionada
+  (apartado 8).</li>
+<li>Cuando invitas por correo de iCloud, CloudKit localiza y preautoriza a
+  ese participante antes de que la App prepare el correo de invitación
+  (apartado 7); el enlace de invitación no debe entenderse como un código
+  público de acceso.</li>
+<li>No almacenamos las URLs de invitación en servidores propios.</li>
+</ul>
 <p>El consentimiento que solicita la App, mediante una acción afirmativa,
 informado, revocable y demostrable, sigue los requisitos que establece la
 AEPD para la obtención válida del consentimiento.</p>
