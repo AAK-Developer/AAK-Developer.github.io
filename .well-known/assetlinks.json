@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.aak.motorlog",
+      "sha256_cert_fingerprints": [
+        "18:6A:E0:6B:E1:12:68:F4:76:99:EA:85:0F:F0:F4:AC:DA:C3:E8:8A:6B:26:44:DE:92:23:69:BE:9E:AE:FF:6A"
+      ]
+    }
+  }
+]
