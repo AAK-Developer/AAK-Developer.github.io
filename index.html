@@ -6,6 +6,14 @@
   <meta name="description" content="AAK Developer crea aplicaciones útiles, privadas y cuidadas para iPhone y Apple Watch.">
   <meta name="theme-color" content="#070B14">
   <title>AAK Developer — Apps para la vida real</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <meta property="og:title" content="AAK Developer — Apps para la vida real">
+  <meta property="og:description" content="AAK Developer crea aplicaciones útiles, privadas y cuidadas para iPhone y Apple Watch.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/apple-touch-icon.png">
   <style>
     :root {
       --bg: #070b14;
@@ -83,18 +91,33 @@
       letter-spacing: -.03em;
     }
 
+    /* The official AAK Developer logo replaces the previous lettered placeholder. It is placed on
+       a white chip because the wordmark is dark navy and would otherwise disappear against the
+       dark background of this site. */
     .brand-mark {
       width: 38px;
       height: 38px;
       border-radius: 13px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(145deg, #5c84ff, #76e1ff);
-      color: #06101f;
+      background: white;
+      padding: 3px;
+      object-fit: contain;
       box-shadow: 0 10px 30px rgba(79,124,255,.35);
-      font-size: 15px;
-      font-weight: 900;
     }
+
+    .hero-logo {
+      width: 112px;
+      height: 112px;
+      border-radius: 26px;
+      background: white;
+      padding: 11px;
+      object-fit: contain;
+      margin: 0 0 24px;
+      box-shadow: 0 22px 50px rgba(0,0,0,.35);
+    }
+
+    /* AAK RRSS is a platform, not an App Store app — a softer radius than the .app-art squircle
+       keeps that distinction visible inside an otherwise identical card. */
+    .app.rrss .app-art img { border-radius: 26px; background: white; }
 
     .nav-links {
       display: flex;
@@ -546,6 +569,7 @@
       .app-inner { padding: 25px; }
       .app-art img { width: min(240px, 84%); }
       .metrics { gap: 20px; }
+      .hero-logo { width: 88px; height: 88px; border-radius: 22px; padding: 9px; margin-bottom: 18px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -561,12 +585,13 @@
   <nav>
     <div class="container nav-inner">
       <a class="brand" href="#inicio" aria-label="AAK Developer, inicio">
-        <span class="brand-mark">AAK</span>
+        <img class="brand-mark" src="assets/aak-developer-logo.png" alt="Logo de AAK Developer" width="38" height="38">
         <span>AAK Developer</span>
       </a>
 
       <div class="nav-links">
         <a href="#apps">Aplicaciones</a>
+        <a href="#rrss">AAK RRSS</a>
         <a href="#filosofia">Filosofía</a>
         <a class="contact-btn" href="mailto:enric@aakdeveloper.com">Contacto</a>
       </div>
@@ -577,6 +602,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
+          <img class="hero-logo" src="assets/aak-developer-logo.png" alt="Logo oficial de AAK Developer" width="1254" height="1254">
           <div class="badge">Desarrollo independiente desde España</div>
           <h1>Apps que <span>sirven de verdad.</span></h1>
           <p class="hero-copy">
@@ -825,6 +851,43 @@
             <h4>Hecho con intención</h4>
             <p>Cada app nace de una necesidad real, no de añadir otra aplicación más al teléfono.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rrss">
+      <div class="container">
+        <div class="section-kicker">Plataforma propia</div>
+        <h2 class="section-title">AAK RRSS, el centro de contenidos y redes.</h2>
+        <p class="section-intro">
+          La comunicación de estas siete aplicaciones no se improvisa: se prepara, se revisa y se aprueba
+          en una plataforma propia.
+        </p>
+
+        <div class="apps-grid">
+          <article class="app featured rrss reveal">
+            <div class="app-inner">
+              <div class="app-copy">
+                <span class="app-label">Plataforma de gestión de contenidos</span>
+                <h3>AAK RRSS</h3>
+                <p>
+                  AAK RRSS es la plataforma web con la que AAK Developer gestiona los contenidos y las redes
+                  sociales de sus aplicaciones. Permite preparar cada campaña, adaptar el mensaje y la
+                  creatividad a cada red, revisar la pieza final y publicarla únicamente tras una aprobación
+                  explícita. Se conecta con Facebook, Instagram, Threads y TikTok mediante sus APIs oficiales,
+                  y deja registrado qué se publicó, dónde y cuándo.
+                </p>
+                <div class="app-actions">
+                  <a class="mini-link primary" href="https://rrss.aakdeveloper.com/" target="_blank" rel="noopener noreferrer">Abrir AAK RRSS</a>
+                  <a class="mini-link" href="https://rrss.aakdeveloper.com/privacy" target="_blank" rel="noopener noreferrer">Privacidad</a>
+                  <a class="mini-link" href="https://rrss.aakdeveloper.com/terms" target="_blank" rel="noopener noreferrer">Términos</a>
+                </div>
+              </div>
+              <div class="app-art">
+                <img src="assets/aak-rrss-logo.png" alt="Logo oficial de AAK RRSS">
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
