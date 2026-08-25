@@ -612,6 +612,31 @@
             <small>Radio sin fronteras</small>
           </div>
         </div>
+
+        <script>
+          // Las tres tarjetas flotantes muestran tres apps al azar en cada carga.
+          (() => {
+            const apps = [
+              { icon: 'assets/motorlog.png', name: 'AAK MotorLog', tag: 'Tu garaje, ordenado' },
+              { icon: 'assets/aakpills.png', name: 'AAK Pills', tag: 'Cuidado familiar' },
+              { icon: 'assets/aakfoodscan.png', name: 'AAK FoodScan', tag: 'Escanea y entiende' },
+              { icon: 'assets/aakradio.png', name: 'AAK Radio', tag: 'Radio sin fronteras' },
+              { icon: 'assets/twoclicks.png', name: 'TwoClicks', tag: 'Recordatorios al vuelo' },
+              { icon: 'assets/aaktextaudio.png', name: 'AAK TextAudio', tag: 'Texto y voz' },
+              { icon: 'assets/aakprevia.png', name: 'AAK Previa', tag: 'Juegos para el grupo' },
+            ];
+            for (let i = apps.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [apps[i], apps[j]] = [apps[j], apps[i]];
+            }
+            document.querySelectorAll('.hero-stack .float-card').forEach((card, index) => {
+              const app = apps[index];
+              card.querySelector('img').src = app.icon;
+              card.querySelector('strong').textContent = app.name;
+              card.querySelector('small').textContent = app.tag;
+            });
+          })();
+        </script>
       </div>
     </section>
 
