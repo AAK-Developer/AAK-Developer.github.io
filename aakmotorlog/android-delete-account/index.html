@@ -39,44 +39,60 @@
 <h1>Eliminar tu cuenta en AAK MotorLog para Android</h1>
 <p>Puedes eliminar tu cuenta completa, o solo parte de tus datos, directamente desde la app, sin necesidad de contactar con nosotros.</p>
 
+<h2>Cómo funciona el acceso a un vehículo</h2>
+<p>Para entender qué se borra y qué no, hace falta saber cómo se comparte. Cada vehículo tiene sus propios participantes, y cada uno con un papel:</p>
+<ul>
+  <li><strong>Propietario:</strong> quien creó el vehículo. Edita todo, gestiona quién tiene acceso y es el único que puede eliminar el vehículo. Hay un solo propietario por vehículo.</li>
+  <li><strong>Editor</strong> (en la app, <em>Puede editar</em>): edita todo el contenido del vehículo (kilómetros, mantenimientos, repostajes, ITV, seguro, fotos), pero no gestiona accesos ni puede eliminarlo.</li>
+  <li><strong>Lector</strong> (en la app, <em>Solo ver</em>): solo consulta, no puede modificar nada.</li>
+</ul>
+<p>El acceso se concede vehículo a vehículo, por invitación enviada por correo desde la ficha del vehículo. El correo sirve para hacerte llegar la invitación, no para identificarte: quien la acepta tiene que iniciar sesión, y el acceso queda ligado a esa cuenta, no a la dirección.</p>
+
 <h2>Eliminar la cuenta completa</h2>
 <ol>
   <li>Abre AAK MotorLog e inicia sesión con tu cuenta de Google. La opción de eliminar la cuenta solo aparece con la sesión iniciada.</li>
-  <li>Ve a la pestaña <strong>Perfil</strong> y, dentro del apartado <strong>Familia</strong>, pulsa <strong>Eliminar cuenta</strong>.</li>
+  <li>Ve a la pestaña <strong>Perfil</strong> y, dentro del apartado <strong>Cuenta</strong>, pulsa <strong>Eliminar cuenta</strong>.</li>
   <li>La app te explica exactamente qué se va a borrar y qué no. Para continuar tienes que escribir a mano la palabra <strong>ELIMINAR</strong>.</li>
-  <li>Al confirmar, por seguridad la app te pide volver a iniciar sesión con Google para verificar tu identidad en ese momento.</li>
-  <li>Se borran los datos del servidor, después los de este dispositivo, y se cierra la sesión. La operación es irreversible.</li>
+  <li>Al confirmar, por seguridad la app te pide volver a iniciar sesión con Google para verificar tu identidad en ese momento. Una verificación de hace más de 5 minutos no sirve.</li>
+  <li>Se borran los datos del servidor, después los de este dispositivo, y se cierran todas tus sesiones. La operación es irreversible.</li>
 </ol>
-<p>Si estás sin conexión o la verificación falla, la app te lo indica y tus datos permanecen intactos hasta que vuelvas a intentarlo.</p>
+<p>Si estás sin conexión o la verificación falla, la app te lo indica y tus datos permanecen intactos hasta que vuelvas a intentarlo: los datos locales solo se borran después de que el servidor confirme.</p>
 
 <h2>Eliminar solo parte de tus datos</h2>
 <p>Sin cerrar la cuenta, también puedes borrar:</p>
 <ul>
-  <li>Un vehículo y todo su historial: abre el vehículo y pulsa el icono de <strong>papelera</strong> de la barra superior.</li>
+  <li>Un vehículo y todo su historial: abre el vehículo y pulsa el icono de <strong>papelera</strong> de la barra superior. Solo aparece si eres el propietario.</li>
   <li>Un registro individual (mantenimiento, repostaje, ITV o seguro): ábrelo y pulsa el icono de <strong>papelera</strong> de la barra superior.</li>
   <li>La foto de una factura, conservando el registro: ábrelo, pulsa la <strong>✕</strong> sobre la foto y guarda.</li>
+  <li>El acceso de otra persona a un vehículo tuyo: abre el vehículo, entra en <strong>Compartir</strong> y pulsa <strong>Retirar acceso</strong> junto a su nombre. Deja de ver el vehículo de inmediato.</li>
+  <li>Tu propio acceso a un vehículo que te compartieron: pide a su propietario que te lo retire desde esa misma pantalla.</li>
   <li>Todos los datos guardados en este dispositivo, sin cerrar la cuenta: <strong>Perfil → Soporte y datos → Borrar todos los datos</strong>.</li>
-  <li>Tu pertenencia a una familia: en <strong>Perfil → Familia</strong>, usa <strong>Unirse a otra familia</strong> con el código de otra familia (al entrar en la nueva sales automáticamente de la anterior), o <strong>Cerrar sesión</strong> si solo quieres dejar de sincronizar en este dispositivo.</li>
+  <li>Dejar de sincronizar en este dispositivo, conservando la cuenta: <strong>Perfil → Cuenta → Cerrar sesión</strong>.</li>
 </ul>
 
 <h2>Qué se elimina y qué se conserva</h2>
 <table>
   <thead><tr><th>Datos</th><th>Al eliminar la cuenta</th></tr></thead>
   <tbody>
-    <tr><td>Perfil (nombre, correo, identificador de Google)</td><td>Se elimina del servidor de inmediato</td></tr>
-    <tr><td>Vehículos, registros de mantenimiento, repostajes, ITV y seguros</td><td>Se borran siempre de este dispositivo. En el servidor se borran si eras el único miembro de tu familia; si había más miembros, esos datos siguen siendo suyos y tú dejas de tener acceso</td></tr>
-    <tr><td>Fotos de facturas escaneadas</td><td>Se borran de este dispositivo. Las imágenes nunca se almacenan en nuestro servidor: se analizan para extraer los datos y no se guardan</td></tr>
-    <tr><td>Pertenencia a la familia y código de invitación</td><td>Tu pertenencia se elimina de inmediato. La familia y su código se eliminan si eras el único miembro</td></tr>
-    <tr><td>Sesión en este dispositivo</td><td>Se cierra e invalida de inmediato</td></tr>
-    <tr><td>Sesiones en otros dispositivos</td><td>Se quedan sin datos a los que acceder, porque la cuenta ya no existe. Aun así, te recomendamos cerrar sesión también en ellos</td></tr>
-    <tr><td>Historial de compras y suscripciones</td><td>Lo gestiona Google Play según su política</td></tr>
+    <tr><td>Tu cuenta y el identificador de tu inicio de sesión con Google</td><td>Se eliminan del servidor de inmediato, con borrado físico: no se marcan como borrados, se suprimen las filas</td></tr>
+    <tr><td>Vehículos a los que solo tú tienes acceso, con sus mantenimientos, repostajes, ITV y seguros</td><td>Se borran del servidor y de este dispositivo</td></tr>
+    <tr><td>Vehículos tuyos que has compartido con otras personas</td><td>Tu acceso desaparece. El vehículo y su historial siguen intactos para quienes lo compartiste, porque también son sus datos</td></tr>
+    <tr><td>Vehículos que otra persona compartió contigo</td><td>Tu acceso desaparece. Siguen intactos para su propietario</td></tr>
+    <tr><td>Fotos de vehículos y de facturas que hayas guardado</td><td>Se borran del almacenamiento del servidor junto con el vehículo al que pertenecen, y de este dispositivo. Las de un vehículo que siga existiendo para otras personas se conservan con él</td></tr>
+    <tr><td>Imágenes enviadas al escáner de facturas</td><td>No se almacenan: se analizan para extraer los datos y se descartan. Lo que se guarda es la foto que tú decides adjuntar al registro, y esa entra en la fila anterior</td></tr>
+    <tr><td>Invitaciones que hayas enviado y estén sin aceptar</td><td>Se anulan y dejan de poder aceptarse</td></tr>
+    <tr><td>Tu plan y tu nivel de suscripción en nuestro servidor</td><td>Se eliminan</td></tr>
+    <tr><td>Sesión en este dispositivo y en cualquier otro</td><td>Se cierran e invalidan todas de inmediato</td></tr>
+    <tr><td>Historial de compras y suscripciones</td><td>Lo gestiona Google Play según su política, no nosotros</td></tr>
   </tbody>
 </table>
+<p>Los datos se guardan en la Unión Europea: tanto la base de datos como el almacenamiento de fotos están creados con jurisdicción europea.</p>
 
 <h2>Ten en cuenta</h2>
 <ul>
   <li>Eliminar la cuenta no cancela una suscripción activa: hazlo desde Google Play → Suscripciones.</li>
-  <li>Si compartes familia con otras personas, sus vehículos y su historial siguen intactos para ellas: lo que ocurre es que tú dejas de tener acceso.</li>
+  <li>Si compartes vehículos con otras personas, su historial sigue intacto para ellas: lo que ocurre es que tú dejas de tener acceso.</li>
+  <li>Al eliminar un vehículo desde la app (no la cuenta entera), deja de estar disponible para ti y para todos sus participantes, y desaparece de los dispositivos al sincronizar. En el servidor queda marcado como eliminado el tiempo necesario para que esa eliminación llegue a los demás dispositivos.</li>
   <li>Si quieres conservar un histórico, abre cada vehículo y exporta su PDF antes de eliminar la cuenta.</li>
 </ul>
 
