@@ -757,6 +757,22 @@
             </div>
           </article>
         </div>
+
+        <script>
+          // El catálogo se baraja en cada carga; la tarjeta destacada es la que quede primera.
+          (() => {
+            const grid = document.querySelector('.apps-grid');
+            const cards = Array.from(grid.children);
+            for (let i = cards.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [cards[i], cards[j]] = [cards[j], cards[i]];
+            }
+            cards.forEach((card, index) => {
+              card.classList.toggle('featured', index === 0);
+              grid.appendChild(card);
+            });
+          })();
+        </script>
       </div>
     </section>
 
