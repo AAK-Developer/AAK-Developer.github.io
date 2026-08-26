@@ -1,11 +1,15 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.aak.motorlog",
       "sha256_cert_fingerprints": [
-        "18:6A:E0:6B:E1:12:68:F4:76:99:EA:85:0F:F0:F4:AC:DA:C3:E8:8A:6B:26:44:DE:92:23:69:BE:9E:AE:FF:6A"
+        "18:6A:E0:6B:E1:12:68:F4:76:99:EA:85:0F:F0:F4:AC:DA:C3:E8:8A:6B:26:44:DE:92:23:69:BE:9E:AE:FF:6A",
+        "0F:6D:14:6C:9E:75:21:9E:0C:DF:25:4B:E8:D1:F5:9D:5C:DF:AB:02:AF:B8:CA:5F:64:A3:F8:CD:A9:B1:54:C1",
+        "36:4D:6E:D5:E9:9C:AB:34:67:17:5B:44:FD:98:6B:98:CC:C3:7E:97:A2:24:62:F5:2F:93:09:B4:09:31:92:7F"
       ]
     }
   }
