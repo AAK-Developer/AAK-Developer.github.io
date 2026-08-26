@@ -105,14 +105,21 @@
     }
 
     .hero-logo {
-      width: 112px;
-      height: 112px;
-      border-radius: 26px;
+      width: 206px;
+      height: 206px;
+      border-radius: 46px;
       background: white;
-      padding: 11px;
+      padding: 20px;
       object-fit: contain;
-      margin: 0 0 24px;
+      margin: 0;
+      flex-shrink: 0;
       box-shadow: 0 22px 50px rgba(0,0,0,.35);
+    }
+
+    .hero-lockup {
+      display: flex;
+      align-items: center;
+      gap: 18px;
     }
 
     .nav-links {
@@ -173,14 +180,17 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(58px, 8.2vw, 112px);
-      line-height: .9;
-      letter-spacing: -.075em;
-      max-width: 860px;
+      font-size: 64px;
+      line-height: 1.05;
+      letter-spacing: -.02em;
     }
 
-    h1 span {
+    h1 .line {
       display: block;
+      white-space: nowrap;
+    }
+
+    h1 .grad {
       background: linear-gradient(100deg, #fff 8%, #8fb0ff 50%, #69e8ff 85%);
       -webkit-background-clip: text;
       background-clip: text;
@@ -545,6 +555,8 @@
       .hero-grid { grid-template-columns: 1fr; }
       .hero-stack { min-height: 430px; }
       .float-card { width: 210px; }
+      .hero-logo { width: 176px; height: 176px; border-radius: 40px; padding: 17px; }
+      h1 { font-size: 56px; }
       .app, .app.featured { grid-column: span 12; }
       .app-inner { grid-template-columns: 1fr; }
       .principles-grid { grid-template-columns: 1fr; }
@@ -555,7 +567,8 @@
       .container { width: min(100% - 24px, 1180px); }
       nav .nav-inner { height: 64px; }
       .hero { padding-top: 78px; }
-      h1 { font-size: 58px; }
+      h1 { font-size: clamp(28px, calc(20.5vw - 35px), 42px); }
+      .hero-lockup { gap: 12px; }
       .hero-stack { min-height: 360px; margin-top: 10px; }
       .float-card { width: 155px; padding: 10px; border-radius: 20px; }
       .float-card img { border-radius: 16px; }
@@ -567,7 +580,7 @@
       .app-inner { padding: 25px; }
       .app-art img { width: min(240px, 84%); }
       .metrics { gap: 20px; }
-      .hero-logo { width: 88px; height: 88px; border-radius: 22px; padding: 9px; margin-bottom: 18px; }
+      .hero-logo { width: 133px; height: 133px; border-radius: 30px; padding: 13px; margin: 0; }
       /* La lista de tecnologías es larga: en móvil las dos partes se apilan en
          lugar de competir por el mismo renglón. Mismos colores, tipografía y
          separadores; sólo cambia la dirección del flex. */
@@ -594,7 +607,7 @@
       <div class="nav-links">
         <a href="#apps">Aplicaciones</a>
         <a href="#filosofia">Filosofía</a>
-        <a class="contact-btn" href="mailto:enric@aakdeveloper.com">Contacto</a>
+        <a class="contact-btn" href="mailto:info@aakdeveloper.com">Contacto</a>
       </div>
     </div>
   </nav>
@@ -603,16 +616,17 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <img class="hero-logo" src="assets/aak-developer-logo.png" alt="Logo oficial de AAK Developer" width="1254" height="1254">
-          <div class="badge">Aplicaciones independientes, desde España</div>
-          <h1>Apps que <span>sirven de verdad.</span></h1>
+          <div class="hero-lockup">
+            <img class="hero-logo" src="assets/aak-developer-logo.png" alt="Logo oficial de AAK Developer" width="1254" height="1254">
+            <h1><span class="line">Apps que</span><span class="line">sirven</span><span class="line grad">de verdad</span></h1>
+          </div>
           <p class="hero-copy">
             En AAK Developer creamos aplicaciones claras, privadas y cuidadas para resolver problemas cotidianos sin añadir más ruido.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#apps">Explorar aplicaciones ↓</a>
-            <a class="btn btn-secondary" href="mailto:enric@aakdeveloper.com">Contactar</a>
+            <a class="btn btn-secondary" href="mailto:info@aakdeveloper.com">Contactar</a>
           </div>
 
           <div class="metrics">
@@ -861,7 +875,7 @@
         <div class="cta-card reveal">
           <h2>¿Tienes una idea o quieres hablar sobre una aplicación?</h2>
           <p>En AAK Developer desarrollamos aplicaciones desde España, cuidando cada producto desde la idea hasta su evolución.</p>
-          <a class="btn btn-primary" href="mailto:enric@aakdeveloper.com">enric@aakdeveloper.com</a>
+          <a class="btn btn-primary" href="mailto:info@aakdeveloper.com">info@aakdeveloper.com</a>
         </div>
       </div>
     </section>
@@ -869,7 +883,7 @@
 
   <footer>
     <div class="container footer-inner">
-      <span>© 2026 Enrique Moron</span>
+      <span>© 2026 AAK Developer</span>
       <span>iOS · Android · Web Apps · Swift · SwiftUI · Kotlin · React · España</span>
     </div>
   </footer>
