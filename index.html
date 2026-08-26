@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AAK Developer crea aplicaciones útiles, privadas y cuidadas para iPhone y Apple Watch.">
+  <meta name="description" content="En AAK Developer creamos aplicaciones útiles, privadas y cuidadas para iOS, Android y web.">
   <meta name="theme-color" content="#070B14">
   <title>AAK Developer — Apps para la vida real</title>
 
@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <meta property="og:title" content="AAK Developer — Apps para la vida real">
-  <meta property="og:description" content="AAK Developer crea aplicaciones útiles, privadas y cuidadas para iPhone y Apple Watch.">
+  <meta property="og:description" content="En AAK Developer creamos aplicaciones útiles, privadas y cuidadas para iOS, Android y web.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/assets/apple-touch-icon.png">
   <style>
@@ -529,6 +529,8 @@
       font-size: 13px;
     }
 
+    .footer-inner span { min-width: 0; overflow-wrap: anywhere; }
+
     .reveal {
       opacity: 0;
       transform: translateY(24px);
@@ -566,6 +568,10 @@
       .app-art img { width: min(240px, 84%); }
       .metrics { gap: 20px; }
       .hero-logo { width: 88px; height: 88px; border-radius: 22px; padding: 9px; margin-bottom: 18px; }
+      /* La lista de tecnologías es larga: en móvil las dos partes se apilan en
+         lugar de competir por el mismo renglón. Mismos colores, tipografía y
+         separadores; sólo cambia la dirección del flex. */
+      .footer-inner { flex-direction: column; gap: 10px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -598,15 +604,15 @@
       <div class="container hero-grid">
         <div>
           <img class="hero-logo" src="assets/aak-developer-logo.png" alt="Logo oficial de AAK Developer" width="1254" height="1254">
-          <div class="badge">Desarrollo independiente desde España</div>
+          <div class="badge">Aplicaciones independientes, desde España</div>
           <h1>Apps que <span>sirven de verdad.</span></h1>
           <p class="hero-copy">
-            AAK Developer crea aplicaciones claras, privadas y cuidadas para resolver problemas cotidianos sin añadir más ruido.
+            En AAK Developer creamos aplicaciones claras, privadas y cuidadas para resolver problemas cotidianos sin añadir más ruido.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#apps">Explorar aplicaciones ↓</a>
-            <a class="btn btn-secondary" href="mailto:enric@aakdeveloper.com">Hablar conmigo</a>
+            <a class="btn btn-secondary" href="mailto:enric@aakdeveloper.com">Contactar</a>
           </div>
 
           <div class="metrics">
@@ -824,7 +830,7 @@
 
     <section id="filosofia">
       <div class="container">
-        <div class="section-kicker">Cómo trabajo</div>
+        <div class="section-kicker">Cómo trabajamos</div>
         <h2 class="section-title">Menos ruido. Más utilidad.</h2>
         <p class="section-intro">
           Productos claros, con diseño cuidado y una relación honesta con los datos del usuario.
@@ -853,8 +859,8 @@
     <section class="cta">
       <div class="container">
         <div class="cta-card reveal">
-          <h2>¿Tienes una idea o quieres hablar de una app?</h2>
-          <p>AAK Developer es un proyecto independiente construido desde España, aplicación a aplicación.</p>
+          <h2>¿Tienes una idea o quieres hablar sobre una aplicación?</h2>
+          <p>En AAK Developer desarrollamos aplicaciones desde España, cuidando cada producto desde la idea hasta su evolución.</p>
           <a class="btn btn-primary" href="mailto:enric@aakdeveloper.com">enric@aakdeveloper.com</a>
         </div>
       </div>
@@ -863,8 +869,8 @@
 
   <footer>
     <div class="container footer-inner">
-      <span>© 2026 Enrique Morón Campos — AAK Developer</span>
-      <span>iOS · Swift · SwiftUI · España</span>
+      <span>© 2026 Enrique Moron</span>
+      <span>iOS · Android · Web Apps · Swift · SwiftUI · Kotlin · React · España</span>
     </div>
   </footer>
 
