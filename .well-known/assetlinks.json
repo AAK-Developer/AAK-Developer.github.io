@@ -12,5 +12,17 @@
         "36:4D:6E:D5:E9:9C:AB:34:67:17:5B:44:FD:98:6B:98:CC:C3:7E:97:A2:24:62:F5:2F:93:09:B4:09:31:92:7F"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.aak.pills",
+      "sha256_cert_fingerprints": [
+        "15:C3:70:BC:EC:B7:F1:AC:A1:E0:98:9F:77:EE:EC:F3:C7:B7:A0:CF:86:6C:E2:6B:73:9A:CA:CB:8E:BC:79:B9"
+      ]
+    }
   }
 ]

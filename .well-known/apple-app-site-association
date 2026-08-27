@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["958W3LJN84.com.aak.pills"],
+        "components": [
+          { "/": "/aakpills/invite*" },
+          { "/": "/aakpills/auth-complete*" }
+        ]
+      }
+    ]
+  }
+}
