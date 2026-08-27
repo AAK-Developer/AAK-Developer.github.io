@@ -66,11 +66,24 @@
     return a;
   }
 
+  // Detección de plataforma SOLO para decidir qué ofrecer aquí (nunca
+  // para nada que dependa de seguridad): iOS/otros ven el enlace real de
+  // App Store; Android, que TODAVÍA no está publicada en Play (solo
+  // prueba interna), vería un enlace muerto (play.google.com/.../
+  // details?id=com.aak.pills da 404 hoy) — mejor un mensaje honesto que
+  // un botón que no lleva a ningún sitio. Actualizar en cuanto Android
+  // se publique de verdad en Play.
+  var esAndroid = /Android/i.test(navigator.userAgent || '');
+
   if (ruta.indexOf('/aakpills/invite/') === 0) {
     titulo.textContent = 'Invitación de AAK Pills';
-    texto.textContent = 'Este enlace es una invitación para compartir el cuidado de un familiar en AAK Pills. Si ya tienes la app instalada en este mismo dispositivo, vuelve a abrir el enlace desde el correo o mensaje original (no copiado a mano) — debería abrirse directamente en la app. Si no la tienes instalada todavía:';
-    acciones.appendChild(botonAppStore());
-    pista.textContent = 'Tras instalarla, abre de nuevo este mismo enlace de invitación.';
+    if (esAndroid) {
+      texto.textContent = 'Este enlace es una invitación para compartir el cuidado de un familiar en AAK Pills. La versión de Android está en camino y todavía no está publicada en Google Play — en cuanto lo esté, vuelve a abrir este mismo enlace desde el correo o mensaje original y se abrirá directamente en la app.';
+    } else {
+      texto.textContent = 'Este enlace es una invitación para compartir el cuidado de un familiar en AAK Pills. Si ya tienes la app instalada en este mismo dispositivo, vuelve a abrir el enlace desde el correo o mensaje original (no copiado a mano) — debería abrirse directamente en la app. Si no la tienes instalada todavía:';
+      acciones.appendChild(botonAppStore());
+      pista.textContent = 'Tras instalarla, abre de nuevo este mismo enlace de invitación.';
+    }
   } else if (ruta.indexOf('/aakpills/auth-complete') === 0) {
     titulo.textContent = 'Volviendo a AAK Pills…';
     texto.textContent = 'Esto es un paso intermedio de "Continuar con Apple". Si la app no se ha abierto sola, vuelve a ella manualmente — el inicio de sesión ya debería haberse completado.';
