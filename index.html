@@ -265,6 +265,26 @@
     }
     .float-card small { color: var(--muted); }
 
+    /* Solo la tarjeta promocionada temporalmente (ver FM_SANTA26_PROMO_ACTIVE) recibe este
+       enlace real; las otras dos siguen siendo el mismo div decorativo de siempre. */
+    .float-card-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 6px;
+    }
+    .float-card-link:focus-visible {
+      outline: 3px solid var(--cyan);
+      outline-offset: 4px;
+    }
+    .float-card-compat {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      letter-spacing: .02em;
+      color: rgba(174,184,207,.75);
+    }
+
     .card-1 { left: 12px; top: 82px; transform: rotate(-8deg); }
     .card-2 { right: 0; top: 6px; transform: rotate(7deg); animation-delay: -2s; }
     .card-3 { right: 55px; bottom: 10px; transform: rotate(-2deg); animation-delay: -4s; }
@@ -551,6 +571,141 @@
       transform: translateY(0);
     }
 
+    /* Promoción temporal de AAK FM Santa26 (Festa Major 2026). Vive entre el hero y el
+       catálogo, con su propio gradiente festivo para leerse claramente como algo especial
+       y de duración limitada, no como una app más del catálogo. */
+    .fm-promo { padding: 34px 0 6px; }
+
+    .fm-promo-card {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 26px;
+      border-radius: var(--radius-xl);
+      padding: 34px 38px;
+      background: linear-gradient(135deg, #201441 0%, #6b4cf6 44%, #ff6c4a 100%);
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: var(--shadow);
+    }
+
+    .fm-promo-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(40px);
+      pointer-events: none;
+    }
+    .fm-promo-blob-a { width: 220px; height: 220px; right: -60px; top: -80px; background: rgba(255,200,90,.35); }
+    .fm-promo-blob-b { width: 180px; height: 180px; left: -50px; bottom: -70px; background: rgba(100,217,255,.25); }
+
+    .fm-promo-confetti {
+      position: absolute;
+      top: 16px;
+      right: 26px;
+      letter-spacing: 6px;
+      font-size: 13px;
+      color: rgba(255,255,255,.55);
+    }
+
+    .fm-promo-icon {
+      position: relative;
+      width: 96px;
+      height: 96px;
+      border-radius: 24px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 16px 34px rgba(0,0,0,.4);
+    }
+
+    .fm-promo-body { position: relative; flex: 1 1 320px; min-width: 0; }
+
+    .fm-promo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.3);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: 11px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .fm-promo-badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ffc85a;
+      box-shadow: 0 0 12px #ffc85a;
+    }
+
+    .fm-promo-title {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 32px);
+      letter-spacing: -.02em;
+      color: white;
+    }
+
+    .fm-promo-text {
+      margin: 8px 0 0;
+      color: rgba(255,255,255,.94);
+      font-size: 16px;
+      line-height: 1.5;
+      max-width: 46ch;
+    }
+
+    .fm-promo-sub {
+      margin: 6px 0 0;
+      color: rgba(255,255,255,.72);
+      font-size: 13px;
+    }
+
+    .fm-promo-compat {
+      margin: 4px 0 0;
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
+    }
+
+    .fm-promo-action {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .fm-promo-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      border-radius: 15px;
+      padding: 14px 22px;
+      font-weight: 900;
+      background: white;
+      color: #4a2f9e;
+      white-space: nowrap;
+      transition: transform .2s ease;
+    }
+    .fm-promo-cta:hover { transform: translateY(-2px); }
+    .fm-promo-cta:focus-visible {
+      outline: 3px solid #ffc85a;
+      outline-offset: 3px;
+    }
+
+    .fm-promo-footnote {
+      color: rgba(255,255,255,.68);
+      font-size: 12px;
+    }
+
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; }
       .hero-stack { min-height: 430px; }
@@ -561,6 +716,8 @@
       .app-inner { grid-template-columns: 1fr; }
       .principles-grid { grid-template-columns: 1fr; }
       .nav-links a:not(.contact-btn) { display: none; }
+      .fm-promo-card { padding: 26px; gap: 18px; }
+      .fm-promo-icon { width: 76px; height: 76px; border-radius: 20px; }
     }
 
     @media (max-width: 600px) {
@@ -585,6 +742,14 @@
          lugar de competir por el mismo renglón. Mismos colores, tipografía y
          separadores; sólo cambia la dirección del flex. */
       .footer-inner { flex-direction: column; gap: 10px; }
+      .fm-promo { padding: 22px 0 4px; }
+      .fm-promo-card { padding: 20px 18px; border-radius: 26px; gap: 14px; }
+      .fm-promo-icon { width: 60px; height: 60px; border-radius: 16px; }
+      .fm-promo-title { font-size: 21px; }
+      .fm-promo-text { font-size: 14px; }
+      .fm-promo-confetti { display: none; }
+      .fm-promo-action { width: 100%; }
+      .fm-promo-cta { width: 100%; justify-content: center; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -636,48 +801,87 @@
           </div>
         </div>
 
-        <div class="hero-stack" aria-hidden="true">
-          <div class="float-card card-1">
-            <img src="assets/aakpills.png" alt="">
-            <strong>AAK Pills</strong>
-            <small>Cuidado familiar</small>
-          </div>
-          <div class="float-card card-2">
-            <img src="assets/motorlog.png" alt="">
-            <strong>AAK MotorLog</strong>
-            <small>Tu garaje, ordenado</small>
-          </div>
-          <div class="float-card card-3">
-            <img src="assets/aakradio.png" alt="">
-            <strong>AAK Radio</strong>
-            <small>Radio sin fronteras</small>
-          </div>
+        <div class="hero-stack">
+          <div class="float-card card-1"></div>
+          <div class="float-card card-2"></div>
+          <div class="float-card card-3"></div>
         </div>
 
         <script>
           // Las tres tarjetas flotantes muestran tres apps al azar en cada carga.
+          //
+          // PROMOCIÓN TEMPORAL — Festa Major 2026: mientras FM_SANTA26_PROMO_ACTIVE
+          // sea true, la primera tarjeta (card-1) es siempre AAK FM Santa26 y las
+          // otras dos se sortean entre el resto del catálogo (sin poder repetirla).
+          // Para retirar la promoción después del 6 de septiembre, basta con poner
+          // esta constante a false: el carrusel vuelve a sortear las 3 entre las 7
+          // apps de siempre, sin tocar nada más.
+          const FM_SANTA26_PROMO_ACTIVE = true;
+          const FM_SANTA26_CARD = {
+            icon: 'assets/aak-fm-santa26-icon.png',
+            name: 'AAK FM Santa26',
+            tag: 'Festa Major 2026',
+            compat: 'iOS · Android',
+            href: 'https://fmsanta26.aakdeveloper.com',
+          };
+
           (() => {
             const apps = [
-              { icon: 'assets/motorlog.png', name: 'AAK MotorLog', tag: 'Tu garaje, ordenado' },
-              { icon: 'assets/aakpills.png', name: 'AAK Pills', tag: 'Cuidado familiar' },
-              { icon: 'assets/aakfoodscan.png', name: 'AAK FoodScan', tag: 'Escanea y entiende' },
-              { icon: 'assets/aakradio.png', name: 'AAK Radio', tag: 'Radio sin fronteras' },
-              { icon: 'assets/twoclicks.png', name: 'TwoClicks', tag: 'Recordatorios al vuelo' },
-              { icon: 'assets/aaktextaudio.png', name: 'AAK TextAudio', tag: 'Texto y voz' },
-              { icon: 'assets/aakprevia.png', name: 'AAK Previa', tag: 'Juegos para el grupo' },
+              { icon: 'assets/motorlog.png', name: 'AAK MotorLog', tag: 'Tu garaje, ordenado', compat: 'iOS · Android próximamente' },
+              { icon: 'assets/aakpills.png', name: 'AAK Pills', tag: 'Cuidado familiar', compat: 'iOS' },
+              { icon: 'assets/aakfoodscan.png', name: 'AAK FoodScan', tag: 'Escanea y entiende', compat: 'iOS' },
+              { icon: 'assets/aakradio.png', name: 'AAK Radio', tag: 'Radio sin fronteras', compat: 'iOS' },
+              { icon: 'assets/twoclicks.png', name: 'TwoClicks', tag: 'Recordatorios al vuelo', compat: 'iOS' },
+              { icon: 'assets/aaktextaudio.png', name: 'AAK TextAudio', tag: 'Texto y voz', compat: 'iOS' },
+              { icon: 'assets/aakprevia.png', name: 'AAK Previa', tag: 'Juegos para el grupo', compat: 'iOS' },
             ];
             for (let i = apps.length - 1; i > 0; i--) {
               const j = Math.floor(Math.random() * (i + 1));
               [apps[i], apps[j]] = [apps[j], apps[i]];
             }
-            document.querySelectorAll('.hero-stack .float-card').forEach((card, index) => {
-              const app = apps[index];
-              card.querySelector('img').src = app.icon;
-              card.querySelector('strong').textContent = app.name;
-              card.querySelector('small').textContent = app.tag;
+            const cards = [...document.querySelectorAll('.hero-stack .float-card')];
+            const slots = FM_SANTA26_PROMO_ACTIVE
+              ? [FM_SANTA26_CARD, ...apps.slice(0, cards.length - 1)]
+              : apps.slice(0, cards.length);
+
+            cards.forEach((card, index) => {
+              const app = slots[index];
+              const compat = app.compat ? `<span class="float-card-compat">${app.compat}</span>` : '';
+              const inner = `<img src="${app.icon}" alt=""><strong>${app.name}</strong><small>${app.tag}</small>${compat}`;
+              if (app.href) {
+                // Única tarjeta interactiva del carrusel: enlace real, accesible por teclado.
+                card.removeAttribute('aria-hidden');
+                card.innerHTML = `<a class="float-card-link" href="${app.href}" target="_blank" rel="noopener noreferrer" aria-label="${app.name} — ${app.tag}">${inner}</a>`;
+              } else {
+                // Resto de tarjetas: mismo comportamiento decorativo de siempre, sin enlace.
+                card.setAttribute('aria-hidden', 'true');
+                card.innerHTML = inner;
+              }
             });
           })();
         </script>
+      </div>
+    </section>
+
+    <section class="fm-promo">
+      <div class="container">
+        <div class="fm-promo-card">
+          <div class="fm-promo-blob fm-promo-blob-a" aria-hidden="true"></div>
+          <div class="fm-promo-blob fm-promo-blob-b" aria-hidden="true"></div>
+          <span class="fm-promo-confetti" aria-hidden="true">✦ • ✺ • ✦</span>
+          <img class="fm-promo-icon" src="assets/aak-fm-santa26-icon.png" alt="Icono oficial de AAK FM Santa26" width="240" height="240" loading="lazy">
+          <div class="fm-promo-body">
+            <span class="fm-promo-badge">Especial Festa Major 2026</span>
+            <h2 class="fm-promo-title">AAK FM Santa26</h2>
+            <p class="fm-promo-text">La Festa Major de Santa Perpètua, més fàcil que mai.</p>
+            <p class="fm-promo-sub">Programa complet · Avisos · Mapa · Favorits</p>
+            <p class="fm-promo-compat">iOS · Android</p>
+          </div>
+          <div class="fm-promo-action">
+            <a class="fm-promo-cta" href="https://fmsanta26.aakdeveloper.com" target="_blank" rel="noopener noreferrer">Accedeix gratis ↗</a>
+            <span class="fm-promo-footnote">Servei gratuït creat per AAK Developer</span>
+          </div>
+        </div>
       </div>
     </section>
 
