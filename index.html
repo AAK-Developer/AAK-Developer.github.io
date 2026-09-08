@@ -795,7 +795,7 @@
           </div>
 
           <div class="metrics">
-            <div><b>7</b>aplicaciones</div>
+            <div><b>8</b>aplicaciones</div>
             <div><b>iOS</b>nativo</div>
             <div><b>Privacidad</b>desde el diseño</div>
           </div>
@@ -816,7 +816,7 @@
           // Para retirar la promoción después del 6 de septiembre, basta con poner
           // esta constante a false: el carrusel vuelve a sortear las 3 entre las 7
           // apps de siempre, sin tocar nada más.
-          const FM_SANTA26_PROMO_ACTIVE = true;
+          const FM_SANTA26_PROMO_ACTIVE = false;
           const FM_SANTA26_CARD = {
             icon: 'assets/aak-fm-santa26-icon.png',
             name: 'AAK FM Santa26',
@@ -863,32 +863,10 @@
       </div>
     </section>
 
-    <section class="fm-promo">
-      <div class="container">
-        <div class="fm-promo-card">
-          <div class="fm-promo-blob fm-promo-blob-a" aria-hidden="true"></div>
-          <div class="fm-promo-blob fm-promo-blob-b" aria-hidden="true"></div>
-          <span class="fm-promo-confetti" aria-hidden="true">✦ • ✺ • ✦</span>
-          <img class="fm-promo-icon" src="assets/aak-fm-santa26-icon.png" alt="Icono oficial de AAK FM Santa26" width="240" height="240" loading="lazy">
-          <div class="fm-promo-body">
-            <span class="fm-promo-badge">Especial Festa Major 2026</span>
-            <h2 class="fm-promo-title">AAK FM Santa26</h2>
-            <p class="fm-promo-text">La Festa Major de Santa Perpètua, més fàcil que mai.</p>
-            <p class="fm-promo-sub">Programa complet · Avisos · Mapa · Favorits</p>
-            <p class="fm-promo-compat">iOS · Android</p>
-          </div>
-          <div class="fm-promo-action">
-            <a class="fm-promo-cta" href="https://fmsanta26.aakdeveloper.com" target="_blank" rel="noopener noreferrer">Accedeix gratis ↗</a>
-            <span class="fm-promo-footnote">Servei gratuït creat per AAK Developer</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="apps">
       <div class="container">
         <div class="section-kicker">El catálogo</div>
-        <h2 class="section-title">Siete ideas. Una misma obsesión por hacerlo fácil.</h2>
+        <h2 class="section-title">Ocho ideas. Una misma obsesión por hacerlo fácil.</h2>
         <p class="section-intro">
           Cada aplicación parte de una necesidad concreta y se diseña para ser útil desde el primer minuto.
         </p>
@@ -1026,13 +1004,31 @@
               </div>
             </div>
           </article>
+
+          <article class="app reveal" data-pinned="end">
+            <div class="app-inner">
+              <div class="app-copy">
+                <span class="app-label">Disponible como WebApp</span>
+                <h3>AAK FM Santa26</h3>
+                <p>La Festa Major de Santa Perpètua, més fàcil que mai: programa complet, avisos, mapa i favorits.</p>
+                <div class="app-actions">
+                  <a class="mini-link primary" href="https://fmsanta26.aakdeveloper.com" target="_blank" rel="noopener noreferrer">Abrir WebApp</a>
+                </div>
+              </div>
+              <div class="app-art">
+                <img src="assets/aak-fm-santa26-icon.png" alt="Icono de AAK FM Santa26">
+              </div>
+            </div>
+          </article>
         </div>
 
         <script>
           // El catálogo se baraja en cada carga; la tarjeta destacada es la que quede primera.
           (() => {
             const grid = document.querySelector('.apps-grid');
-            const cards = Array.from(grid.children);
+            // AAK FM Santa26 queda fija al final, fuera del sorteo y sin recibir "featured".
+            const pinned = grid.querySelector('.app[data-pinned="end"]');
+            const cards = Array.from(grid.children).filter((card) => card !== pinned);
             for (let i = cards.length - 1; i > 0; i--) {
               const j = Math.floor(Math.random() * (i + 1));
               [cards[i], cards[j]] = [cards[j], cards[i]];
@@ -1041,6 +1037,7 @@
               card.classList.toggle('featured', index === 0);
               grid.appendChild(card);
             });
+            if (pinned) grid.appendChild(pinned);
           })();
         </script>
       </div>
