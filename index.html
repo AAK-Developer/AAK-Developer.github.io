@@ -98,6 +98,7 @@
     .brand-group { display: flex; align-items: center; gap: 10px; min-width: 0; }
     .social-links-head { flex-wrap: nowrap; gap: 0; }
     .social-link-head { width: 36px; height: 36px; border-radius: 10px; }
+    .social-label-head { display: none; }
 
     .brand-mark {
       width: 38px;
@@ -743,7 +744,14 @@
     @media (max-width: 600px) {
       .container { width: min(100% - 24px, 1180px); }
       nav .nav-inner { height: 64px; }
-      .social-links-head { display: none; }
+      /* En móvil "Contacto" del header es redundante (el hero ya tiene "Contactar"): su sitio lo
+         ocupan las redes. Las demás entradas de .nav-links ya están ocultas en este ancho. */
+      .nav-links { display: none; }
+      .brand-group { flex: 1; }
+      .brand { flex-shrink: 0; white-space: nowrap; }
+      .social-links-head { margin-left: auto; align-items: center; flex-wrap: nowrap; gap: 0; }
+      .social-label-head { display: inline; font-size: 12px; color: var(--muted); margin-right: 2px; }
+      .social-link-head { width: 30px; height: 30px; border-radius: 8px; }
       .hero { padding-top: 78px; }
       h1 { font-size: clamp(28px, calc(20.5vw - 35px), 42px); }
       .hero-lockup { gap: 12px; }
@@ -773,6 +781,12 @@
       .fm-promo-cta { width: 100%; justify-content: center; }
     }
 
+    /* Medido: la palabra "Síguenos" + 4 iconos solo caben en una fila desde ~371px. Por debajo de
+       374px se oculta únicamente la palabra; los 4 iconos siguen visibles. */
+    @media (max-width: 373px) {
+      .social-label-head { display: none; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       * { scroll-behavior: auto !important; }
       .float-card { animation: none; }
@@ -791,6 +805,7 @@
           <span>AAK Developer</span>
         </a>
         <div class="social-links social-links-head" role="group" aria-label="Redes sociales de AAK Developer">
+          <span class="social-label-head" aria-hidden="true">Síguenos</span>
           <a class="social-link social-link-head" href="https://www.facebook.com/aakdeveloper" target="_blank" rel="noopener noreferrer" aria-label="AAK Developer en Facebook" title="Facebook">
             <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="#0866FF" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
           </a>
