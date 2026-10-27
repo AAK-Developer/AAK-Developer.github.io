@@ -488,6 +488,16 @@
         radial-gradient(circle at 92% 10%, rgba(20,184,166,.42), transparent 34%),
         linear-gradient(160deg, rgba(20,184,166,.14), rgba(255,255,255,.035));
     }
+    .legacy {
+      background:
+        radial-gradient(circle at 92% 10%, rgba(123,249,152,.34), transparent 34%),
+        linear-gradient(160deg, rgba(37,158,253,.16), rgba(255,255,255,.035));
+    }
+    .routesradars {
+      background:
+        radial-gradient(circle at 92% 10%, rgba(30,110,232,.42), transparent 34%),
+        linear-gradient(160deg, rgba(30,110,232,.14), rgba(255,255,255,.035));
+    }
     .fm-santa26 {
       background:
         radial-gradient(circle at 92% 10%, rgba(181,27,145,.36), transparent 34%),
@@ -847,7 +857,7 @@
           </div>
 
           <div class="metrics">
-            <div><b>8</b>aplicaciones</div>
+            <div><b>10</b>aplicaciones</div>
             <div><b>iOS</b>nativo</div>
             <div><b>WebApp</b></div>
             <div><b>Privacidad</b>desde el diseño</div>
@@ -867,7 +877,7 @@
           // sea true, la primera tarjeta (card-1) es siempre AAK FM Santa26 y las
           // otras dos se sortean entre el resto del catálogo (sin poder repetirla).
           // Para retirar la promoción después del 6 de septiembre, basta con poner
-          // esta constante a false: el carrusel vuelve a sortear las 3 entre las 7
+          // esta constante a false: el carrusel vuelve a sortear las 3 entre las 9
           // apps de siempre, sin tocar nada más.
           const FM_SANTA26_PROMO_ACTIVE = false;
           const FM_SANTA26_CARD = {
@@ -887,6 +897,8 @@
               { icon: 'assets/twoclicks.png', name: 'TwoClicks', tag: 'Recordatorios al vuelo', compat: 'iOS' },
               { icon: 'assets/aaktextaudio.png', name: 'AAK TextAudio', tag: 'Texto y voz', compat: 'iOS' },
               { icon: 'assets/aakprevia.png', name: 'AAK Previa', tag: 'Juegos para el grupo', compat: 'iOS' },
+              { icon: 'assets/aaklegacy.png', name: 'AAK Legacy', tag: 'Legado digital', compat: 'Próximamente en App Store' },
+              { icon: 'assets/aakroutesradars.png', name: 'AAK Routes &amp; Radars', tag: 'Rutas y radares', compat: 'Próximamente en App Store' },
             ];
             for (let i = apps.length - 1; i > 0; i--) {
               const j = Math.floor(Math.random() * (i + 1));
@@ -919,7 +931,7 @@
     <section id="apps">
       <div class="container">
         <div class="section-kicker">El catálogo</div>
-        <h2 class="section-title">Ocho ideas. Una misma obsesión por hacerlo fácil.</h2>
+        <h2 class="section-title">Diez ideas. Una misma obsesión por hacerlo fácil.</h2>
         <p class="section-intro">
           Cada aplicación parte de una necesidad concreta y se diseña para ser útil desde el primer minuto.
         </p>
@@ -1058,6 +1070,39 @@
             </div>
           </article>
 
+          <article class="app legacy reveal" data-no-featured>
+            <div class="app-inner">
+              <div class="app-copy">
+                <span class="app-label">Próximamente en App Store</span>
+                <h3>AAK Legacy</h3>
+                <p>Organiza y transmite tu legado digital a quien tú decidas, con control sobre qué se comparte y cuándo.</p>
+                <div class="app-actions">
+                  <a class="mini-link primary" href="https://aaklegacy.com" target="_blank" rel="noopener noreferrer">Ver web de AAK Legacy</a>
+                  <a class="mini-link" href="/aaklegacy/">Detalles</a>
+                </div>
+              </div>
+              <div class="app-art">
+                <img src="assets/aaklegacy.png" alt="Icono de AAK Legacy">
+              </div>
+            </div>
+          </article>
+
+          <article class="app routesradars reveal" data-no-featured>
+            <div class="app-inner">
+              <div class="app-copy">
+                <span class="app-label">Próximamente en App Store</span>
+                <h3>AAK Routes &amp; Radars</h3>
+                <p>Avisos de radares y rutas para moto y coche en España.</p>
+                <div class="app-actions">
+                  <a class="mini-link" href="/aakroutesradars/">Detalles</a>
+                </div>
+              </div>
+              <div class="app-art">
+                <img src="assets/aakroutesradars.png" alt="Icono de AAK Routes &amp; Radars">
+              </div>
+            </div>
+          </article>
+
           <article class="app fm-santa26 reveal" data-pinned="end">
             <div class="app-inner">
               <div class="app-copy">
@@ -1086,8 +1131,12 @@
               const j = Math.floor(Math.random() * (i + 1));
               [cards[i], cards[j]] = [cards[j], cards[i]];
             }
-            cards.forEach((card, index) => {
-              card.classList.toggle('featured', index === 0);
+            // Las apps aún sin publicar llevan data-no-featured: barajan igual pero no pueden
+            // ser la destacada. Al publicar una app, basta con quitarle ese atributo.
+            // Si todas lo llevan, no hay destacada y la rejilla queda en media anchura.
+            const featuredCard = cards.find((card) => !card.hasAttribute('data-no-featured'));
+            cards.forEach((card) => {
+              card.classList.toggle('featured', card === featuredCard);
               grid.appendChild(card);
             });
             if (pinned) grid.appendChild(pinned);
