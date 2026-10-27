@@ -135,7 +135,8 @@
 <p><strong>Tu correo electrónico no es la clave con la que se organizan tus datos.</strong> Se utiliza para identificarte frente al proveedor y, en su caso, para reconocerte, pero el identificador interno es independiente de él. El servicio te devuelve además un <strong>token de sesión propio</strong> —no el token del proveedor— que la App guarda de forma cifrada en tu dispositivo para no pedirte que inicies sesión cada vez.</p>
 
 <h2>8. Invitar a un familiar</h2>
-<p>En Android, la única forma de vincular el móvil de un familiar es <strong>«Invitar por email»</strong>. No hay códigos que dictar por teléfono, ni códigos QR, ni enlaces que copiar y pegar: cuantas menos opciones, menos posibilidades de que una persona mayor acabe tocando algo equivocado.</p>
+<p>En Android, la vinculación del móvil de un familiar se hace siempre desde <strong>«Invitar por email»</strong>. El correo lleva dos cosas: un <strong>enlace</strong>, que es la vía normal —se toca una vez y la app se vincula sola—, y un <strong>código de diez dígitos</strong> por si ese enlace no funciona.</p>
+<p>El código existe porque algunos servicios de correo <strong>reescriben los enlaces</strong> de los mensajes que entregan, y cuando eso ocurre el enlace deja de abrir la app. En ese caso tu familiar puede instalar AAK Pills a mano y escribir el código. No hay códigos QR ni ninguna otra vía: dos caminos para lo mismo, y el segundo solo para cuando el primero falla.</p>
 <p>El proceso, cuando utilizas esta función, es:</p>
 <ol>
   <li>El cuidador escribe el <strong>correo electrónico</strong> de la persona a la que quiere invitar.</li>
@@ -152,15 +153,16 @@
   <li>Una vez enviado, el mensaje puede quedar en la carpeta de enviados del cuidador y ser tratado por su proveedor de correo y por el del destinatario conforme a sus propias políticas.</li>
 </ul>
 
-<h3>8.1 El enlace de invitación</h3>
-<p>La invitación viaja como un <strong>enlace seguro y temporal</strong>. Ese enlace:</p>
+<h3>8.1 El enlace y el código de invitación</h3>
+<p>La invitación viaja como un <strong>enlace seguro y temporal</strong>, acompañado de un <strong>código de diez dígitos</strong> que pertenece a esa misma invitación. Tanto el enlace como el código:</p>
 <ul>
   <li>es <strong>único</strong> para esa invitación concreta;</li>
   <li><strong>puede caducar</strong> pasado un tiempo;</li>
   <li><strong>puede revocarse</strong> por el cuidador en cualquier momento;</li>
-  <li>se <strong>valida</strong> antes de conceder ningún acceso.</li>
+  <li>se <strong>valida</strong> antes de conceder ningún acceso;</li>
+  <li><strong>caducan a la vez</strong>: el código no vive más que la invitación a la que pertenece.</li>
 </ul>
-<p class="note"><strong>La mera posesión del enlace no concede acceso automáticamente.</strong> Para completar la vinculación, la invitación debe seguir siendo válida, la persona debe identificarse mediante Apple o Google, aceptar expresamente el acceso, y el servicio debe autorizar la vinculación.</p>
+<p class="note"><strong>La mera posesión del enlace o del código no concede acceso automáticamente.</strong> Para completar la vinculación, la invitación debe seguir siendo válida, la persona debe identificarse mediante Apple o Google, aceptar expresamente el acceso, y el servicio debe autorizar la vinculación.</p>
 <p>El correo que escribe el cuidador sirve <strong>para hacer llegar la invitación</strong>, no para identificar a nadie: la identidad la establecen Apple o Google al iniciar sesión. Por eso tu familiar puede aceptar la invitación identificándose con la cuenta que prefiera, aunque no sea la misma dirección a la que llegó el correo — algo habitual si tiene varias cuentas o si utiliza una dirección privada de reenvío.</p>
 
 <h3>8.2 Desvinculación</h3>
@@ -241,6 +243,7 @@
   <li>Toda comunicación con el servicio de sincronización viaja cifrada mediante <strong>HTTPS/TLS</strong>.</li>
   <li>Las invitaciones utilizan enlaces <strong>únicos, temporales y revocables</strong>, y la aceptación exige además autenticación con Google o Apple (apartado 8.1).</li>
   <li>El acceso al enlace de invitación por sí solo no concede acceso a los datos.</li>
+  <li>El <strong>código de invitación</strong> exige haber iniciado sesión <em>antes</em> de poder usarse, y el número de intentos está limitado, de modo que no se puede averiguar probando combinaciones. El cuidador puede <strong>generar uno nuevo</strong> cuando quiera —conviene hacerlo si se lo ha dictado en voz alta—, y al hacerlo el anterior deja de valer.</li>
 </ul>
 <p>Ningún sistema es completamente infalible. Te recomendamos proteger tu dispositivo con bloqueo de pantalla y mantener tu cuenta de Google o de Apple con verificación en dos pasos.</p>
 
