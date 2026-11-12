@@ -51,18 +51,20 @@
 </ul>
 <h2>3. Qué datos tratamos y para qué</h2>
 <p><strong>Ubicación.</strong> La app usa la ubicación precisa de tu iPhone para mostrarte en el mapa, calcular rutas y avisarte de radares y avisos cercanos, también en CarPlay y con la app en segundo plano si lo permites. Para descargar los radares y avisos de tu zona, la app envía a nuestro servidor la zona consultada. Cuando marcas un aviso (por ejemplo, «Policía» u «Obras»), se guarda su posición, su tipo y la hora para mostrarlo a otros usuarios durante un tiempo limitado.</p>
-<p><strong>Avisos de la comunidad.</strong> Cada aviso caduca automáticamente al cabo de unas horas (entre 1 y 24, según el tipo) y se elimina de nuestros sistemas poco después. Junto al aviso se guarda un identificador técnico del dispositivo para evitar abusos y gestionar las confirmaciones de otros usuarios.</p>
+<p><strong>Avisos de la comunidad.</strong> Cada aviso caduca automáticamente al cabo de unas horas (entre 1 y 24, según el tipo) y se elimina de nuestros sistemas 24 horas después de caducar. Junto al aviso se guarda un identificador aleatorio generado en tu iPhone al instalar la app, que sirve para evitar abusos y gestionar las confirmaciones de otros usuarios. Este identificador es independiente de tu cuenta: no relacionamos los avisos con tu cuenta ni guardamos tu dirección IP en nuestras bases de datos.</p>
 <p><strong>Cuenta (Iniciar sesión con Apple).</strong> Si activas las funciones sociales, inicias sesión con Apple. Recibimos un identificador de usuario de Apple y, si decides compartirlo, tu nombre. Con ello creamos tu cuenta, tu nombre visible y tu código de amigo. Guardamos tu lista de amigos, las solicitudes de amistad y los bloqueos que hagas.</p>
 <p><strong>Estado de conexión.</strong> Mientras la app está abierta, o en segundo plano con una ruta o con los radares activos, tus amigos pueden ver si estás conectado. No compartimos tu ubicación con tus amigos.</p>
-<p><strong>Llamadas de voz.</strong> Las llamadas entre amigos se transmiten cifradas y en tiempo real. La app no graba ni guarda el audio.</p>
+<p><strong>Llamadas de voz.</strong> Las llamadas entre amigos se transmiten cifradas y en tiempo real a través de los servidores de retransmisión de Cloudflare (Cloudflare Realtime). La app no graba las conversaciones y no guardamos el audio. Para que la llamada funcione guardamos temporalmente quién participa en cada conversación, quién invitó a quién y las horas de entrada y salida; estos datos se eliminan al terminar la conversación o, como máximo, 24 horas después de la última actividad.</p>
 <p><strong>Estadísticas de llamada.</strong> Durante la llamada, la app envía a nuestro servidor, como máximo cada 10 segundos, estadísticas técnicas sin contenido de audio ni ubicación (por ejemplo, retardo, variación del retardo, pérdida de paquetes, la salida de audio usada y si la pantalla está bloqueada o el vehículo en movimiento). No guardamos tu cuenta junto a estas estadísticas, aunque durante un máximo de 24 horas pueden relacionarse con la llamada en la que participaste. Las conservamos 7 días para mejorar la calidad del servicio.</p>
-<p><strong>Identificadores del dispositivo.</strong> Usamos un identificador técnico del dispositivo para mantener tu sesión iniciada de forma segura. Las notificaciones de la app (por ejemplo, de invitaciones o solicitudes de amistad) se generan en tu propio iPhone; no usamos el servicio de notificaciones push de Apple.</p>
+<p><strong>Identificadores del dispositivo.</strong> Usamos un identificador técnico del dispositivo para mantener tu sesión iniciada de forma segura.</p>
+
+<p><strong>Notificaciones.</strong> Las notificaciones de la app (por ejemplo, de invitaciones a llamadas o solicitudes de amistad) se generan en tu propio iPhone. No usamos el servicio de notificaciones push de Apple.</p>
 <p><strong>Datos que se quedan en tu iPhone.</strong> Tus rutas, lugares favoritos y ajustes se guardan en tu iPhone y, si lo tienes activado, se sincronizan con tu iCloud. Nosotros no tenemos acceso a esos datos. El registro de diagnóstico, si lo activas, se guarda solo en tu iPhone y únicamente nos llega si tú decides exportarlo y enviárnoslo.</p>
 <p><strong>Compras.</strong> Si la app ofrece funciones Premium mediante compra, el pago lo gestiona Apple. No recibimos tus datos de pago.</p>
 <h2>4. Servicios de terceros</h2>
 <ul>
   <li><strong>Apple</strong>: mapas (MapKit), información meteorológica (Apple Weather), iCloud, Iniciar sesión con Apple, CarPlay y compras dentro de la app, según la política de privacidad de Apple.</li>
-  <li><strong>Cloudflare</strong>: alojamiento de nuestros servidores y bases de datos.</li>
+  <li><strong>Cloudflare</strong>: alojamiento de nuestros servidores y bases de datos, y retransmisión cifrada del audio de las llamadas (Cloudflare Realtime). Nuestras bases de datos se alojan en centros de datos de Cloudflare en Europa occidental; las conexiones pueden atenderse desde el centro de datos de Cloudflare más cercano a ti.</li>
   <li><strong>OpenStreetMap</strong>: datos cartográficos abiertos usados para radares y vías.</li>
 </ul>
 <p>No compartimos tus datos con terceros para publicidad ni para ningún otro fin comercial.</p>
@@ -72,6 +74,7 @@
 <ul>
   <li>Avisos de la comunidad: hasta su caducidad, y se eliminan en las 24 horas siguientes.</li>
   <li>Estadísticas técnicas de llamada: 7 días.</li>
+  <li>Datos de participación en llamadas: se eliminan al terminar la conversación o, como máximo, 24 horas después de la última actividad.</li>
   <li>Sesión: los datos de sesión caducan como máximo a los 60 días sin uso.</li>
   <li>Cuenta, amigos y solicitudes: mientras mantengas tu cuenta. Si la eliminas o nos lo pides, los borramos (ver <a href="/aakroutesradars/delete-account/">https://www.aakdeveloper.com/aakroutesradars/delete-account/</a>).</li>
 </ul>
