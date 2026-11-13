@@ -498,6 +498,11 @@
         radial-gradient(circle at 92% 10%, rgba(30,110,232,.42), transparent 34%),
         linear-gradient(160deg, rgba(30,110,232,.14), rgba(255,255,255,.035));
     }
+    .aakcolors {
+      background:
+        radial-gradient(circle at 92% 10%, rgba(121,9,247,.42), transparent 34%),
+        linear-gradient(160deg, rgba(121,9,247,.14), rgba(255,255,255,.035));
+    }
     .fm-santa26 {
       background:
         radial-gradient(circle at 92% 10%, rgba(181,27,145,.36), transparent 34%),
@@ -857,7 +862,7 @@
           </div>
 
           <div class="metrics">
-            <div><b>10</b>aplicaciones</div>
+            <div><b>11</b>aplicaciones</div>
             <div><b>iOS</b>nativo</div>
             <div><b>WebApp</b></div>
             <div><b>Privacidad</b>desde el diseño</div>
@@ -877,7 +882,7 @@
           // sea true, la primera tarjeta (card-1) es siempre AAK FM Santa26 y las
           // otras dos se sortean entre el resto del catálogo (sin poder repetirla).
           // Para retirar la promoción después del 6 de septiembre, basta con poner
-          // esta constante a false: el carrusel vuelve a sortear las 3 entre las 9
+          // esta constante a false: el carrusel vuelve a sortear las 3 entre las 10
           // apps de siempre, sin tocar nada más.
           const FM_SANTA26_PROMO_ACTIVE = false;
           const FM_SANTA26_CARD = {
@@ -899,6 +904,7 @@
               { icon: 'assets/aakprevia.png', name: 'AAK Previa', tag: 'Juegos para el grupo', compat: 'iOS' },
               { icon: 'assets/aaklegacy.png', name: 'AAK Legacy', tag: 'Legado digital', compat: 'Próximamente en App Store' },
               { icon: 'assets/aakroutesradars.png', name: 'AAK Routes &amp; Radars', tag: 'Rutas y radares', compat: 'Próximamente en App Store' },
+              { icon: 'assets/aakcolors.png', name: 'AAK Colors', tag: 'Colores en voz alta', compat: 'Próximamente en App Store' },
             ];
             for (let i = apps.length - 1; i > 0; i--) {
               const j = Math.floor(Math.random() * (i + 1));
@@ -931,7 +937,7 @@
     <section id="apps">
       <div class="container">
         <div class="section-kicker">El catálogo</div>
-        <h2 class="section-title">Diez ideas. Una misma obsesión por hacerlo fácil.</h2>
+        <h2 class="section-title">Once ideas. Una misma obsesión por hacerlo fácil.</h2>
         <p class="section-intro">
           Cada aplicación parte de una necesidad concreta y se diseña para ser útil desde el primer minuto.
         </p>
@@ -1101,6 +1107,24 @@
               </div>
               <div class="app-art">
                 <img src="assets/aakroutesradars.png" alt="Icono de AAK Routes &amp; Radars">
+              </div>
+            </div>
+          </article>
+
+          <article class="app aakcolors reveal" data-no-featured>
+            <div class="app-inner">
+              <div class="app-copy">
+                <span class="app-label">Próximamente en App Store</span>
+                <h3>AAK Colors</h3>
+                <p>Identifica los colores que te rodean con la cámara del iPhone y escucha sus nombres en voz alta. Diseñada especialmente para personas ciegas o con baja visión.</p>
+                <div class="app-actions">
+                  <a class="mini-link" href="/aakcolors/">Detalles</a>
+                  <a class="mini-link" href="/aakcolors/privacy/">Privacidad</a>
+                  <a class="mini-link" href="/aakcolors/support/">Soporte</a>
+                </div>
+              </div>
+              <div class="app-art">
+                <img src="assets/aakcolors.png" alt="Icono de AAK Colors">
               </div>
             </div>
           </article>
