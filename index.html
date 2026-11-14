@@ -498,6 +498,7 @@
         radial-gradient(circle at 92% 10%, rgba(30,110,232,.42), transparent 34%),
         linear-gradient(160deg, rgba(30,110,232,.14), rgba(255,255,255,.035));
     }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
     .aakcolors {
       background:
         radial-gradient(circle at 92% 10%, rgba(121,9,247,.42), transparent 34%),
@@ -904,7 +905,7 @@
               { icon: 'assets/aakprevia.png', name: 'AAK Previa', tag: 'Juegos para el grupo', compat: 'iOS' },
               { icon: 'assets/aaklegacy.png', name: 'AAK Legacy', tag: 'Legado digital', compat: 'Próximamente en App Store' },
               { icon: 'assets/aakroutesradars.png', name: 'AAK Routes &amp; Radars', tag: 'Rutas y radares', compat: 'Próximamente en App Store' },
-              { icon: 'assets/aakcolors.png', name: 'AAK Colors', tag: 'Colores en voz alta', compat: 'Próximamente en App Store' },
+              { icon: 'assets/aakcolors.png', name: 'AAK Colors', tag: 'Colores en voz alta', compat: 'iOS' },
             ];
             for (let i = apps.length - 1; i > 0; i--) {
               const j = Math.floor(Math.random() * (i + 1));
@@ -1111,13 +1112,14 @@
             </div>
           </article>
 
-          <article class="app aakcolors reveal" data-no-featured>
+          <article class="app aakcolors reveal">
             <div class="app-inner">
               <div class="app-copy">
-                <span class="app-label">Próximamente en App Store</span>
+                <span class="app-label">Disponible en App Store</span>
                 <h3>AAK Colors</h3>
                 <p>Identifica los colores que te rodean con la cámara del iPhone y escucha sus nombres en voz alta. Diseñada especialmente para personas ciegas o con baja visión.</p>
                 <div class="app-actions">
+                  <a class="mini-link primary" href="https://apps.apple.com/es/app/aak-colors/id6834182311" target="_blank" rel="noopener noreferrer">Ver en App Store<span class="sr-only"> (se abre en una pestaña nueva)</span></a>
                   <a class="mini-link" href="/aakcolors/">Detalles</a>
                   <a class="mini-link" href="/aakcolors/privacy/">Privacidad</a>
                   <a class="mini-link" href="/aakcolors/support/">Soporte</a>
